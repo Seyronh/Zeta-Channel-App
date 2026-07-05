@@ -80,7 +80,7 @@ const Articulo = () => {
                         Cartel
                     </div>
                 </div>
-            </div >
+            </div>
         </div >
     );
 }

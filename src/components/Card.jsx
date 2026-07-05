@@ -22,8 +22,8 @@ const Card = ({ card }) => {
 
                 {/* He tenido que crear un componente al svg para poder ponerle el hover como className y además hacer el group-hover para que se haga en modo grupo */}
             </div>
-            <div className="flex gap-3 md:flex-col md:gap-5">
-                <div className="flex flex-col gap-4 font-sans">
+            <div className="grid gap-3 grid-cols-3 md:flex-col md:gap-5 md:flex">
+                <div className="col-span-2 flex flex-col gap-4 font-sans justify-between">
 
                     <h1 className="text-[calc(1.5rem_+_0.5vw)] font-bold uppercase leading-[calc(1.5rem_+_0.5vw)] text-black">{tituloEsp}</h1>
 
@@ -39,37 +39,19 @@ const Card = ({ card }) => {
                                 <Btn text={`${dia} sep`} variant='solidblue' size='xs' font='pixel' />
                             </div>
                             <div className="flex gap-2 md:gap-4">
-                                <div>
-                                    <Btn text={horario[0]} variant='outlineblack' size='xs' font='pixel'
+                                {horario.map((hora) => (
+                                    <Btn key={hora} text={hora} variant='outlineblack' size='xs' font='pixel'
+                                    /* map para que se añadan la cantidad de btn segun la cantidad de horas que haya */
                                     /* {isHorario1Selected ? 'solidblack' : 'outlineblack'} size='xs' font='pixel' onClick={() => setIsHorario1Selected(!isHorario1Selected)} */
                                     />
-                                </div>
-                                <div>
-                                    <Btn text={horario[1]} variant='outlineblack' size='xs' font='pixel'
-                                    /* {isHorario2Selected ? 'solidblack' : 'outlineblack'} size='xs' font='pixel' onClick={() => setIsHorario2Selected(!isHorario2Selected)} */ />
-                                </div>
-                            </div>
-                        </li>
-                        <li className="hidden flex gap-2 md:justify-between">
-                            <div>
-                                <Btn text={`${dia} sep`} variant='solidblue' size='xs' font='pixel' />
-                            </div>
-                            <div className="flex gap-2 md:gap-4">
-                                <div>
-                                    <Btn text={horario[0]} variant='outlineblack' size='xs' font='pixel'
-                                    /* {isHorario1Selected ? 'solidblack' : 'outlineblack'} size='xs' font='pixel' onClick={() => setIsHorario1Selected(!isHorario1Selected)} */
-                                    />
-                                </div>
-                                <div>
-                                    <Btn text={horario[1]} variant='outlineblack' size='xs' font='pixel'
-                                    /* {isHorario2Selected ? 'solidblack' : 'outlineblack'} size='xs' font='pixel' onClick={() => setIsHorario2Selected(!isHorario2Selected)} */ />
-                                </div>
+                                )
+                                )}
                             </div>
                         </li>
                     </ul>
 
                 </div>
-                <div className="flex-1/2">
+                <div className="h-[160px] md:h-full">
                     <div className="h-full overflow-hidden rounded-3xl">
                         <img src={imagenCard} alt={tituloEsp} className="will-change-transform w-full h-full object-cover md:hidden" />
                         <div className="hidden md:block will-change-transform">
@@ -92,4 +74,6 @@ const Card = ({ card }) => {
 
 export default Card;
 
-/* TO DO: IMAGEN REDIMENSIONADA VERSION CARD DE CERCA */
+
+/* TO DO: Filtros */
+/* ARREGLAR */

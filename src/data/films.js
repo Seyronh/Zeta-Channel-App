@@ -300,7 +300,7 @@ export const CATALOGO = [
     {
         id: 5,
         slug: 'los-magos-de-waverly-place',
-        dia: 12, // Basado en su estreno original (12 de octubre)
+        dia: 14,
         tituloEsp: 'Los magos de Waverly Place',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -372,9 +372,9 @@ export const CATALOGO = [
     },
     {
         id: 6,
-        slug: 'hotel-dulce-hotel-las-aventuras-de-zack-y-cody',
-        dia: 18, // Basado en su estreno original (18 de marzo)
-        tituloEsp: 'Hotel dulce hotel: Las aventuras de Zack y Cody',
+        slug: 'dulce-hotel-zack-y-cody',
+        dia: 13,
+        tituloEsp: 'Dulce hotel: Zack y Cody',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
@@ -446,7 +446,7 @@ export const CATALOGO = [
     {
         id: 7,
         slug: 'little-einsteins',
-        dia: 9, // Basado en su estreno original (9 de octubre)
+        dia: 15,
         tituloEsp: 'Little Einsteins',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -507,7 +507,7 @@ export const CATALOGO = [
     {
         id: 8,
         slug: 'pecezuelos',
-        dia: 24, // Basado en su estreno oficial (24 de septiembre)
+        dia: 15,
         tituloEsp: 'Pecezuelos',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -567,7 +567,7 @@ export const CATALOGO = [
     }, {
         id: 9,
         slug: 'phineas-y-ferb',
-        dia: 17, // Basado en su preestreno original (17 de agosto)
+        dia: 14,
         tituloEsp: 'Phineas y Ferb',
         imagen: portada1,
         imagenCard: portadaCard1,
