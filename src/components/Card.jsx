@@ -10,9 +10,6 @@ const Card = ({ card }) => {
     const { tituloEsp, imagen, imagenCard, tipo, duracion, dia, horario, slug
     } = card;
 
-    /* const [isHorario1Selected, setIsHorario1Selected] = useState(false);
-    const [isHorario2Selected, setIsHorario2Selected] = useState(false);
- */
 
     return (
         <Link to={`/Articulo/${slug}`} className="relative mx-auto bg-pink hover:bg-blue rounded-l-3xl rounded-br-3xl flex flex-col group transition-colors p-4 duration-300">
@@ -40,10 +37,7 @@ const Card = ({ card }) => {
                             </div>
                             <div className="flex gap-2 md:gap-4">
                                 {horario.map((hora) => (
-                                    <Btn key={hora} text={hora} variant='outlineblack' size='xs' font='pixel'
-                                    /* map para que se añadan la cantidad de btn segun la cantidad de horas que haya */
-                                    /* {isHorario1Selected ? 'solidblack' : 'outlineblack'} size='xs' font='pixel' onClick={() => setIsHorario1Selected(!isHorario1Selected)} */
-                                    />
+                                    <Btn key={hora} text={hora} variant='outlineblack' size='xs' font='pixel' />
                                 )
                                 )}
                             </div>
@@ -75,4 +69,3 @@ export default Card;
 
 
 /* TO DO: Filtros */
-/* ARREGLAR */
