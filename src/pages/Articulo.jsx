@@ -14,6 +14,7 @@ import pegatinaCartel from '../assets/img/pegatinas/pegatina-icon-cartel.svg';
 /* import pegatinaDesplegable from '../assets/img/pegatinas/pegatina-icon-desplegable.svg'; */
 import iconCartel from '../assets/img/icon/articulo-cartel-icon.svg';
 /* import iconDesplegable from '../assets/img/icon/articulo-desplegable-icon.svg'; */
+import iconUbicacion from '../assets/img/icon/icon-ubicacion.svg';
 
 const Articulo = () => {
     /* 1. Capturamos el slug de la URL */
@@ -25,12 +26,28 @@ const Articulo = () => {
         return <Navigate to="/Error404" replace />; */
 
 
-    const { tituloEsp, imagen, cartel,/* dia,  tipo, duracion, horario, sala, tituloVo, directorx, bandaSonora, saga, genero, sinopsis, personajes, trailerVideo, cita, autorCita, imagenesGaleria */ } = catalogo;
+    const { tituloEsp, imagen, cartel, horario, dia, tipo, duracion, sala /* tituloVo, directorx, bandaSonora, saga, genero, sinopsis, personajes, trailerVideo, cita, autorCita, imagenesGaleria */ } = catalogo;
 
     /* 4.Si la pelicula existe, mostramos su información */
 
     /* está el articulo abierto? */
     const [popupIsOpen, setpopupIsOpen] = useState(true);
+
+    /* has seleccionado un horario? */
+    const [horariosSeleccionados, setHorariosSeleccionados] = useState([]);
+    const cambiarHorarioSeleccionado = (hora) => {
+        if (horariosSeleccionados.includes(hora)) {
+            const horaQuitada = horariosSeleccionados.filter(horaSeleccionada => horaSeleccionada !== hora)
+            setHorariosSeleccionados(horaQuitada)
+            console.log(horaQuitada)
+        }
+        else {
+            const horaAnadida = [...horariosSeleccionados, hora]
+            setHorariosSeleccionados(horaAnadida)
+            console.log(horaAnadida)
+        }
+    }
+    /* el horariosSeleccionados está vacio de por sí lo que hacemos es con el else metemos la hora que le hemos dado, luego si le volvemos a dar hace el filter que borra la hora que coincide a la que le hemos dado */
 
     return (
         <div className="relative pt-8">
@@ -41,7 +58,7 @@ const Articulo = () => {
                 {/* He tenido que crear un componente al svg para poder ponerle el hover como className y además hacer el group-hover para que se haga en modo grupo */}
             </div>
             <div className="pt-7 pb-6 bg-blue rounded-tl-4xl">
-                <div className="flex flex-col gap-7 px-6">
+                <div className="flex flex-col gap-6 px-6">
                     <div className="relative flex flex-col gap-4 md:flex-row md:gap-8">
                         <Link to="/Entradas" className="absolute z-997 top-0 right-0 w-auto h-auto">
                             <img src={btnMas} alt="Más información" />
@@ -63,7 +80,7 @@ const Articulo = () => {
                     </div>
                     {/* TO DO: quizás plantear un roll que conforme scrollees se lea */}
                 </div>
-                <div className={`relative flex flex-col gap-7 px-10 ${popupIsOpen ? 'block' : 'hidden'}`}>
+                <div className={`relative flex flex-col px-10 ${popupIsOpen ? 'block' : 'hidden'}`}>
                     <div className="p-6 bg-white rounded-xl">
                         <CierrePopUp text="Cartel" setpopupIsOpen={setpopupIsOpen} className="absolute top-0 right-0 left-0 mx-10" />
 
@@ -80,6 +97,30 @@ const Articulo = () => {
                         Cartel
                     </div>
                 </div>
+                <ul className="flex flex-col gap-3 p-6">
+                    <li className="flex justify-between">
+                        <p className="text-[calc(1.25rem_+_0.25vw)] font-sans text-white">{tipo}</p>
+                        <p className="text-[calc(1.25rem_+_0.25vw)] text-white font-pixel">{duracion} min</p>
+                    </li>
+                    <li className="w-full h-[2px] bg-white"></li>
+                    <li className="flex justify-between">
+                        <Btn text={`${dia} sep`} variant='solidpink' size='xs' font='pixel' />
+
+                        {horario.map((hora) => (
+                            <Btn key={hora} text={hora} variant={horariosSeleccionados.includes(hora) ? 'solidblack' : 'outlinewhite'} size='xs' font='pixel' size='xs' font='pixel'
+                                /* map para que se añadan la cantidad de btn segun la cantidad de horas que haya */
+                                onClick={() => cambiarHorarioSeleccionado(hora)} />
+                        )
+                        )}
+
+                        <p className="font-pixel text-xl text-white uppercase">Sala {sala}</p>
+                    </li>
+                    <li className="flex items-center gap-3">
+                        <img src={iconUbicacion} alt='Ubicación' />
+                        <p>Autocine Madrid - C. de la Isla de Java, 2</p>
+                    </li>
+
+                </ul>
             </div>
         </div >
     );
