@@ -15,15 +15,15 @@ const Card = ({ card }) => {
  */
 
     return (
-        <Link to={`/articulo/${slug}`} className="relative mx-auto bg-pink hover:bg-blue rounded-l-3xl rounded-br-3xl flex flex-col group transition-colors p-4 duration-300">
+        <Link to={`/Articulo/${slug}`} className="relative mx-auto bg-pink hover:bg-blue rounded-l-3xl rounded-br-3xl flex flex-col group transition-colors p-4 duration-300">
             <div className="absolute bottom-full right-0 -mb-[2px] z-10">
 
                 <LabelCard className="w-full relative text-pink group-hover:text-blue transition-colors duration-300" />
 
                 {/* He tenido que crear un componente al svg para poder ponerle el hover como className y además hacer el group-hover para que se haga en modo grupo */}
             </div>
-            <div className="grid gap-3 grid-cols-3 md:flex-col md:gap-5 md:flex">
-                <div className="col-span-2 flex flex-col gap-4 font-sans justify-between">
+            <div className="grid gap-3 grid-cols-3 md:flex-col md:gap-5 md:flex h-full justify-between">
+                <div className="col-span-2 flex flex-col gap-4 font-sans justify-around h-full">
 
                     <h1 className="text-[calc(1.5rem_+_0.5vw)] font-bold uppercase leading-[calc(1.5rem_+_0.5vw)] text-black">{tituloEsp}</h1>
 
@@ -51,20 +51,19 @@ const Card = ({ card }) => {
                     </ul>
 
                 </div>
-                <div className="h-[160px] md:h-full">
+                <div className="h-[160px] md:h-auto">
                     <div className="h-full overflow-hidden rounded-3xl">
                         <img src={imagenCard} alt={tituloEsp} className="will-change-transform w-full h-full object-cover md:hidden" />
-                        <div className="hidden md:block will-change-transform">
-                            <img src={imagen} alt={tituloEsp} className="  w-full h-full object-cover object-top" />
-                        </div>
+                        <img src={imagen} alt={tituloEsp} className="hidden md:block will-change-transform w-full h-full object-cover object-top" />
+
 
                         {/* Cuando veias la tarjeta sin el will-change-transform la imagen se veia como sin renderizar o pixelada pero cuando acercaba con el zoom en el buscador como que lo arreglaba, le he preguntado a la ia para ver qué era y es que por defecto el buscador como que la renderiza desde el CPU. Y ahora saca la imagen del flujo normal de renderizado de la CPU y le asigna su propia capa de memoria dedicada en la tarjeta gráfica (GPU). Al ser la GPU la que ahora se encarga de pintar esa tarjeta, aplica algoritmos de suavizado mucho más potentes (como los que usa Photoshop o Figma), eliminando el pixelado o el aspecto borroso (ya no sé si eso afectará a la optimización) */}
 
                     </div>
 
-                    <Link to={`/Articulo/${slug}`} className="absolute bottom-3 right-4">
+                    <div className="absolute bottom-3 right-4">
                         <img src={btnMas} alt="Más información" />
-                    </Link>
+                    </div>
                 </div>
             </div>
         </Link>
