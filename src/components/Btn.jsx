@@ -48,6 +48,7 @@ const Btn = ({
     if (to) {
         return (
             <Link to={to} className={btnClass} {...props}>
+                {/* el ...props es para hacer una copia */}
                 {text}
             </Link>
         );
