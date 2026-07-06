@@ -28,7 +28,7 @@ const Card = ({ card }) => {
                     <h1 className="text-[calc(1.5rem_+_0.5vw)] font-bold uppercase leading-[calc(1.5rem_+_0.5vw)] text-black">{tituloEsp}</h1>
 
 
-                    <ul className="flex flex-col gap-3 text-black group-hover:text-white font-pixel">
+                    <ul className="flex flex-col gap-3">
                         <li className="flex justify-between">
                             <p className="text-[calc(1.25rem_+_0.25vw)] font-sans text-black group-hover:text-white">{tipo}</p>
                             <p className="text-[calc(1.25rem_+_0.25vw)] text-black  group-hover:text-white font-pixel">{duracion} min</p>
