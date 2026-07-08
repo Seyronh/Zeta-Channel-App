@@ -9,6 +9,7 @@ import tiraRollText from '../assets/img/tira-roll-text.svg';
 import styles from './Articulo.module.css';
 import LabelCard from '../components/LabelCard.jsx';
 import CierrePopUp from '../components/CierrePopUp.jsx';
+import CarruselGaleria from '../components/CarruselGaleria.jsx';
 
 import pegatinaCartel from '../assets/img/pegatinas/pegatina-icon-cartel.svg';
 import pegatinaDesplegable from '../assets/img/pegatinas/pegatina-icon-desplegable.svg';
@@ -16,7 +17,8 @@ import iconCartel from '../assets/img/icon/articulo-cartel-icon.svg';
 import iconDesplegable from '../assets/img/icon/articulo-desplegable-icon.svg';
 import iconUbicacion from '../assets/img/icon/icon-ubicacion.svg';
 import AcordeonArticulo from '../components/AcordeonArticulo.jsx';
-
+/* import pixelFondo from '../assets/img/pixel-fondo.svg';
+ */
 const Articulo = () => {
     /* 1. Capturamos el slug de la URL */
     const { slug } = useParams();
@@ -166,7 +168,27 @@ const Articulo = () => {
                 </div>
 
                 {/* GALERIA */}
+                <div className="flex flex-col gap-6 p-6">
+                    <h2 className="text-3xl font-pixel uppercase text-white">Galería</h2>
+                    <CarruselGaleria />
+                </div>
+                {/*  TIRA ROLL 2 */}
+                <div className="bg-green py-2 my-8">
+                    <div
+                        style={{ backgroundImage: `url(${tiraRollText})` }}
+                        className={`w-full h-4 ${styles.roll}`}>
+                    </div>
+                    {/* TO DO: quizás plantear un roll que conforme scrollees se lea */}
+                </div>
+
+                {/* PELICULAS RELACIONADAS */}
+                <div>
+                    <h2 className="text-3xl font-pixel uppercase text-black dark:text-white bg-pix-light dark:bg-pix-dark">También te podría interesar</h2>
+                </div>
             </div>
+            {/* <div>
+                <img src={pixelFondo} alt="Pixel fondo" className="text-pix-light dark:bg-pix-dark w-full" />
+            </div> */}
         </div >
     );
 }
