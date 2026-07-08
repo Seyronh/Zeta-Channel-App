@@ -29,7 +29,7 @@ const Articulo = () => {
         return <Navigate to="/Error404" replace />; */
 
 
-    const { tituloEsp, imagen, cartel, horario, dia, tipo, duracion, sala, trailerVideo, cita, autorCita /* imagenesGaleria */ } = catalogo;
+    const { tituloEsp, imagen, cartel, horario, dia, tipo, duracion, sala, trailerVideo, cita, autorCita, imagenesGaleria } = catalogo;
 
     /* 4.Si la pelicula existe, mostramos su información */
 
@@ -137,7 +137,7 @@ const Articulo = () => {
                 </ul>
 
                 {/* FICHA TÉCNICA + EASTER EGG CERRADO */}
-                <div className={`relative flex flex-col px-4 ${popupFicha ? 'block' : 'hidden'}`}>
+                <div className={`relative flex flex-col px-4 my-6 ${popupFicha ? 'block' : 'hidden'}`}>
                     <div className="p-6 bg-white rounded-xl">
                         <CierrePopUp text="Ficha Técnica" setpopupIsOpen={setpopupFicha} className="absolute top-0 right-0 left-0 mx-4" />
                         <AcordeonArticulo desplegable={catalogo} />
@@ -168,12 +168,12 @@ const Articulo = () => {
                 </div>
 
                 {/* GALERIA */}
-                <div className="flex flex-col gap-6 p-6">
-                    <h2 className="text-3xl font-pixel uppercase text-white">Galería</h2>
-                    <CarruselGaleria />
+                <div className="flex flex-col">
+                    <h2 className="text-3xl font-pixel uppercase text-white p-6">Galería</h2>
+                    <CarruselGaleria imagenesGaleria={imagenesGaleria} />
                 </div>
                 {/*  TIRA ROLL 2 */}
-                <div className="bg-green py-2 my-8">
+                <div className="bg-green py-2 my-12">
                     <div
                         style={{ backgroundImage: `url(${tiraRollText})` }}
                         className={`w-full h-4 ${styles.roll}`}>
