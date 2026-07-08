@@ -9,8 +9,8 @@ import Agenda from './pages/Agenda';
 import User from './pages/User';
 import ScrollToTop from './components/routes/ScrollToTop';
 import Articulo from './pages/Articulo';
-/* import Error404 from './pages/Error404';
-import Footer from './components/Footer'; */
+/* import Error404 from './pages/Error404'; */
+import Footer from './components/Footer';
 
 const App = () => (
   <BrowserRouter>
@@ -32,7 +32,7 @@ const App = () => (
       </Routes>
     </main>
 
-    {/* <Footer /> */}
+    <Footer />
 
   </BrowserRouter>
 )
