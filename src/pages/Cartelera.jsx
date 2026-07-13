@@ -10,6 +10,9 @@ import { PrevButton, NextButton } from "../components/BtnCarrusel.jsx";
 import { useCarruselIndicadores } from "../data/useCarruselIndicadores.js";
 import { DotButton } from "../components/CarruselIndicadores.jsx";
 
+import { Pix1, PixFondo } from '../components/Pixel.jsx';
+
+
 const Cartelera = () => {
 
     // La lógica de qué filtro está activo vive aquí arriba
@@ -62,58 +65,71 @@ const Cartelera = () => {
     const { selectedIndex, scrollSnaps, onDotButtonClick } = useCarruselIndicadores(falsoEmblaApi);
 
     return (
-        <div className="p-6">
-            <div className="flex items-center gap-4 justify-center mb-12">
-                <img src={carteleraIcon} alt="Icono de Cartelera" className="w-11 h-11" />
-                <h1 className="text-5xl leading-0 font-pixel uppercase">CARTELERA</h1>
+        <div className="relative">
+            <div className="absolute bottom-0 left-0 right-0 flex w-full min-h-screen z-[-1] overflow-hidden">
+                <PixFondo
+                    className="w-full h-full text-pix-light"
+                />
+                <PixFondo
+                    className="w-full h-full text-pix-light"
+                />
+                {/* MAÑANA ARREGLAR PONER LOS PIXELES POR TAMAÑO */}
             </div>
 
-            <FiltrosCartelera
-                tipoSeleccionado={tipoSeleccionado}
-                setTipoSeleccionado={setTipoSeleccionado}
-                generoSeleccionado={generoSeleccionado}
-                setGeneroSeleccionado={setGeneroSeleccionado}
-                fechaSeleccionada={fechaSeleccionada}
-                setFechaSeleccionada={setFechaSeleccionada}
-
-                totalResultados={pelisFiltradas.length}
-            />
-
-            {/* LAS TARJETAS REORTADAS Y FILTRADAS */}
-            <div className="container mx-auto grid grid-cols-1 gap-16 md:gap-x-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-28">
-                {pelisPaginadas.map(peli => (
-                    <Card key={peli.id} card={peli} />
-                ))}
-            </div>
-            {/* ─── 4. RENDERIZADO USANDO TUS PROPIOS COMPONENTES ─── */}
-            {totalPaginas > 1 && (
-                <div className="flex items-center justify-center gap-8 mt-16 mb-8 select-none">
-
-                    {/* Botón de atrás idéntico al carrusel */}
-                    <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-
-                    {/* Generador de tus DotButtons exactos */}
-                    <div className="flex items-center gap-6">
-                        {scrollSnaps.map((_, index) => (
-                            <DotButton
-                                key={index}
-                                onClick={() => onDotButtonClick(index)}
-                                className={`transition-all duration-300 rounded-full
-                                    ${index === selectedIndex
-                                        ? 'w-5 h-5 bg-green' // Estilo activo Y2K
-                                        : 'w-5 h-5 bg-black opacity-50' // Estilo apagado
-                                    }`}
-                            />
-                        ))}
-                    </div>
-
-                    {/* Botón de adelante idéntico al carrusel */}
-                    <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+            <div className="p-6">
+                <Pix1 className="absolute top-0 left-0 w-11 h-11 z-0 text-pix-light" />
+                <div className="flex items-center gap-4 justify-center mb-12">
+                    <img src={carteleraIcon} alt="Icono de Cartelera" className="w-11 h-11" />
+                    <h1 className="text-5xl leading-0 font-pixel uppercase">CARTELERA</h1>
 
                 </div>
-            )}
-        </div>
 
+                <FiltrosCartelera
+                    tipoSeleccionado={tipoSeleccionado}
+                    setTipoSeleccionado={setTipoSeleccionado}
+                    generoSeleccionado={generoSeleccionado}
+                    setGeneroSeleccionado={setGeneroSeleccionado}
+                    fechaSeleccionada={fechaSeleccionada}
+                    setFechaSeleccionada={setFechaSeleccionada}
+
+                    totalResultados={pelisFiltradas.length}
+                />
+
+                {/* LAS TARJETAS REORTADAS Y FILTRADAS */}
+                <div className="container mx-auto grid grid-cols-1 gap-16 md:gap-x-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-28">
+                    {pelisPaginadas.map(peli => (
+                        <Card key={peli.id} card={peli} />
+                    ))}
+                </div>
+                {/* ─── 4. RENDERIZADO USANDO TUS PROPIOS COMPONENTES ─── */}
+                {totalPaginas > 1 && (
+                    <div className="flex items-center justify-center gap-8 mt-16 mb-8 select-none">
+
+                        {/* Botón de atrás idéntico al carrusel */}
+                        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+
+                        {/* Generador de tus DotButtons exactos */}
+                        <div className="flex items-center gap-6">
+                            {scrollSnaps.map((_, index) => (
+                                <DotButton
+                                    key={index}
+                                    onClick={() => onDotButtonClick(index)}
+                                    className={`transition-all duration-300 rounded-full
+                                    ${index === selectedIndex
+                                            ? 'w-5 h-5 bg-green' // Estilo activo Y2K
+                                            : 'w-5 h-5 bg-black opacity-50' // Estilo apagado
+                                        }`}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Botón de adelante idéntico al carrusel */}
+                        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+
+                    </div>
+                )}
+            </div>
+        </div>
 
     );
 };
