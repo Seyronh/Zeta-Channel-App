@@ -1,10 +1,8 @@
 import useEmblaCarousel from 'embla-carousel-react';
-import {
-    NextButton,
-    PrevButton,
-    usePrevNextButtons
-} from './BtnCarrusel';
-import { DotButton, CarruselIndicadores } from './CarruselIndicadores';
+import { usePrevNextButtons } from "../data/usePrevNextButtons.js";
+import { PrevButton, NextButton } from "./BtnCarrusel.jsx";
+import { useCarruselIndicadores } from "../data/useCarruselIndicadores.js";
+import { DotButton } from "../components/CarruselIndicadores.jsx";
 
 const CarruselGaleria = ({ imagenesGaleria }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: true })
@@ -12,7 +10,7 @@ const CarruselGaleria = ({ imagenesGaleria }) => {
     const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi)
 
     const { selectedIndex, scrollSnaps, onDotButtonClick } =
-        CarruselIndicadores(emblaApi)
+        useCarruselIndicadores(emblaApi)
 
     return (
         <div className="relative">
