@@ -23,7 +23,7 @@ export const CATALOGO = [
         //CARD 
         id: 1,
         slug: 'high-school-musical',
-        dia: 14,
+        fecha: 14,
         tituloEsp: 'High School Musical', // poner , y no ; !!!
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -99,7 +99,7 @@ export const CATALOGO = [
         //CARD 
         id: 2,
         slug: 'lemonade-mouth',
-        dia: 13,
+        fecha: 13,
         tituloEsp: 'Lemonade Mouth',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -166,7 +166,7 @@ export const CATALOGO = [
     {
         id: 3,
         slug: 'camp-rock',
-        dia: 13,
+        fecha: 13,
         tituloEsp: 'Camp Rock',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -239,7 +239,7 @@ export const CATALOGO = [
     {
         id: 4,
         slug: 'austin-y-ally',
-        dia: 18, // Basado en su estreno en España (18 de mayo)
+        fecha: 13,
         tituloEsp: 'Austin y Ally',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -300,7 +300,7 @@ export const CATALOGO = [
     {
         id: 5,
         slug: 'los-magos-de-waverly-place',
-        dia: 14,
+        fecha: 14,
         tituloEsp: 'Los magos de Waverly Place',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -373,7 +373,7 @@ export const CATALOGO = [
     {
         id: 6,
         slug: 'dulce-hotel-zack-y-cody',
-        dia: 13,
+        fecha: 13,
         tituloEsp: 'Dulce hotel: Zack y Cody',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -446,7 +446,7 @@ export const CATALOGO = [
     {
         id: 7,
         slug: 'little-einsteins',
-        dia: 15,
+        fecha: 15,
         tituloEsp: 'Little Einsteins',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -507,7 +507,7 @@ export const CATALOGO = [
     {
         id: 8,
         slug: 'pecezuelos',
-        dia: 15,
+        fecha: 15,
         tituloEsp: 'Pecezuelos',
         imagen: portada1,
         imagenCard: portadaCard1,
@@ -567,7 +567,7 @@ export const CATALOGO = [
     }, {
         id: 9,
         slug: 'phineas-y-ferb',
-        dia: 14,
+        fecha: 14,
         tituloEsp: 'Phineas y Ferb',
         imagen: portada1,
         imagenCard: portadaCard1,

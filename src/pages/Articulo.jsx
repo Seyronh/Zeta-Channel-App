@@ -29,7 +29,7 @@ const Articulo = () => {
         return <Navigate to="/Error404" replace />; */
 
 
-    const { tituloEsp, imagen, cartel, horario, dia, tipo, duracion, sala, trailerVideo, cita, autorCita, imagenesGaleria } = catalogo;
+    const { tituloEsp, imagen, cartel, horario, fecha, tipo, duracion, sala, trailerVideo, cita, autorCita, imagenesGaleria } = catalogo;
 
     /* 4.Si la pelicula existe, mostramos su información */
 
@@ -116,7 +116,7 @@ const Articulo = () => {
                     </li>
                     <li className="w-full h-0.5 bg-white"></li>
                     <li className="flex justify-between">
-                        <Btn text={`${dia} sep`} variant='solidpink' size='xs' font='pixel' />
+                        <Btn text={`${fecha} sep`} variant='solidpink' size='xs' font='pixel' />
 
                         {horario.map((hora) => (
                             <Btn key={hora} text={hora} variant={horariosSeleccionados.includes(hora) ? 'solidblack' : 'outlinewhite'} size='xs' font='pixel' size='xs' font='pixel'

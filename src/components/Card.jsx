@@ -7,7 +7,7 @@ import LabelCard from './LabelCard.jsx';
 
 
 const Card = ({ card }) => {
-    const { tituloEsp, imagen, imagenCard, tipo, duracion, dia, horario, slug
+    const { tituloEsp, imagen, imagenCard, tipo, duracion, fecha, horario, slug
     } = card;
 
 
@@ -33,7 +33,7 @@ const Card = ({ card }) => {
                         <li className="w-full h-[2px] bg-black group-hover:bg-white"></li>
                         <li className="flex justify-between">
                             <div>
-                                <Btn text={`${dia} sep`} variant='solidblue' size='xs' font='pixel' />
+                                <Btn text={`${fecha} sep`} variant='solidblue' size='xs' font='pixel' />
                             </div>
                             <div className="flex gap-2 md:gap-4">
                                 {horario.map((hora) => (
