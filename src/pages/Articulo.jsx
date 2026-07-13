@@ -54,7 +54,7 @@ const Articulo = () => {
     /* el horariosSeleccionados está vacio de por sí lo que hacemos es con el else metemos la hora que le hemos dado, luego si le volvemos a dar hace el filter que borra la hora que coincide a la que le hemos dado */
 
     return (
-        <div className="relative pt-8">
+        <article className="relative pt-8">
             {/* TAPADERA CARD */}
             <div className="absolute bottom-full right-0 -mb-11 z-10 ml-27.5">
 
@@ -189,8 +189,9 @@ const Articulo = () => {
             {/* <div>
                 <img src={pixelFondo} alt="Pixel fondo" className="text-pix-light dark:bg-pix-dark w-full" />
             </div> */}
-        </div >
+        </article>
     );
 }
 export default Articulo;
 /* TO DO: versión tablet y pc */
+/* TO DO: reseteo etiquetas div app entera -- article / section */
