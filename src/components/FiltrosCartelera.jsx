@@ -20,7 +20,7 @@ const FiltrosCartelera = ({ tipoSeleccionado, setTipoSeleccionado, totalResultad
 
     return (
         <div>
-            <nav className="mb-12 flex flex-wrap items-center gap-4 font-sans">
+            <nav className={`flex flex-wrap items-center gap-4 font-sans ${tipoSeleccionado !== 'all' ? 'mb-4' : 'mb-16'}`}>
                 <Listbox value={tipoSeleccionado} onChange={setTipoSeleccionado}>
                     <div className="relative">
                         <ListboxButton className={`flex items-center gap-3 bg-green text-black font-semi-bold px-6 py-2.5 rounded-full data-open:rounded-l-3xl data-open:rounded-r-3xl data-open:rounded-b-none transition duration-75 uppercase group ${tipoSeleccionado === 'all' ? 'data-open:gap-10' : 'data-open:gap-6'}`}>
@@ -61,8 +61,8 @@ const FiltrosCartelera = ({ tipoSeleccionado, setTipoSeleccionado, totalResultad
             </nav>
 
             {tipoSeleccionado !== 'all' && (
-                <p className="text-xs font-bold uppercase text-neutral-500 mb-6 font-mono">
-                    Mostrando resultados para: <span className="text-black underline">{tipoActualObjeto?.name}</span> ({totalResultados})
+                <p className="uppercase text-black font-sans mb-16 text-right">
+                    <span className="font-bold bg-grey rounded-full px-3.5 py-2">{totalResultados}</span>    Resultados
                 </p>
             )}
         </div>
