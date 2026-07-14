@@ -19,6 +19,8 @@ import galeriaHs8 from '../assets/img/cartelera/high-school-musical/galeria-8.we
 
 
 export const CATALOGO = [
+
+    /* Películas */
     {
         //CARD 
         id: 1,
@@ -29,7 +31,10 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Película', // serie, pelicula o actividad
         duracion: 98,
-        horario: ['12:30', '19:30'], // ponemos un array para el horario, ya que puede haber más de uno
+        horario: [
+            { hora: '12:30', plazas: 20 },
+            { hora: '19:30', plazas: 4 }
+        ], // ponemos un array para el horario, ya que puede haber más de uno
 
         //ARTICULO -- info anterior y esta
         cartel: cartel1,
@@ -105,7 +110,7 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Película',
         duracion: 108,
-        horario: ['17:00'],
+        horario: [{ hora: '17:00', plazas: 20 }],
 
         //ARTICULO
         cartel: cartel1,
@@ -172,8 +177,10 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Película',
         duracion: 94,
-        horario: ['17:00', '19:00'],
-
+        horario: [
+            { hora: '17:00', plazas: 0 },
+            { hora: '19:00', plazas: 4 }
+        ],
         //ARTICULO
         cartel: cartel1,
         sala: 1,
@@ -237,7 +244,245 @@ export const CATALOGO = [
         imagenesGaleria: []
     },
     {
+        //CARD 
         id: 4,
+        slug: 'descendientes',
+        fecha: 15,
+        tituloEsp: 'Descendientes',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Película',
+        duracion: 112,
+        horario: [{ hora: '12:00', plazas: 20 }],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Descendants',
+        directorx: 'Kenny Ortega',
+        bandaSonora: 'Rotten to the Core',
+        saga: ['Descendientes 2', 'Descendientes 3', 'Descendientes: El ascenso de Red'],
+        genero: ['Musical', 'Fantasía', 'Aventura'],
+        sinopsis: 'Los hijos adolescentes de los villanos más conocidos de Disney reciben una oportunidad para asistir a la escuela preparatoria en el idílico reino de Auradon junto a los hijos de los héroes.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Dove Cameron', personaje: 'Mal' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Sofia Carson', personaje: 'Evie' },
+            { id: 3, imagen: troyBolton, actor: 'Cameron Boyce', personaje: 'Carlos' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Booboo Stewart', personaje: 'Jay' },
+            { id: 5, imagen: troyBolton, actor: 'Mitchell Hope', personaje: 'Rey Ben' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/zGl79m8R974',
+        cita: '«No somos nuestros padres. Somos libres de elegir nuestro propio camino».',
+        autorCita: 'Mal',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 5,
+        slug: 'teen-beach-movie',
+        fecha: 15,
+        tituloEsp: 'Teen Beach Movie',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Película',
+        duracion: 95,
+        horario: [{ hora: '17:00', plazas: 20 }],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Teen Beach Movie',
+        directorx: 'Jeffrey Hornaday',
+        bandaSonora: 'Cruisin` for a Bruisin`',
+        saga: ['Teen Beach 2'],
+        genero: ['Musical', 'Comedia', 'Fantasía'],
+        sinopsis: 'Brady y McKenzie son dos surfistas que acaban siendo transportados mágicamente dentro de una clásica película musical de playa de los años 60 llamada "Amor sin barreras" ("Wet Side Story").',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Ross Lynch', personaje: 'Brady' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Maia Mitchell', personaje: 'McKenzie (Mack)' },
+            { id: 3, imagen: troyBolton, actor: 'Grace Phipps', personaje: 'Lela' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Garrett Clayton', personaje: 'Tanner' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/fD_bM-D6P34',
+        cita: '«No puedes simplemente cantar sobre lo que sientes en vez de hacerlo realidad».',
+        autorCita: 'McKenzie',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 6,
+        slug: 'programa-de-proteccion-de-princesas',
+        fecha: 15,
+        tituloEsp: 'Programa de Protección de Princesas',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Película',
+        duracion: 89,
+        horario: [{ hora: '19:30', plazas: 15 }],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Princess Protection Program',
+        directorx: 'Allison Liddi-Brown',
+        bandaSonora: 'One and the Same',
+        saga: [],
+        genero: ['Comedia', 'Drama', 'Familiar'],
+        sinopsis: 'Cuando el país de una joven princesa es invadido por un dictador, ella entra en el Programa de Protección de Princesas y es enviada a vivir con una chica común en Luisiana para aprender a pasar desapercibida.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Selena Gomez', personaje: 'Carter Mason' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Demi Lovato', personaje: 'Princesa Rosalinda / Rosie' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/5D345L-wPxs',
+        cita: '«Una verdadera princesa no lleva corona en la cabeza, la lleva en el corazón».',
+        autorCita: 'Princesa Rosalinda',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 7,
+        slug: 'el-chico-ideal',
+        fecha: 13,
+        tituloEsp: 'El Chico Ideal',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Película',
+        duracion: 90,
+        horario: [{ hora: '19:00', plazas: 5 }],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'How to Build a Better Boy',
+        directorx: 'Paul Hoen',
+        bandaSonora: 'Something Real',
+        saga: [],
+        genero: ['Comedia', 'Ciencia Ficción'],
+        sinopsis: 'Dos mejores amigas expertas en tecnología, Mae y Gabby, deciden crear al novio virtual perfecto usando un software de diseño militar, sin darse cuenta de que han programado un robot soldado real.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Kelli Berglund', personaje: 'Mae Hartley' },
+            { id: 2, imagen: gabriellaMontez, actor: 'China Anne McClain', personaje: 'Gabby Harrison' },
+            { id: 3, imagen: troyBolton, actor: 'Marshall Williams', personaje: 'Albert Banks' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/F6n4U6lR070',
+        cita: '«A veces lo perfecto no es tan real, y lo real es mucho mejor».',
+        autorCita: 'Gabby Harrison',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 8,
+        slug: '16-deseos',
+        fecha: 14,
+        tituloEsp: '16 Deseos',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Película',
+        duracion: 90,
+        horario: [{ hora: '17:00', plazas: 0 }],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: '16 Wishes',
+        directorx: 'Peter DeLuise',
+        bandaSonora: 'A Wish Comes True Everyday',
+        saga: [],
+        genero: ['Fantasía', 'Comedia', 'Drama'],
+        sinopsis: 'Abby Jensen ha planeado su cumpleaños número 16 desde que era niña. Cuando recibe una caja de velas mágicas que hacen realidad sus deseos, descubre que pedir lo que quieres puede tener consecuencias inesperadas.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Debby Ryan', personaje: 'Abby Jensen' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Jay Kepler', personaje: 'Jay Kepler' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/p17P7V4fO8U',
+        cita: '«Ten cuidado con lo que deseas, porque podrías perder lo que realmente importa».',
+        autorCita: 'Abby Jensen',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 9,
+        slug: 'radio-rebelde',
+        fecha: 15,
+        tituloEsp: 'Radio Rebelde',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Película',
+        duracion: 89,
+        horario: [{ hora: '19:30', plazas: 10 }],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Radio Rebel',
+        directorx: 'Peter Howitt',
+        bandaSonora: 'We Got the Beat',
+        saga: [],
+        genero: ['Drama', 'Comedia', 'Juvenil'],
+        sinopsis: 'Tara Adams es una tímida estudiante de secundaria que secretamente es Radio Rebelde, la locutora de podcast más popular e influyente de su escuela, que inspira a sus compañeros a expresarse.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Debby Ryan', personaje: 'Tara Adams / Radio Rebelde' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Audrey', personaje: 'Audrey' },
+            { id: 3, imagen: troyBolton, actor: 'Gavin', personaje: 'Gavin' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/9Gbeu6E_rRE',
+        cita: '«La única voz que importa es la tuya. No dejes que nadie baje tu volumen».',
+        autorCita: 'Radio Rebelde',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+
+    /* SERIES */
+
+    {
+        id: 10,
         slug: 'austin-y-ally',
         fecha: 13,
         tituloEsp: 'Austin y Ally',
@@ -245,7 +490,10 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 25, // Duración aproximada por episodio
-        horario: ['17:30', '20:30'],
+        horario: [
+            { hora: '17:30', plazas: 20 },
+            { hora: '20:30', plazas: 15 }
+        ],
 
         //ARTICULO
         cartel: cartel1,
@@ -298,7 +546,7 @@ export const CATALOGO = [
         imagenesGaleria: []
     },
     {
-        id: 5,
+        id: 11,
         slug: 'los-magos-de-waverly-place',
         fecha: 14,
         tituloEsp: 'Los magos de Waverly Place',
@@ -306,11 +554,14 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 28, // Duración aproximada por episodio
-        horario: ['17:30', '20:00'],
+        horario: [
+            { hora: '17:30', plazas: 3 },
+            { hora: '20:00', plazas: 15 }
+        ],
 
         //ARTICULO
         cartel: cartel1,
-        sala: 1,
+        sala: 3,
 
         //INFO DESPLEGABLE
         tituloVo: 'Wizards of Waverly Place',
@@ -371,7 +622,7 @@ export const CATALOGO = [
         imagenesGaleria: []
     },
     {
-        id: 6,
+        id: 12,
         slug: 'dulce-hotel-zack-y-cody',
         fecha: 13,
         tituloEsp: 'Dulce hotel: Zack y Cody',
@@ -379,7 +630,10 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 22, // Duración aproximada por episodio
-        horario: ['17:00', '19:30'],
+        horario: [
+            { hora: '17:00', plazas: 20 },
+            { hora: '19:30', plazas: 15 }
+        ],
 
         //ARTICULO
         cartel: cartel1,
@@ -444,7 +698,481 @@ export const CATALOGO = [
         imagenesGaleria: []
     },
     {
-        id: 7,
+        //CARD 
+        id: 13,
+        slug: 'zack-y-cody-todos-a-bordo',
+        fecha: 14,
+        tituloEsp: 'Zack y Cody: Todos a bordo',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '13:30', plazas: 20 },
+            { hora: '18:30', plazas: 2 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'The Suite Life on Deck',
+        directorx: 'Danny Kallis (Creador)',
+        bandaSonora: 'Livin` the Suite Life',
+        saga: ['Hotel, dulce hotel: Las aventuras de Zack y Cody'],
+        genero: ['Comedia', 'Familiar'],
+        sinopsis: 'Los gemelos Zack y Cody Martin se mudan del hotel Tipton a bordo del lujoso transatlántico SS Tipton, donde asisten a la escuela secundaria marina mientras causan el caos de siempre.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Dylan Sprouse', personaje: 'Zack Martin' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Cole Sprouse', personaje: 'Cody Martin' },
+            { id: 3, imagen: troyBolton, actor: 'Brenda Song', personaje: 'London Tipton' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Debby Ryan', personaje: 'Bailey Pickett' },
+            { id: 5, imagen: troyBolton, actor: 'Phill Lewis', personaje: 'Marion Moseby' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/L0-mXk5xH6o',
+        cita: '«¡Ay del transatlántico si estos dos consiguen graduarse!».',
+        autorCita: 'Marion Moseby',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 14,
+        slug: 'buena-suerte-charlie',
+        fecha: 15,
+        tituloEsp: '¡Buena suerte, Charlie!',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 23,
+        horario: [
+            { hora: '12:00', plazas: 12 },
+            { hora: '20:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Good Luck Charlie',
+        directorx: 'Phil Baker (Creador)',
+        bandaSonora: 'Hang in There Baby',
+        saga: ['¡Buena suerte, Charlie!: Un viaje de película'],
+        genero: ['Comedia', 'Familiar', 'Sitcom'],
+        sinopsis: 'La adolescente Teddy Duncan graba video-diarios para dar consejos a su hermanita pequeña, Charlie, sobre cómo sobrevivir a su caótica y divertida familia a medida que vaya creciendo.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Bridgit Mendler', personaje: 'Teddy Duncan' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Mia Talerico', personaje: 'Charlie Duncan' },
+            { id: 3, imagen: troyBolton, actor: 'Jason Dolley', personaje: 'PJ Duncan' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Bradley Steven Perry', personaje: 'Gabe Duncan' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/6iB_D8o9n4I',
+        cita: '«Sé buena, sé tú misma y... ¡buena suerte, Charlie!».',
+        autorCita: 'Teddy Duncan',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 15,
+        slug: 'jessie',
+        fecha: 13,
+        tituloEsp: 'Jessie',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '18:00', plazas: 20 },
+            { hora: '20:00', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Jessie',
+        directorx: 'Pamela Eells O`Connell (Creadora)',
+        bandaSonora: 'Hey Jessie',
+        saga: ['Bunk`d (Acampados)'],
+        genero: ['Comedia', 'Familiar', 'Sitcom'],
+        sinopsis: 'Una chica de Texas se muda a Nueva York para perseguir sus sueños y termina convirtiéndose en la niñera de los cuatro hijos adoptivos de una adinerada pareja de famosos.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Debby Ryan', personaje: 'Jessie Prescott' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Peyton List', personaje: 'Emma Ross' },
+            { id: 3, imagen: troyBolton, actor: 'Cameron Boyce', personaje: 'Luke Ross' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Karan Brar', personaje: 'Ravi Ross' },
+            { id: 5, imagen: troyBolton, actor: 'Skai Jackson', personaje: 'Zuri Ross' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/S2pE848D0Sg',
+        cita: '«Nueva York es grande, pero con vosotros siempre me siento en casa».',
+        autorCita: 'Jessie Prescott',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 16,
+        slug: 'mi-perro-tiene-un-blog',
+        fecha: 15,
+        tituloEsp: 'Mi perro tiene un blog',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '13:00', plazas: 20 },
+            { hora: '18:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Dog with a Blog',
+        directorx: 'Michael B. Kaplan (Creador)',
+        bandaSonora: 'Dog with a Blog Theme',
+        saga: [],
+        genero: ['Comedia', 'Familiar'],
+        sinopsis: 'Dos hermanastros que no se llevan bien se unen al descubrir que su nuevo perro adoptado, Stan, sabe hablar y escribe un blog secreto sobre las divertidas dinámicas de la familia.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Kuma / Mick (Voz de Stephen Full)', personaje: 'Stan (El Perro)' },
+            { id: 2, imagen: gabriellaMontez, actor: 'G. Hannelius', personaje: 'Avery Jennings' },
+            { id: 3, imagen: troyBolton, actor: 'Blake Michael', personaje: 'Tyler James' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Francesca Capaldi', personaje: 'Chloe James' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/5DscN3b-7fQ',
+        cita: '«Soy un perro que escribe en un blog... y sí, sé escribir con patas».',
+        autorCita: 'Stan',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 17,
+        slug: 'raven',
+        fecha: 14,
+        tituloEsp: 'Raven',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '18:00', plazas: 20 },
+            { hora: '19:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'That`s So Raven',
+        directorx: 'Michael Poryes (Creador)',
+        bandaSonora: 'That`s So Raven Theme',
+        saga: ['Cory en la Casa Blanca', 'Vuelve Raven'],
+        genero: ['Comedia', 'Fantasía', 'Sitcom'],
+        sinopsis: 'Raven Baxter es una simpática adolescente con la habilidad psíquica de tener visiones del futuro inmediato. El verdadero problema surge cuando intenta cambiar lo que va a ocurrir.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Raven-Symoné', personaje: 'Raven Baxter' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Anneliese van der Pol', personaje: 'Chelsea Daniels' },
+            { id: 3, imagen: troyBolton, actor: 'Orlando Brown', personaje: 'Eddie Thomas' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Kyle Massey', personaje: 'Cory Baxter' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/i08vWb0X-6k',
+        cita: '«¡Sí, ese es mi futuro!».',
+        autorCita: 'Raven Baxter',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 18,
+        slug: 'hannah-montana',
+        fecha: 14,
+        tituloEsp: 'Hannah Montana',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 23,
+        horario: [
+            { hora: '18:00', plazas: 20 },
+            { hora: '20:00', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Hannah Montana',
+        directorx: 'Michael Poryes (Creador)',
+        bandaSonora: 'Best of Both Worlds',
+        saga: ['Hannah Montana: La Película'],
+        genero: ['Musical', 'Comedia', 'Sitcom'],
+        sinopsis: 'Miley Stewart vive una doble vida secreta: de día es una estudiante ordinaria de secundaria y de noche es Hannah Montana, una superestrella mundial del pop.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Miley Cyrus', personaje: 'Miley Stewart / Hannah Montana' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Emily Osment', personaje: 'Lilly Truscott / Lola Luftnagle' },
+            { id: 3, imagen: troyBolton, actor: 'Mitchel Musso', personaje: 'Oliver Oken' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Jason Earles', personaje: 'Jackson Stewart' },
+            { id: 5, imagen: troyBolton, actor: 'Billy Ray Cyrus', personaje: 'Robby Ray Stewart' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/v9IqL1pG-cI',
+        cita: '«Nadie es perfecto, pero tienes lo mejor de ambos mundos».',
+        autorCita: 'Hannah Montana',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 19,
+        slug: 'shake-it-up',
+        fecha: 13,
+        tituloEsp: 'Shake It Up',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 23,
+        horario: [
+            { hora: '18:30', plazas: 20 },
+            { hora: '20:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Shake It Up',
+        directorx: 'Chris Thompson (Creador)',
+        bandaSonora: 'Shake It Up Theme',
+        saga: [],
+        genero: ['Comedia', 'Baile', 'Sitcom'],
+        sinopsis: 'Dos inseparables amigas de Chicago, CeCe y Rocky, logran su gran sueño de convertirse en bailarinas de reparto en el popular programa musical local "Shake It Up, Chicago!".',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Bella Thorne', personaje: 'CeCe Jones' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Zendaya', personaje: 'Rocky Blue' },
+            { id: 3, imagen: troyBolton, actor: 'Davis Cleveland', personaje: 'Flynn Jones' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Adam Irigoyen', personaje: 'Deuce Martinez' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/5DscB3H-8fQ',
+        cita: '«Baila como si nadie te estuviera mirando, o al menos como si todo Chicago te mirara».',
+        autorCita: 'CeCe Jones',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 20,
+        slug: 'kc-agente-especial',
+        fecha: 15,
+        tituloEsp: 'K.C. Agente Especial',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '12:00', plazas: 20 },
+            { hora: '20:00', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'K.C. Undercover',
+        directorx: 'Corinne Marshall (Creadora)',
+        bandaSonora: 'Keep It Undercover',
+        saga: [],
+        genero: ['Comedia', 'Acción', 'Espionaje'],
+        sinopsis: 'K.C. Cooper es una genio de las matemáticas y cinturón negro en karate que descubre que sus padres son espías encubiertos, lo que la lleva a ser reclutada por la misma agencia gubernamental.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Zendaya', personaje: 'K.C. Cooper' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Veronica Dunne', personaje: 'Marisa Clark' },
+            { id: 3, imagen: troyBolton, actor: 'Kamil McFadden', personaje: 'Ernie Cooper' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/Z5g9e-2m7yE',
+        cita: '«Tengo la misión de salvar el mundo, y aun así tengo que terminar los deberes de lengua».',
+        autorCita: 'K.C. Cooper',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 21,
+        slug: 'riley-y-el-mundo',
+        fecha: 15,
+        tituloEsp: 'Riley y el Mundo',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 23,
+        horario: [
+            { hora: '13:30', plazas: 20 },
+            { hora: '19:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Girl Meets World',
+        directorx: 'Michael Jacobs (Creador)',
+        bandaSonora: 'Take On the World',
+        saga: ['Yo y el Mundo (Boy Meets World)'],
+        genero: ['Comedia', 'Drama', 'Familiar'],
+        sinopsis: 'Sigue a Riley Matthews, la hija adolescente de Cory y Topanga Matthews, mientras junto a su mejor amiga Maya Hart navega por los altibajos de la vida y el instituto en la ciudad de Nueva York.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Rowan Blanchard', personaje: 'Riley Matthews' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Sabrina Carpenter', personaje: 'Maya Hart' },
+            { id: 3, imagen: troyBolton, actor: 'Peyton Meyer', personaje: 'Lucas Friar' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Ben Savage', personaje: 'Cory Matthews' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/5D34rF-H2kM',
+        cita: '«La gente cambia a la gente. Ese es el secreto del mundo».',
+        autorCita: 'Riley Matthews',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 22,
+        slug: 'lizzie-mcguire',
+        fecha: 14,
+        tituloEsp: 'Lizzie McGuire',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '12:30', plazas: 20 },
+            { hora: '19:00', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Lizzie McGuire',
+        directorx: 'Terri Minsky (Creadora)',
+        bandaSonora: 'We`ll Figure It Out',
+        saga: ['Lizzie Superestrella (The Lizzie McGuire Movie)'],
+        genero: ['Comedia', 'Juvenil'],
+        sinopsis: 'Lizzie McGuire es una adolescente normal y corriente de 13 años que, junto a sus amigos Gordo y Miranda, lidia con el instituto. Sus pensamientos más íntimos los expresa su alter ego animado.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Hilary Duff', personaje: 'Lizzie McGuire' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Adam Lamberg', personaje: 'David "Gordo" Gordon' },
+            { id: 3, imagen: troyBolton, actor: 'Lalaine', personaje: 'Miranda Sánchez' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/L0H5gZ-2m3k',
+        cita: '«A veces solo quiero que mi vida tenga una bonita banda sonora».',
+        autorCita: 'Lizzie animada',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 23,
+        slug: 'liv-and-maddie',
+        fecha: 15,
+        tituloEsp: 'Liv and Maddie',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '18:00', plazas: 20 },
+            { hora: '20:00', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Liv and Maddie',
+        directorx: 'John D. Beck (Creador)',
+        bandaSonora: 'Better in Stereo',
+        saga: [],
+        genero: ['Comedia', 'Familiar', 'Sitcom'],
+        sinopsis: 'Las gemelas idénticas Liv y Maddie Rooney tienen personalidades completamente opuestas: Liv es una refinada estrella de televisión que vuelve a casa, y Maddie es una atleta de instituto apasionada por el baloncesto.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Dove Cameron', personaje: 'Liv Rooney / Maddie Rooney' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Joey Bragg', personaje: 'Joey Rooney' },
+            { id: 3, imagen: troyBolton, actor: 'Parker Rooney', personaje: 'Parker Rooney' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/yF_6Rz9q_kE',
+        cita: '«Dos de un tipo... pero completamente diferentes».',
+        autorCita: 'Liv Rooney',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    /* ANIMACIÓN */
+    {
+        id: 24,
         slug: 'little-einsteins',
         fecha: 15,
         tituloEsp: 'Little Einsteins',
@@ -452,7 +1180,10 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 24, // Duración aproximada por episodio
-        horario: ['13:00', '16:30'],
+        horario: [
+            { hora: '13:00', plazas: 20 },
+            { hora: '17:00', plazas: 15 }
+        ],
 
         //ARTICULO
         cartel: cartel1,
@@ -505,7 +1236,7 @@ export const CATALOGO = [
         imagenesGaleria: []
     },
     {
-        id: 8,
+        id: 25,
         slug: 'pecezuelos',
         fecha: 15,
         tituloEsp: 'Pecezuelos',
@@ -513,7 +1244,10 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 22, // Duración por bloque de episodios
-        horario: ['17:30', '19:30'],
+        horario: [
+            { hora: '18:00', plazas: 20 },
+            { hora: '19:30', plazas: 15 }
+        ],
 
         //ARTICULO
         cartel: cartel1,
@@ -565,7 +1299,7 @@ export const CATALOGO = [
         //GALERIA
         imagenesGaleria: []
     }, {
-        id: 9,
+        id: 26,
         slug: 'phineas-y-ferb',
         fecha: 14,
         tituloEsp: 'Phineas y Ferb',
@@ -573,11 +1307,14 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 22, // Duración aproximada por episodio
-        horario: ['16:30', '18:30'],
+        horario: [
+            { hora: '16:30', plazas: 20 },
+            { hora: '18:30', plazas: 15 }
+        ],
 
         //ARTICULO
         cartel: cartel1,
-        sala: 2,
+        sala: 3,
 
         //INFO DESPLEGABLE
         tituloVo: 'Phineas and Ferb',
@@ -636,6 +1373,697 @@ export const CATALOGO = [
 
         //GALERIA
         imagenesGaleria: []
-    }
+    },
+    {
+        //CARD 
+        id: 27,
+        slug: 'la-princesa-sofia',
+        fecha: 15,
+        tituloEsp: 'La Princesa Sofia',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '12:00', plazas: 20 },
+            { hora: '18:30', plazas: 15 }
+        ],
 
-]
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Sofia the First',
+        directorx: 'Craig Gerber (Creador)',
+        bandaSonora: 'Sofia the First Theme',
+        saga: ['Elena de Ávalor'],
+        genero: ['Animación', 'Fantasía', 'Infantil'],
+        sinopsis: 'Sofia es una niña plebeya cuya vida cambia drásticamente cuando su madre se casa con el rey Roland II y ella se convierte en princesa de la noche a la mañana.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Ariel Winter (Voz)', personaje: 'Princesa Sofia' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Wayne Brady (Voz)', personaje: 'Clover (Conejo)' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/v9D4m_9k4xE',
+        cita: '«Ser una princesa no se trata de la tiara, sino de cómo tratas a los demás».',
+        autorCita: 'Princesa Sofia',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 28,
+        slug: 'patoaventuras',
+        fecha: 14,
+        tituloEsp: 'PatoAventuras',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '12:00', plazas: 20 },
+            { hora: '16:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'DuckTales',
+        directorx: 'Matt Youngberg (Creador)',
+        bandaSonora: 'DuckTales Theme Song',
+        saga: ['DuckTales (1987)'],
+        genero: ['Animación', 'Aventura', 'Comedia'],
+        sinopsis: 'El multimillonario Gilito McPato (Scrooge McDuck) se reúne con su temperamental sobrino el Pato Donald y sus tres traviesos sobrinos nietos (Juanito, Jaimito y Jorgito) para embarcarse en nuevas aventuras por todo el mundo.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'David Tennant (Voz)', personaje: 'Gilito McPato' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Tony Anselmo (Voz)', personaje: 'Pato Donald' },
+            { id: 3, imagen: troyBolton, actor: 'Kate Micucci (Voz)', personaje: 'Rosita (Webby Vanderquack)' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/0-LNgX69B0o',
+        cita: '«La vida es como un huracán aquí en Patolandia».',
+        autorCita: 'Gilito McPato',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 29,
+        slug: 'star-vs-las-fuerzas-del-mal',
+        fecha: 15,
+        tituloEsp: 'Star vs. las Fuerzas del Mal',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '17:30', plazas: 20 },
+            { hora: '19:00', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Star vs. the Forces of Evil',
+        directorx: 'Daron Nefcy (Creadora)',
+        bandaSonora: 'I Think I`m a Clone Now',
+        saga: [],
+        genero: ['Animación', 'Fantasía', 'Aventura'],
+        sinopsis: 'Star Butterfly es una princesa mágica de otra dimensión que es enviada a la Tierra para vivir con la familia Diaz y aprender a controlar los inmensos poderes de su varita mágica.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Eden Sher (Voz)', personaje: 'Star Butterfly' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Adam McArthur (Voz)', personaje: 'Marco Diaz' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/h-S0u-oRkZk',
+        cita: '«¡Arcoíris con purpurina y rayos mágicos!».',
+        autorCita: 'Star Butterfly',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 30,
+        slug: 'gravity-falls',
+        fecha: 14,
+        tituloEsp: 'Gravity Falls',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '17:30', plazas: 20 },
+            { hora: '20:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Gravity Falls',
+        directorx: 'Alex Hirsch (Creador)',
+        bandaSonora: 'Gravity Falls Opening Theme',
+        saga: [],
+        genero: ['Animación', 'Misterio', 'Comedia'],
+        sinopsis: 'Los mellizos Dipper y Mabel Pines son enviados a pasar sus vacaciones de verano en la Cabaña del Misterio, un museo para turistas propiedad de su tío abuelo Stan en Gravity Falls, un pueblo lleno de secretos paranormales.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Jason Ritter (Voz)', personaje: 'Dipper Pines' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Kristen Schaal (Voz)', personaje: 'Mabel Pines' },
+            { id: 3, imagen: troyBolton, actor: 'Alex Hirsch (Voz)', personaje: 'Tío Stan' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/fD3_H-8mC9g',
+        cita: '«No confíes en nadie en este pueblo».',
+        autorCita: 'Dipper Pines',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 31,
+        slug: 'la-banda-del-patio',
+        fecha: 14,
+        tituloEsp: 'La banda del patio',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '19:00', plazas: 20 },
+            { hora: '20:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Recess',
+        directorx: 'Paul Germain (Creador)',
+        bandaSanora: 'Recess Theme',
+        saga: ['La banda del patio: Llegó el recreo'],
+        genero: ['Animación', 'Comedia', 'Infantil'],
+        sinopsis: 'Seis valientes alumnos de primaria de la escuela de la Calle Tercera se organizan durante el recreo para resistir las estrictas normas de los adultos y crear su propio sistema social.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Ross Malinger (Voz)', personaje: 'T.J. Detweiler' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Pamela Adlon (Voz)', personaje: 'Ashley Spinelli' },
+            { id: 3, imagen: troyBolton, actor: 'Rickey D`Shon Collins (Voz)', personaje: 'Vince LaSalle' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/6iB_D8o9n4I',
+        cita: '«¡Esto es el recreo, chicos! La libertad nos llama».',
+        autorCita: 'T.J. Detweiler',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 32,
+        slug: 'brandy-and-mr-whiskers',
+        fecha: 15,
+        tituloEsp: 'Brandy & Mr. Whiskers',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '12:30', plazas: 20 },
+            { hora: '19:00', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Brandy & Mr. Whiskers',
+        directorx: 'Russell Marcus (Creador)',
+        bandaSonora: 'Brandy & Mr. Whiskers Theme Song',
+        saga: [],
+        genero: ['Animación', 'Comedia'],
+        sinopsis: 'Brandy, una perrita refinada de la alta sociedad, y Mr. Whiskers, un conejo hiperactivo y caótico, caen de un avión de carga y terminan perdidos en la inhóspita selva del Amazonas.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Kaley Cuoco (Voz)', personaje: 'Brandy Harrington' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Charlie Adler (Voz)', personaje: 'Mr. Whiskers' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/i08vWb0X-6k',
+        cita: '«¡No puedo creer que esté atrapada en el Amazonas con un conejo loco!».',
+        autorCita: 'Brandy',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 33,
+        slug: 'kim-possible',
+        fecha: 13,
+        tituloEsp: 'Kim Possible',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Serie',
+        duracion: 22,
+        horario: [
+            { hora: '18:30', plazas: 20 },
+            { hora: '20:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Kim Possible',
+        directorx: 'Bob Schooley (Creador)',
+        bandaSonora: 'Call Me, Beep Me!',
+        saga: ['Kim Possible: Sí es para tanto (So the Drama)'],
+        genero: ['Animación', 'Acción', 'Comedia'],
+        sinopsis: 'Kim Possible es una estudiante de secundaria promedio que, en su tiempo libre, salva al mundo de supervillanos megalómanos junto a su mejor amigo Ron Imparable y su topo Rufus.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Christy Carlson Romano (Voz)', personaje: 'Kim Possible' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Will Friedle (Voz)', personaje: 'Ron Imparable' },
+            { id: 3, imagen: troyBolton, actor: 'John DiMaggio (Voz)', personaje: 'Dr. Drakken' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/X5g9e-2m7yE',
+        cita: '«¿Llamame, búscame, si quieres verme? ¡No hay problema!».',
+        autorCita: 'Kim Possible',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+
+    /* ACTIVIDADES */
+
+    {
+        //CARD 
+        id: 34,
+        slug: 'mini-taller-manualidades-art-attack-1',
+        fecha: 13,
+        tituloEsp: 'Taller de Manualidades: Art Attack (Día 1)',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 45,
+        horario: [
+            { hora: '18:30', plazas: 20 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Art Attack: DIY Workshop',
+        directorx: 'Jordi Cruz',
+        bandaSonora: 'Sintonía de Art Attack',
+        saga: [],
+        genero: ['Taller', 'Manualidades', 'Creatividad'],
+        sinopsis: 'Primer día de nuestro mini taller de Art Attack. Ven a fabricar paso a paso dos de las manualidades más icónicas de las primeras temporadas del programa: ¡el clásico organizador de escritorio con forma de monstruo y un portafotos de arcilla de secado rápido!',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Jordi Cruz', personaje: 'Presentador Legendario' },
+            { id: 2, imagen: gabriellaMontez, actor: 'El Cabezón (Animatronic)', personaje: 'Consejero de Arte' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/o-vD3-K9N0s',
+        cita: '«¡No necesitas ser un gran artista para hacer cosas hermosas con tus propias manos!».',
+        autorCita: 'Jordi Cruz',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 35,
+        slug: 'mini-taller-manualidades-art-attack-2',
+        fecha: 15,
+        tituloEsp: 'Taller de Manualidades: Art Attack (Día 2)',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 45,
+        horario: [
+            { hora: '19:00', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Art Attack: DIY Workshop II',
+        directorx: 'Jordi Cruz',
+        bandaSonora: 'Sintonía de Art Attack',
+        saga: [],
+        genero: ['Taller', 'Manualidades', 'Creatividad'],
+        sinopsis: 'Segundo día de nuestro taller creativo de Art Attack. En esta sesión aprenderemos a trabajar con el "mejunje Art Attack" (cola blanca y agua) para moldear una increíble hucha con forma de cerdito espacial y un marco texturizado usando papel de periódico.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Jordi Cruz', personaje: 'Presentador Legendario' },
+            { id: 2, imagen: gabriellaMontez, actor: 'El Cabezón (Animatronic)', personaje: 'Consejero de Arte' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/o-vD3-K9N0s',
+        cita: '«Y recordad, ¡este es el mejunje especial que lo pega todo!».',
+        autorCita: 'Jordi Cruz',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 36,
+        slug: 'gran-obra-escala-art-attack',
+        fecha: 14,
+        tituloEsp: 'Art Attack: El Gran Dibujo Colectivo',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 90,
+        horario: [
+            { hora: '18:30', plazas: 20 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Art Attack: Giant Canvas',
+        directorx: 'Alex (El Manitas)',
+        bandaSonora: 'Sintonía de Art Attack',
+        saga: [],
+        genero: ['Arte Urbano', 'Colaborativo'],
+        sinopsis: '¿Te acuerdas de los dibujos gigantes que hacían en el suelo con ropa, arena o cartones? ¡Es hora de hacerlo realidad! Participa activamente o ven a observar cómo creamos paso a paso un dibujo a escala masiva en el suelo del recinto del festival utilizando materiales reciclados.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Alex "El Manitas"', personaje: 'Artista de campo' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Jordi Cruz', personaje: 'Coordinador artístico' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/o-vD3-K9N0s',
+        cita: '«Visto desde aquí parece solo un montón de ropa vieja, pero si subimos...».',
+        autorCita: 'Alex "El Manitas"',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 37,
+        slug: 'concurso-just-dance',
+        fecha: 14,
+        tituloEsp: 'Torneo Just Dance: Domina el escenario',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 120,
+        horario: [
+            { hora: '16:30', plazas: 20 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Just Dance Tournament',
+        directorx: 'Sergio Martín',
+        bandaSonora: 'Sintonía Oficial Just Dance',
+        saga: [],
+        genero: ['Concurso', 'Videojuegos', 'Baile'],
+        sinopsis: 'Torneo Just Dance: Domina el escenario con las coreografías que practicabas en el salón de casa y gana un premio de un cheque de 50€ que puedes utilizar en cualquiera de los stands de nuestro festival, incluido comidas.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Sergio Martín', personaje: 'Presentador y Animador' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Andrea Guasch', personaje: 'Jurado Estrella de Baile' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/5DscM3H-8fQ',
+        cita: '«¡Sacad esos pasos prohibidos que ensayabais delante del espejo!».',
+        autorCita: 'Sergio Martín',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 38,
+        slug: 'kahoot-premios-zeta',
+        fecha: 13,
+        tituloEsp: 'Gran Kahoot Zeta: Curiosidades Disney',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 60,
+        horario: [
+            { hora: '19:00', plazas: 3 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 3,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'The Ultimate Disney Trivia',
+        directorx: 'David Moreno',
+        bandaSonora: 'Kahoot Lobby Theme (Remix)',
+        saga: [],
+        genero: ['Concurso', 'Trivia', 'Interactiva'],
+        sinopsis: 'Gran Kahoot Zeta: Preguntas nivel experto sobre tramas secundarias y curiosidades. Solo un verdadero fan podrá alzarse con el trofeo, donde puedes ganar un pack de regalo de varias series y películas de tu infancia.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'David Moreno', personaje: 'Presentador del Quiz' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/L0H5gZ-2m3k',
+        cita: '«¿Quién se sabe el segundo apellido de London Tipton? ¡Demostradlo ya en vuestras pantallas!».',
+        autorCita: 'David Moreno',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 39,
+        slug: 'concurso-disfraces',
+        fecha: 15,
+        tituloEsp: 'Concurso de Disfraces: Estrellas de Disney',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 90,
+        horario: [
+            { hora: '16:30', plazas: 20 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Cosplay and Costume Contest',
+        directorx: 'Andrea Guasch',
+        bandaSonora: 'We`re All In This Together (Dance Mix)',
+        saga: [],
+        genero: ['Pasarela', 'Concurso', 'Creativo'],
+        sinopsis: 'Concurso de Disfraces: Saca del armario tu mejor look de estrella del pop, deportista de instituto o criatura mágica. ¡El mejor disfraz se llevará un premio exclusivo de un pack de merchandising valorado en 100€ de tu serie o película favorita y un gran descuento en nuestras Food Trucks!',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Andrea Guasch', personaje: 'Maestra de Ceremonias' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Jordi Cruz', personaje: 'Miembro del Jurado' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/zGl79m8R974',
+        cita: '«¡Ver a tantas Hannah Montanas y Troy Boltons juntos en este escenario me da años de vida!».',
+        autorCita: 'Andrea Guasch',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 40,
+        slug: 'gincana-disney-1',
+        fecha: 14,
+        tituloEsp: 'Gincana: En busca del Amuleto de Avalor',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 30,
+        horario: [
+            { hora: '12:00', plazas: 20 },
+            { hora: '19:30', plazas: 15 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Scavenger Hunt: Sofia`s Quest',
+        directorx: 'Sergio Martín',
+        bandaSonora: 'Sintonía de Aventuras Disney',
+        saga: [],
+        genero: ['Gincana', 'Familiar', 'Juegos'],
+        sinopsis: '¡Una gincana interactiva para niños y toda la familia! Ayuda a encontrar el amuleto perdido resolviendo pistas escondidas por los stands y rincones del festival en un tiempo récord de media hora. Temática: Criaturas mágicas y misterios de la Princesa Sofía.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Sergio Martín', personaje: 'Capitán de la Gincana' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/v9D4m_9k4xE',
+        cita: '«¡El tiempo corre! Tenéis exactamente 30 minutos para descifrar la última runa».',
+        autorCita: 'Sergio Martín',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 41,
+        slug: 'kahoot-premios-zeta',
+        fecha: 14,
+        tituloEsp: 'Gran Kahoot Zeta: Curiosidades Disney',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 60,
+        horario: [
+            { hora: '12:00', plazas: 20 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'The Ultimate Disney Trivia',
+        directorx: 'David Moreno',
+        bandaSonora: 'Kahoot Lobby Theme (Remix)',
+        saga: [],
+        genero: ['Concurso', 'Trivia', 'Interactiva'],
+        sinopsis: 'Gran Kahoot Zeta: Preguntas nivel experto sobre tramas secundarias y curiosidades. Solo un verdadero fan podrá alzarse con el trofeo, donde puedes ganar un pack de regalo de varias series y películas de tu infancia.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'David Moreno', personaje: 'Presentador del Quiz' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/L0H5gZ-2m3k',
+        cita: '«¿Quién se sabe el segundo apellido de London Tipton? ¡Demostradlo ya en vuestras pantallas!».',
+        autorCita: 'David Moreno',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 42,
+        slug: 'taller-dibujo-animacion-1',
+        fecha: 14,
+        tituloEsp: 'Taller de Dibujo de Animación: Stitch',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 50,
+        horario: [
+            { hora: '16:30', plazas: 20 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 1,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Disney Animation Workshop: Stitch',
+        directorx: 'Rodrigo Septién (Pascu y Rodri)',
+        bandaSonora: 'Aloha, E Komo Mai',
+        saga: [],
+        genero: ['Taller', 'Dibujo', 'Charla'],
+        sinopsis: 'Te enseñamos a dibujar a uno de los personajes de animación favoritos de Disney: ¡Stitch! El taller es ideal para todas las edades por su enfoque fácil y dinámico. Además de dibujar, te contaremos anécdotas increíbles sobre cómo se hicieron estas animaciones clásicas y cómo se realiza el doblaje profesional.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Álvaro Pascual (Pascu)', personaje: 'Ilustrador y Divulgador' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Rodrigo Septién (Rodri)', personaje: 'Narrador e Historiador de Animación' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/X5g9e-2m7yE',
+        cita: '«"Ohana" significa familia, y hoy nuestra familia va a aprender a dibujar trazando círculos sencillos».',
+        autorCita: 'Pascu y Rodri',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
+        id: 43,
+        slug: 'taller-dibujo-animacion-2',
+        fecha: 15,
+        tituloEsp: 'Taller de Dibujo de Animación: Perry el Ornitorrinco',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Actividad',
+        duracion: 50,
+        horario: [
+            { hora: '17:00', plazas: 2 }
+        ],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Disney Animation Workshop: Agent P',
+        directorx: 'Rodrigo Septién (Pascu y Rodri)',
+        bandaSonora: 'Perry the Platypus Theme',
+        saga: [],
+        genero: ['Taller', 'Dibujo', 'Charla'],
+        sinopsis: 'En este segundo taller del día aprenderemos a dibujar al espía más famoso de la televisión: ¡Perry el Ornitorrinco (Agente P)! Una estructura geométrica básica y muy fácil pensada para todas las edades. Entre trazo y trazo, descubriremos los secretos detrás de los efectos de sonido y doblajes de Phineas y Ferb.',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Álvaro Pascual (Pascu)', personaje: 'Ilustrador y Divulgador' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Rodrigo Septién (Rodri)', personaje: 'Narrador e Historiador de Animación' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/Z5g9e-2m7yE',
+        cita: '«¿Un simple rectángulo azul? ¡No! Le pones un sombrero marrón y... ¡Es Perry el Ornitorrinco!».',
+        autorCita: 'Pascu y Rodri',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    }
+];

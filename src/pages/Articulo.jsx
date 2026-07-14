@@ -156,9 +156,9 @@ const Articulo = () => {
                         <Btn text={`${fecha} sep`} variant='solidpink' size='xs' font='pixel' />
 
                         {horario.map((hora) => (
-                            <Btn key={hora} text={hora} variant={horariosSeleccionados.includes(hora) ? 'solidblack' : 'outlinewhite'} size='xs' font='pixel' size='xs' font='pixel'
+                            <Btn key={hora.hora} text={hora.hora} variant={horariosSeleccionados.includes(hora.hora) ? 'solidblack' : 'outlinewhite'} size='xs' font='pixel' size='xs' font='pixel' estado={hora.plazas === 0 ? 'noDisponible' : (hora.plazas <= 5 ? 'ultimasUnidades' : 'disponible')}
                                 /* map para que se añadan la cantidad de btn segun la cantidad de horas que haya */
-                                onClick={() => cambiarHorarioSeleccionado(hora)} />
+                                onClick={() => { if (hora.plazas > 0) { cambiarHorarioSeleccionado(hora.hora); } }} />
                         )
                         )}
 

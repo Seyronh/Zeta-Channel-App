@@ -37,7 +37,7 @@ const Card = ({ card }) => {
                             </div>
                             <div className="flex gap-2 md:gap-4">
                                 {horario.map((hora) => (
-                                    <Btn key={hora} text={hora} variant='outlineblack' size='xs' font='pixel' />
+                                    <Btn key={hora.hora} text={hora.hora} variant='outlineblack' size='xs' font='pixel' />
                                 )
                                 )}
                             </div>

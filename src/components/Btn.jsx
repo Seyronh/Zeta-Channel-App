@@ -6,10 +6,17 @@ const Btn = ({
     variant = "solidgreen",
     font = "sans",
     size = "lg",
+    estado,
     ...props
 }) => {
     const baseStyles = 'flex item-center justify-center rounded-full cursor-pointer transition-colors uppercase px-3 py-1 text-center whitespace-nowrap ';
     /* estilo base de todas las variantes */
+
+    const estadoStyles = {
+        disponible: "outline-solid text-white",
+        ultimasUnidades: "outline-dashed text-white",
+        noDisponible: "bg-neutral-400 text-neutral-700",
+    }
 
     const fontStyle = {
         sans: 'font-sans',
@@ -24,40 +31,54 @@ const Btn = ({
 
     const variantStyles = {
         solidgreen: "bg-green text-black hover:bg-green-hover",
-        outlinegreen: "ring-2 ring-green ring-inset text-black hover:border-green-hover",
+        outlinegreen: "ring-green text-black hover:ring-green-hover",
 
         solidwhite: "bg-white text-black hover:bg-pix-light",
-        outlinewhite: "ring-2 ring-white ring-inset text-white hover:border-pix-light",
+        outlinewhite: "ring-white hover:ring-pix-light",
 
         solidblack: "bg-black text-white hover:bg-pix-dark",
-        outlineblack: "ring-2 ring-black ring-inset text-black hover:border-pix-dark group-hover:ring-white group-hover:text-white",
+        outlineblack: "ring-black text-black hover:ring-pix-dark group-hover:ring-white group-hover:text-white",
 
-        solidgrey: "bg-neutral-400 text-neutral-700",
 
         solidblue: "bg-blue text-black hover:bg-hover-blue group-hover:bg-pink",
-        outlineblue: "ring-2 ring-blue ring-inset text-black hover:border-blue-hover",
+        outlineblue: "ring-blue text-black hover:ring-blue-hover",
 
         /* TO DO: ARREGLAR CONTRASTE BTN AZUL */
 
         solidpink: "bg-pink text-black hover:bg-pink-hover",
-        outlinepink: "ring-2 ring-pink ring-inset text-black hover:border-pink-hover",
+        outlinepink: "ring-pink  text-black hover:ring-pink-hover",
     };
 
-    const btnClass = `${baseStyles} ${fontStyle[font]} ${sizeStyle[size]} ${variantStyles[variant]}`;
+    const btnClass = `${baseStyles} ${fontStyle[font]} ${sizeStyle[size]} ${variantStyles[variant]} ${estado ? estadoStyles[estado] : ""}`;
 
     if (to) {
+
         return (
-            <Link to={to} className={btnClass} {...props}>
-                {/* el ...props es para hacer una copia */}
-                {text}
-            </Link>
+            <div className="flex flex-col items-center gap-4">
+                <Link to={to} className={btnClass} {...props}>
+                    {/* el ...props es para hacer una copia */}
+                    {text}
+                </Link>
+                {estado === "ultimasUnidades" && (
+                    <span className="text-xs font-bold uppercase tracking-tight mt-0.5 text-black dark:text-white">
+                        ¡últimas plazas!
+                    </span>
+                )}
+            </div>
         );
     }
 
     return (
-        <button className={btnClass} {...props}>
-            {text}
-        </button>
+        <div className="flex flex-col items-center gap-4">
+            <button className={btnClass} {...props}>
+                {text}
+            </button>
+            {estado === "ultimasUnidades" && (
+                <span className="text-xs font-bold uppercase tracking-tight text-black dark:text-white">
+                    ¡últimas plazas!
+                </span>
+            )}
+        </div>
     )
 
 }
