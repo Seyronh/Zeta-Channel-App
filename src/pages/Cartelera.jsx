@@ -76,7 +76,7 @@ const Cartelera = () => {
             {/* MAÑANA ARREGLAR PONER LOS PIXELES POR TAMAÑO */}
             {/* </div> */}
 
-            <div className="p-6">
+            <div className="p-4">
                 <Pix1 className="absolute top-10 left-0 w-40 h-40 z-[-1] text-pix-light" />
                 <div className="flex items-center gap-4 justify-center mb-12">
                     <img src={carteleraIcon} alt="Icono de Cartelera" className="w-11 h-11" />

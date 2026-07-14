@@ -2,6 +2,7 @@ import { useParams, /* Navigate, */ Link } from 'react-router-dom';
 import { useState } from 'react';
 
 import { CATALOGO } from '../data/films.js';
+import Card from '../components/Card.jsx';
 /* import Error404 from './Error404.jsx'; */
 import Btn from '../components/Btn.jsx';
 import btnMas from '../assets/img/icon/icon-btn-mas.svg';
@@ -24,12 +25,12 @@ const Articulo = () => {
     const { slug } = useParams();
     /* 2. Buscamos el artículo en el catálogo */
     const catalogo = CATALOGO.find(item => item.slug === slug);
-    /* 3. Si no encontramos el artículo, redirigimos a la página de error */
+    /* 3. Si no encontramos el artículo, redirigimos a la página de error TO DO */
     /* if (!catalogo) {
         return <Navigate to="/Error404" replace />; */
 
 
-    const { tituloEsp, imagen, cartel, horario, fecha, tipo, duracion, sala, trailerVideo, cita, autorCita, imagenesGaleria } = catalogo;
+    const { tituloEsp, imagen, cartel, horario, genero, fecha, tipo, duracion, sala, trailerVideo, cita, autorCita, imagenesGaleria } = catalogo;
 
     /* 4.Si la pelicula existe, mostramos su información */
 
@@ -53,6 +54,42 @@ const Articulo = () => {
     }
     /* el horariosSeleccionados está vacio de por sí lo que hacemos es con el else metemos la hora que le hemos dado, luego si le volvemos a dar hace el filter que borra la hora que coincide a la que le hemos dado */
 
+
+
+    // 1. Primero, hacemos un array que excluya el artículo actual para no recomendarlo a sí mismo
+    const restoDelCatalogo = CATALOGO.filter(item => item.id !== catalogo.id);
+
+    // 2. BUSCAMOS RECOMENDACIÓN 1: Que comparta al menos un género
+    const recomendadoGenero = restoDelCatalogo.find(item => {
+        // Si alguno de los dos no tiene géneros, saltamos
+        if (!item.genero || !catalogo.genero) return false;
+
+        // Comprobamos si hay alguna coincidencia entre ambos arrays
+        return item.genero.some(genero =>
+            catalogo.genero.some(categoria => categoria.toLowerCase() === genero.toLowerCase())
+        );
+    }); /* some es para comprar que alguno de los generos está dentro entonces acepta esa pelicula como recomendada devuelve true o flase si lo cumple*/
+
+    // 3. BUSCAMOS RECOMENDACIÓN 2: Mismo tipo (ej: Película, Serie, Actividad)
+    // Excluimos también el de género para que no se repitan tarjetas si coinciden varias cosas
+    const recomendadoTipo = restoDelCatalogo
+        .filter(item => item.id !== recomendadoGenero?.id)
+        .find(item => item.tipo === catalogo.tipo);
+
+    // 4. BUSCAMOS RECOMENDACIÓN 3: Mismo día/fecha
+    // Excluimos los dos anteriores para garantizar que siempre salgan 3 tarjetas distintas
+    const recomendadoDia = restoDelCatalogo
+        .filter(item => item.id !== recomendadoGenero?.id && item.id !== recomendadoTipo?.id)
+        .find(item => item.fecha === catalogo.fecha);
+
+    // Guardamos los tres elegidos en un array limpio (filtrando por si alguno devuelve "undefined")
+    // Juntamos las recomendaciones pero guardando el objeto de la peli Y el motivo de la recomendación
+    const recomendaciones = [
+        recomendadoGenero && { peli: recomendadoGenero, motivo: "Mismo género" },
+        recomendadoTipo && { peli: recomendadoTipo, motivo: "Mismo formato" },
+        recomendadoDia && { peli: recomendadoDia, motivo: "Mismo día" }
+    ].filter(Boolean); // Filtramos los que sean undefined
+
     return (
         <article className="relative pt-8">
             {/* TAPADERA CARD */}
@@ -63,7 +100,7 @@ const Articulo = () => {
                 {/* He tenido que crear un componente al svg para poder ponerle el hover como className y además hacer el group-hover para que se haga en modo grupo */}
             </div>
             {/* CONTENIDO */}
-            <div className="pt-7 pb-6 bg-blue rounded-tl-4xl">
+            <div className="pt-7 bg-blue rounded-tl-4xl">
                 {/* PRIMERA PARTE - IMAGEN -  BTNES - TITULO PRINCIPAL */}
                 <div className="flex flex-col gap-6 px-6">
                     <div className="relative flex flex-col gap-4 md:flex-row md:gap-8">
@@ -181,14 +218,38 @@ const Articulo = () => {
                     {/* TO DO: quizás plantear un roll que conforme scrollees se lea */}
                 </div>
 
-                {/* PELICULAS RELACIONADAS */}
-                <div>
-                    <h2 className="text-3xl font-pixel uppercase text-black dark:text-white bg-pix-light dark:bg-pix-dark">También te podría interesar</h2>
-                </div>
-            </div>
-            {/* <div>
+
+                {/* <div>
                 <img src={pixelFondo} alt="Pixel fondo" className="text-pix-light dark:bg-pix-dark w-full" />
             </div> */}
+
+                {/* PELICULAS RELACIONADAS */}
+
+                {recomendaciones.length > 0 && (
+                    <div className="mt-20 border-t-2 border-black/10 pt-12 bg-pix-light dark:bg-pix-dark p-3">
+                        {/* aquí iria de fondo el pix-fondo */}
+                        <h2 className="text-3xl font-sans font-bold p-3 mb-3 uppercase text-black dark:text-white">También te podría interesar</h2>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                            {recomendaciones.map(({ peli, motivo }) => (
+                                <div key={peli.id} className="flex flex-col gap-10">
+                                    {/* El texto sutil encima de la tarjeta */}
+                                    <span className="uppercase text-neutral-600 font-medium p-3 font-sans dark:text-neutral-300">
+                                        {motivo === "Mismo género" && `Si te gusta el ${genero.join(' / ')}`}
+                                        {motivo === "Mismo formato" && `Otra ${catalogo.tipo} clave`}
+                                        {motivo === "Mismo día" && "Otra opción para el mismo día"}
+                                    </span>
+
+                                    {/* Tu tarjeta de siempre */}
+                                    <Card card={peli} />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
+
+
         </article>
     );
 }
