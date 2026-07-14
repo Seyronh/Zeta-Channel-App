@@ -10,7 +10,7 @@ import { PrevButton, NextButton } from "../components/BtnCarrusel.jsx";
 import { useCarruselIndicadores } from "../data/useCarruselIndicadores.js";
 import { DotButton } from "../components/CarruselIndicadores.jsx";
 
-import { Pix1, PixFondo } from '../components/Pixel.jsx';
+import { Pix1, /* PixFondo */ } from '../components/Pixel.jsx';
 
 
 const Cartelera = () => {
@@ -66,18 +66,18 @@ const Cartelera = () => {
 
     return (
         <div className="relative">
-            <div className="absolute bottom-0 left-0 right-0 flex w-full min-h-screen z-[-1] overflow-hidden">
+            {/* <div className="absolute bottom-0 left-0 right-0 flex w-full min-h-screen z-[-1] overflow-hidden">
                 <PixFondo
                     className="w-full h-full text-pix-light"
                 />
                 <PixFondo
                     className="w-full h-full text-pix-light"
-                />
-                {/* MAÑANA ARREGLAR PONER LOS PIXELES POR TAMAÑO */}
-            </div>
+                /> */}
+            {/* MAÑANA ARREGLAR PONER LOS PIXELES POR TAMAÑO */}
+            {/* </div> */}
 
             <div className="p-6">
-                <Pix1 className="absolute top-0 left-0 w-11 h-11 z-0 text-pix-light" />
+                <Pix1 className="absolute top-10 left-0 w-40 h-40 z-[-1] text-pix-light" />
                 <div className="flex items-center gap-4 justify-center mb-12">
                     <img src={carteleraIcon} alt="Icono de Cartelera" className="w-11 h-11" />
                     <h1 className="text-5xl leading-0 font-pixel uppercase">CARTELERA</h1>
