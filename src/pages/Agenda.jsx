@@ -1,8 +1,40 @@
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
+
+import Calendario from '../components/Calendario';
+import agendaIcon from '../assets/img/icon/icon-agenda.svg';
+import { Pix4, /* PixFondo */ } from '../components/Pixel.jsx';
+import btnMas from '../assets/img/icon/icon-btn-mas.svg';
 
 const Agenda = () => (
 
-    <div>
-        <h1>AGENDA</h1>
+    <div className="mb-6">
+        <Pix4 className="absolute top-13 right-0 w-40 h-40 z-[-1] text-pix-light" />
+        <div className="flex items-center gap-4 justify-center mb-12">
+            <img src={agendaIcon} alt="Icono de Agenda" className="w-11 h-11" />
+            <h1 className="text-5xl leading-0 font-pixel uppercase">AGENDA</h1>
+
+        </div>
+        <Disclosure as="div" className="p-6">
+            {({ open }) => (
+                <>
+                    <DisclosureButton className="flex justify-between w-full text-left border-b-2 border-black dark:border-white pb-2">
+                        <span className="font-pixel text-xl uppercase"> Viernes 13 </span>
+                        <img
+                            src={btnMas}
+                            alt="btn desplegar"
+                            className={`h-6 w-6 transition-transform ${open ? 'rotate-180' : ''}`}
+                        />
+                    </DisclosureButton>
+
+                    <DisclosurePanel transition className="origin-top transition duration-200 ease-out data-closed:-translate-y-6 data-closed:opacity-0 pt-4 flex flex-col gap-4 text-sans">
+
+                        <Calendario fecha={13} />
+
+                    </DisclosurePanel>
+                </>
+            )}
+        </Disclosure>
+
     </div>
 
 );

@@ -30,7 +30,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película', // serie, pelicula o actividad
-        duracion: 98,
+        duracion: 90,
         horario: [
             { hora: '12:30', plazas: 20 },
             { hora: '19:30', plazas: 4 }
@@ -109,7 +109,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película',
-        duracion: 108,
+        duracion: 90,
         horario: [{ hora: '17:00', plazas: 20 }],
 
         //ARTICULO
@@ -176,7 +176,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película',
-        duracion: 94,
+        duracion: 90,
         horario: [
             { hora: '17:00', plazas: 0 },
             { hora: '19:00', plazas: 4 }
@@ -252,7 +252,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película',
-        duracion: 112,
+        duracion: 120,
         horario: [{ hora: '12:00', plazas: 20 }],
 
         //ARTICULO
@@ -286,46 +286,6 @@ export const CATALOGO = [
     },
     {
         //CARD 
-        id: 5,
-        slug: 'teen-beach-movie',
-        fecha: 15,
-        tituloEsp: 'Teen Beach Movie',
-        imagen: portada1,
-        imagenCard: portadaCard1,
-        tipo: 'Película',
-        duracion: 95,
-        horario: [{ hora: '17:00', plazas: 20 }],
-
-        //ARTICULO
-        cartel: cartel1,
-        sala: 1,
-
-        //INFO DESPLEGABLE
-        tituloVo: 'Teen Beach Movie',
-        directorx: 'Jeffrey Hornaday',
-        bandaSonora: 'Cruisin` for a Bruisin`',
-        saga: ['Teen Beach 2'],
-        genero: ['Musical', 'Comedia', 'Fantasía'],
-        sinopsis: 'Brady y McKenzie son dos surfistas que acaban siendo transportados mágicamente dentro de una clásica película musical de playa de los años 60 llamada "Amor sin barreras" ("Wet Side Story").',
-
-        //REPARTO DESPLEGABLE
-        personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Ross Lynch', personaje: 'Brady' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Maia Mitchell', personaje: 'McKenzie (Mack)' },
-            { id: 3, imagen: troyBolton, actor: 'Grace Phipps', personaje: 'Lela' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Garrett Clayton', personaje: 'Tanner' }
-        ],
-
-        //TRAILER
-        trailerVideo: 'https://www.youtube.com/embed/fD_bM-D6P34',
-        cita: '«No puedes simplemente cantar sobre lo que sientes en vez de hacerlo realidad».',
-        autorCita: 'McKenzie',
-
-        //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
-    },
-    {
-        //CARD 
         id: 6,
         slug: 'programa-de-proteccion-de-princesas',
         fecha: 15,
@@ -333,7 +293,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película',
-        duracion: 89,
+        duracion: 90,
         horario: [{ hora: '19:30', plazas: 15 }],
 
         //ARTICULO
@@ -448,7 +408,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película',
-        duracion: 89,
+        duracion: 90,
         horario: [{ hora: '19:30', plazas: 10 }],
 
         //ARTICULO
@@ -489,7 +449,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 25, // Duración aproximada por episodio
+        duracion: 30, // Duración aproximada por episodio
         horario: [
             { hora: '17:30', plazas: 20 },
             { hora: '20:30', plazas: 15 }
@@ -553,7 +513,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 28, // Duración aproximada por episodio
+        duracion: 30, // Duración aproximada por episodio
         horario: [
             { hora: '17:30', plazas: 3 },
             { hora: '20:00', plazas: 15 }
@@ -625,11 +585,11 @@ export const CATALOGO = [
         id: 12,
         slug: 'dulce-hotel-zack-y-cody',
         fecha: 13,
-        tituloEsp: 'Dulce hotel: Zack y Cody',
+        tituloEsp: 'Dulce hotel',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22, // Duración aproximada por episodio
+        duracion: 30, // Duración aproximada por episodio
         horario: [
             { hora: '17:00', plazas: 20 },
             { hora: '19:30', plazas: 15 }
@@ -706,7 +666,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '13:30', plazas: 20 },
             { hora: '18:30', plazas: 2 }
@@ -750,7 +710,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 23,
+        duracion: 30,
         horario: [
             { hora: '12:00', plazas: 12 },
             { hora: '20:30', plazas: 15 }
@@ -793,7 +753,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '18:00', plazas: 20 },
             { hora: '20:00', plazas: 15 }
@@ -837,7 +797,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '13:00', plazas: 20 },
             { hora: '18:30', plazas: 15 }
@@ -880,7 +840,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '18:00', plazas: 20 },
             { hora: '19:30', plazas: 15 }
@@ -923,7 +883,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 23,
+        duracion: 30,
         horario: [
             { hora: '18:00', plazas: 20 },
             { hora: '20:00', plazas: 15 }
@@ -967,7 +927,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 23,
+        duracion: 30,
         horario: [
             { hora: '18:30', plazas: 20 },
             { hora: '20:30', plazas: 15 }
@@ -1010,7 +970,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '12:00', plazas: 20 },
             { hora: '20:00', plazas: 15 }
@@ -1052,7 +1012,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 23,
+        duracion: 30,
         horario: [
             { hora: '13:30', plazas: 20 },
             { hora: '19:30', plazas: 15 }
@@ -1095,7 +1055,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '12:30', plazas: 20 },
             { hora: '19:00', plazas: 15 }
@@ -1137,7 +1097,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '18:00', plazas: 20 },
             { hora: '20:00', plazas: 15 }
@@ -1179,7 +1139,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 24, // Duración aproximada por episodio
+        duracion: 30, // Duración aproximada por episodio
         horario: [
             { hora: '13:00', plazas: 20 },
             { hora: '17:00', plazas: 15 }
@@ -1243,7 +1203,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22, // Duración por bloque de episodios
+        duracion: 30, // Duración por bloque de episodios
         horario: [
             { hora: '18:00', plazas: 20 },
             { hora: '19:30', plazas: 15 }
@@ -1306,7 +1266,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22, // Duración aproximada por episodio
+        duracion: 30, // Duración aproximada por episodio
         horario: [
             { hora: '16:30', plazas: 20 },
             { hora: '18:30', plazas: 15 }
@@ -1383,7 +1343,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '12:00', plazas: 20 },
             { hora: '18:30', plazas: 15 }
@@ -1424,7 +1384,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '12:00', plazas: 20 },
             { hora: '16:30', plazas: 15 }
@@ -1466,7 +1426,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '17:30', plazas: 20 },
             { hora: '19:00', plazas: 15 }
@@ -1507,7 +1467,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '17:30', plazas: 20 },
             { hora: '20:30', plazas: 15 }
@@ -1549,7 +1509,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '19:00', plazas: 20 },
             { hora: '20:30', plazas: 15 }
@@ -1591,7 +1551,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '12:30', plazas: 20 },
             { hora: '19:00', plazas: 15 }
@@ -1632,7 +1592,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
-        duracion: 22,
+        duracion: 30,
         horario: [
             { hora: '18:30', plazas: 20 },
             { hora: '20:30', plazas: 15 }
@@ -1671,13 +1631,13 @@ export const CATALOGO = [
     {
         //CARD 
         id: 34,
-        slug: 'mini-taller-manualidades-art-attack-1',
+        slug: 'taller-art-attack-1',
         fecha: 13,
-        tituloEsp: 'Taller de Manualidades: Art Attack (Día 1)',
+        tituloEsp: 'Art Attack',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 45,
+        duracion: 30,
         horario: [
             { hora: '18:30', plazas: 20 }
         ],
@@ -1717,7 +1677,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 45,
+        duracion: 30,
         horario: [
             { hora: '19:00', plazas: 15 }
         ],
@@ -1757,7 +1717,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 90,
+        duracion: 60,
         horario: [
             { hora: '18:30', plazas: 20 }
         ],
@@ -1797,7 +1757,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 120,
+        duracion: 60,
         horario: [
             { hora: '16:30', plazas: 20 }
         ],
@@ -1833,18 +1793,18 @@ export const CATALOGO = [
         id: 38,
         slug: 'kahoot-premios-zeta',
         fecha: 13,
-        tituloEsp: 'Gran Kahoot Zeta: Curiosidades Disney',
+        tituloEsp: 'Kahoot',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 60,
+        duracion: 30,
         horario: [
             { hora: '19:00', plazas: 3 }
         ],
 
         //ARTICULO
         cartel: cartel1,
-        sala: 3,
+        sala: 1,
 
         //INFO DESPLEGABLE
         tituloVo: 'The Ultimate Disney Trivia',
@@ -1876,7 +1836,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 90,
+        duracion: 30,
         horario: [
             { hora: '16:30', plazas: 20 }
         ],
@@ -1956,7 +1916,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 60,
+        duracion: 30,
         horario: [
             { hora: '12:00', plazas: 20 }
         ],
@@ -1995,7 +1955,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 50,
+        duracion: 30,
         horario: [
             { hora: '16:30', plazas: 20 }
         ],
@@ -2035,7 +1995,7 @@ export const CATALOGO = [
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
-        duracion: 50,
+        duracion: 30,
         horario: [
             { hora: '17:00', plazas: 2 }
         ],
