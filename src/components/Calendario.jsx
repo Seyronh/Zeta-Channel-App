@@ -1,6 +1,6 @@
 import { CATALOGO } from '../data/films';
 
-const Calendario = ({ fecha }) => {
+const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
     // 1. Filtramos los eventos de la fecha seleccionada
     const eventosFiltrados = CATALOGO.filter((evento) => evento.fecha === fecha);
 
@@ -16,10 +16,10 @@ const Calendario = ({ fecha }) => {
                 duracion: evento.duracion,
                 sala: evento.sala,
                 horaInicio: hora.hora,
+                plazas: hora.plazas
             });
         });
     });
-
 
 
     // Inyectamos el DESCANSO general SÓLO si es Sábado 14 o Domingo 15
@@ -73,6 +73,29 @@ const Calendario = ({ fecha }) => {
         return 'row-span-1 sm:h-20';
     };
 
+    /* --------ESTA PARTE ES PARA EL CHECKOUT----------- */
+
+    const seSolapan = (sesionA, sesionB) => {
+        const inicioA = obtenerMinutos(sesionA.horaInicio);
+        const finA = inicioA + sesionA.duracion;
+
+        const inicioB = obtenerMinutos(sesionB.horaInicio);
+        const finB = inicioB + sesionB.duracion;
+
+        // Se solapan si el inicio de uno ocurre antes del fin del otro (y viceversa)
+        return inicioA < finB && inicioB < finA;
+    };
+
+    const AlternarSeleccion = (sesion) => {
+        if (seleccionados.includes(sesion)) {
+            setSeleccionados(seleccionados.filter((s) => s !== sesion));
+        } else {
+            setSeleccionados([...seleccionados, sesion]);
+        }
+    };
+
+    const esInteractivo = seleccionados !== undefined && setSeleccionados !== undefined;
+
     return (
         <div className="w-full py-4">
             {/* Cabecera de Columnas - Salas */}
@@ -88,11 +111,34 @@ const Calendario = ({ fecha }) => {
                     // Si el elemento es un descanso o el concurso especial de domingo, ocupa las 3 columnas de golpe
                     const esAnchoCompleto = sesion.sala === 'TODAS';
 
+                    // Comprobaciones de estado
+                    const estaSeleccionado = esInteractivo && seleccionados.includes(posicion);
+
+                    // Está bloqueado si NO está seleccionado, pero se solapa con ALGUNA de las sesiones que SÍ están seleccionadas
+                    const estaBloqueado = esInteractivo && !estaSeleccionado && (seleccionados.some((indexSeleccionado) => {
+                        const sesionSeleccionada = todasLasSesionesOrdenadas[indexSeleccionado];
+                        return seSolapan(sesion, sesionSeleccionada);
+                    })
+                        || sesion.plazas <= 0); // También bloqueamos si no hay plazas disponibles
+
+                    // Definimos los estilos según el estado
+                    let claseColor = obtenerClaseFondo(sesion.tipo);
+                    if (esInteractivo && sesion.tipo !== 'Descanso') {
+                        if (estaBloqueado) {
+                            // Cambia esto por la clase que uses para marcar lo seleccionado (ej: borde verde, o fondo oscuro con texto blanco)
+                            claseColor = 'bg-neutral-400 text-black';
+                        } else if (!estaSeleccionado) {
+                            // El gris oscuro para las celdas deshabilitadas
+                            claseColor = 'bg-grey text-black';
+                        }
+                    }
                     return (
-                        <div
+                        <button
+                            onClick={() => esInteractivo && !estaBloqueado && sesion.tipo !== 'Descanso' && AlternarSeleccion(posicion)}
+                            disabled={estaBloqueado}
                             key={`sesion-${posicion}`}
-                            className={`flex flex-col justify-center items-center text-center p-2 gap-1 
-                                ${obtenerClaseFondo(sesion.tipo)} 
+                            className={`flex flex-col justify-center items-center text-center p-2 gap-1 transition-all duration-200
+                                ${claseColor}
                                 ${obtenerClaseDuracion(sesion.duracion)}
                                 ${esAnchoCompleto ? 'col-span-3' : ''} 
                             `}
@@ -101,7 +147,17 @@ const Calendario = ({ fecha }) => {
                             <div className="text-sm">
                                 {sesion.horaInicio} - {obtenerHoraFin(sesion.horaInicio, sesion.duracion)}
                             </div>
-                        </div>
+                            {sesion.plazas === 0 && esInteractivo && (
+                                <span className="relative top-0 bg-black text-white text-[10px] font-sans font-bold px-3 py-0.5 rounded-full uppercase mt-0.5">
+                                    agotado
+                                </span>
+                            )}
+                            {sesion.plazas <= 10 && sesion.plazas > 0 && esInteractivo && (
+                                <span className="relative top-0 bg-white text-black text-[10px] font-sans font-bold px-3 py-0.5 rounded-full uppercase mt-0.5 mb-0.5">
+                                    casi lleno
+                                </span>
+                            )}
+                        </button>
                     );
                 })}
             </div>
