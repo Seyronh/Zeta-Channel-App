@@ -15,25 +15,29 @@ const Agenda = () => (
             <h1 className="text-5xl leading-0 font-pixel uppercase">AGENDA</h1>
         </div>
 
-        <ul className="grid grid-cols-2 justify-center mb-6 gap-6 justify-items-center px-6">
-            <li className="grid grid-cols-4 gap-2 px-6">
-                <div className="span-1 w-5 h-5 bg-blue"></div>
-                <div className="span-3 font-pixel uppercase text-xl  text-black dark:text-white">Películas</div>
-            </li>
+        <div className="flex justify-center w-full">
+            <ul className="grid grid-cols-2 mb-6 gap-x-12 gap-y-6">
+                <li className="flex items-center gap-3">
+                    <div className="w-5 h-5 bg-blue shrink-0"></div>
+                    <div className="font-pixel uppercase text-xl text-black dark:text-white whitespace-nowrap">Películas</div>
+                </li>
 
-            <li className="grid grid-cols-4 gap-2 px-6">
-                <div className="span-1 w-5 h-5 bg-pink"></div>
-                <div className="span-3 font-pixel uppercase text-xl text-black dark:text-white">Series</div>
-            </li>
-            <li className="grid grid-cols-4 gap-2 px-6">
-                <div className="span-1 w-5 h-5 bg-green"></div>
-                <div className="span-3 font-pixel uppercase text-xl text-black dark:text-white">Descanso</div>
-            </li>
-            <li className="grid grid-cols-4 gap-2 px-6">
-                <div className="span-1 w-5 h-5 bg-gray-400"></div>
-                <div className="span-3 font-pixel uppercase text-xl text-black dark:text-white">Eventos</div>
-            </li>
-        </ul>
+                <li className="flex items-center gap-3">
+                    <div className="w-5 h-5 bg-pink shrink-0"></div>
+                    <div className="font-pixel uppercase text-xl text-black dark:text-white whitespace-nowrap">Series</div>
+                </li>
+
+                <li className="flex items-center gap-3">
+                    <div className="w-5 h-5 bg-green shrink-0"></div>
+                    <div className="font-pixel uppercase text-xl text-black dark:text-white whitespace-nowrap">Eventos</div>
+                </li>
+
+                <li className="flex items-center gap-3">
+                    <div className="w-5 h-5 bg-gray-400 shrink-0"></div>
+                    <div className="font-pixel uppercase text-xl text-black dark:text-white whitespace-nowrap">Descanso</div>
+                </li>
+            </ul>
+        </div>
 
         <Disclosure as="div" className="p-6" defaultOpen={true}>
 
