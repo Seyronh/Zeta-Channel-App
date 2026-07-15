@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 const App = () => (
   <BrowserRouter>
     <Header />
-    <main className="mt-20 lg:mt-33">
+    <main>
       <ScrollToTop /> {/* se añade para que siempre vuelve al inicio */}
 
       <Routes>

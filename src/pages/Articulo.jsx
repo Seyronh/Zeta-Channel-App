@@ -91,9 +91,9 @@ const Articulo = () => {
     ].filter(Boolean); // Filtramos los que sean undefined
 
     return (
-        <article className="relative pt-8">
+        <article className="relative pt-30">
             {/* TAPADERA CARD */}
-            <div className="absolute bottom-full right-0 -mb-11 z-10 ml-27.5">
+            <div className="absolute bottom-full top-21 right-0 -mb-11 z-10 ml-27.5">
 
                 <LabelCard className="w-full h-12 relative text-blue" />
 
