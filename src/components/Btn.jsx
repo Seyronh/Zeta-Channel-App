@@ -31,7 +31,7 @@ const Btn = ({
 
     const variantStyles = {
         solidgreen: "bg-green text-black hover:bg-green-hover",
-        outlinegreen: "ring-green text-black hover:ring-green-hover",
+        outlinegreen: "ring-green ring-2 text-black hover:ring-green-hover",
 
         solidwhite: "bg-white text-black hover:bg-pix-light",
         outlinewhite: "ring-white hover:ring-pix-light",
