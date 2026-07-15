@@ -9,13 +9,13 @@ import Btn from '../components/Btn.jsx';
 const Agenda = () => (
 
     <>
-        <Pix4 className="absolute top-13 right-0 w-40 h-40 z-[-1] text-pix-light" />
-        <div className="pt-23 flex items-center gap-4 justify-center mb-12">
-            <img src={agendaIcon} alt="Icono de Agenda" className="w-11 h-11" />
-            <h1 className="text-5xl leading-0 font-pixel uppercase">AGENDA</h1>
+        <Pix4 className="absolute top-13 right-0 w-40 h-40 text-pix-light dark:text-pix-dark" />
+        <div className="relative pt-23 flex items-center gap-4 justify-center mb-12">
+            <img src={agendaIcon} alt="Icono de Agenda" className="w-11 h-11 dark:invert" />
+            <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white">AGENDA</h1>
         </div>
 
-        <div className="flex justify-center w-full">
+        <div className="relative flex justify-center w-full">
             <ul className="grid grid-cols-2 mb-6 gap-x-12 gap-y-6">
                 <li className="flex items-center gap-3">
                     <div className="w-5 h-5 bg-blue shrink-0"></div>
@@ -44,7 +44,7 @@ const Agenda = () => (
             {({ open }) => (
                 <>
                     <DisclosureButton className="flex justify-between w-full text-left border-b-2 border-black dark:border-white pb-2">
-                        <span className="font-pixel text-xl uppercase"> Viernes 13 SEP</span>
+                        <span className="font-pixel text-xl uppercase text-black dark:text-white"> Viernes 13 SEP</span>
                         <img
                             src={btnMas}
                             alt="btn desplegar"
@@ -65,7 +65,7 @@ const Agenda = () => (
             {({ open }) => (
                 <>
                     <DisclosureButton className="flex justify-between w-full text-left border-b-2 border-black dark:border-white pb-2">
-                        <span className="font-pixel text-xl uppercase"> Sábado 14 SEP</span>
+                        <span className="font-pixel text-xl uppercase text-black dark:text-white"> Sábado 14 SEP</span>
                         <img
                             src={btnMas}
                             alt="btn desplegar"
@@ -86,7 +86,7 @@ const Agenda = () => (
             {({ open }) => (
                 <>
                     <DisclosureButton className="flex justify-between w-full text-left border-b-2 border-black dark:border-white pb-2">
-                        <span className="font-pixel text-xl uppercase"> Domingo 15 SEP</span>
+                        <span className="font-pixel text-xl uppercase text-black dark:text-white"> Domingo 15 SEP</span>
                         <img
                             src={btnMas}
                             alt="btn desplegar"
@@ -102,7 +102,7 @@ const Agenda = () => (
                 </>
             )}
         </Disclosure>
-        <div className="mt-6 mb-12">
+        <div className="mt-6 pb-12">
             <Btn to="#" text="Descargar Agenda" variant='solidgreen' color='green' size='xs' font='sans' />
         </div>
     </>

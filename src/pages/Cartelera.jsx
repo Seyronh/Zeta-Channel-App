@@ -66,6 +66,7 @@ const Cartelera = () => {
 
     return (
         <div className="relative pt-20">
+            <Pix1 className="absolute top-13 -left-4 w-40 h-40 text-pix-light dark:text-pix-dark" />
             {/* <div className="absolute bottom-0 left-0 right-0 flex w-full min-h-screen z-[-1] overflow-hidden">
                 <PixFondo
                     className="w-full h-full text-pix-light"
@@ -77,10 +78,10 @@ const Cartelera = () => {
             {/* </div> */}
 
             <div className="p-4">
-                <Pix1 className="absolute top-13 left-0 w-40 h-40 z-[-1] text-pix-light" />
-                <div className="flex items-center gap-4 justify-center mb-12">
-                    <img src={carteleraIcon} alt="Icono de Cartelera" className="w-11 h-11" />
-                    <h1 className="text-5xl leading-0 font-pixel uppercase">CARTELERA</h1>
+
+                <div className="relative flex items-center gap-4 justify-center mb-12">
+                    <img src={carteleraIcon} alt="Icono de Cartelera" className="w-11 h-11 dark:invert" />
+                    <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white">CARTELERA</h1>
 
                 </div>
 
@@ -103,13 +104,13 @@ const Cartelera = () => {
                 </div>
                 {/* ─── 4. RENDERIZADO USANDO TUS PROPIOS COMPONENTES ─── */}
                 {totalPaginas > 1 && (
-                    <div className="flex items-center justify-center gap-8 mt-16 mb-8 select-none">
+                    <div className="flex items-center justify-center gap-6 mt-16 mb-8 select-none">
 
                         {/* Botón de atrás idéntico al carrusel */}
                         <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
 
                         {/* Generador de tus DotButtons exactos */}
-                        <div className="flex items-center gap-6">
+                        <div className="flex items-center gap-5">
                             {scrollSnaps.map((_, index) => (
                                 <DotButton
                                     key={index}
@@ -117,7 +118,7 @@ const Cartelera = () => {
                                     className={`transition-all duration-300 rounded-full
                                     ${index === selectedIndex
                                             ? 'w-5 h-5 bg-green' // Estilo activo Y2K
-                                            : 'w-5 h-5 bg-black opacity-50' // Estilo apagado
+                                            : 'w-5 h-5 bg-black opacity-60 dark:bg-white' // Estilo apagado
                                         }`}
                                 />
                             ))}

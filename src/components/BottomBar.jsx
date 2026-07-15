@@ -13,7 +13,7 @@ const BottomBar = () => {
     const { pathname } = useLocation();
 
     return (
-        <div className="flex items-center justify-center fixed bottom-0 left-0 w-full bg-dark dark:bg-blue text-white dark:text-black z-998 lg:relative lg:bottom-auto lg:left-auto lg:w-auto lg:bg-transparent lg:dark:bg-transparent lg:text-black lg:dark:text-white">
+        <div className="flex items-center justify-center fixed bottom-0 left-0 w-full bg-dark dark:bg-neutral-200 text-white dark:text-black z-998 lg:relative lg:bottom-auto lg:left-auto lg:w-auto lg:bg-transparent lg:dark:bg-transparent lg:text-black lg:dark:text-white">
             {/* Móvil/Tablet - barra fija abajo con fondo y PC se vuelve estático, sin fondos fijos */}
             <nav className="w-full lg:w-auto pt-0.5">
                 <ul className="flex justify-around items-center w-full gap-3 py-3 font-pixel md:gap-6 lg:justify-start lg:gap-8 lg:py-0">

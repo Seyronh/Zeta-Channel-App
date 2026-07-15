@@ -226,7 +226,7 @@ const Articulo = () => {
                 {/* PELICULAS RELACIONADAS */}
 
                 {recomendaciones.length > 0 && (
-                    <div className="mt-20 border-t-2 border-black/10 pt-12 bg-pix-light dark:bg-pix-dark p-3">
+                    <div className="mt-20 border-t-2 border-black/10 pt-12 bg-pix-light dark:bg-pix-dark p-4">
                         {/* aquí iria de fondo el pix-fondo */}
                         <h2 className="text-3xl font-sans font-bold p-3 mb-3 uppercase text-black dark:text-white">También te podría interesar</h2>
 

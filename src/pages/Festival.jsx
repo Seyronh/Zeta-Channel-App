@@ -7,12 +7,12 @@ import MapaFestival from '../components/MapaFestival.jsx';
 import { Pix3, /* PixFondo TO DO*/ } from '../components/Pixel.jsx';
 
 const Festival = () => (
-    <section className="mb-10 pt-23">
-        <Pix3 className="absolute top-13 right-0 w-30 h-30 z-[-1] text-pix-light" />
+    <section className="pb-10 pt-23">
+        <Pix3 className="absolute top-13 right-0 w-30 h-30 z-[-1] text-pix-light dark:text-pix-dark" />
         {/* Cabecera del Festival */}
         <div className="flex items-center gap-4 justify-center mb-6 dark:text-white">
             <img src={festivalIcon} alt="Icono de Festival" className="w-11 h-11 dark:invert" />
-            <h1 className="text-5xl leading-0 font-pixel uppercase">Festival</h1>
+            <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white">Festival</h1>
         </div>
 
         {/* Acordeones Dinámicos */}
