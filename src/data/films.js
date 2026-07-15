@@ -248,12 +248,15 @@ export const CATALOGO = [
         id: 4,
         slug: 'descendientes',
         fecha: 15,
-        tituloEsp: 'Descendientes',
+        tituloEsp: 'Des-cendientes',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película',
         duracion: 120,
-        horario: [{ hora: '12:00', plazas: 20 }],
+        horario: [
+            { hora: '12:00', plazas: 20 },
+            { hora: '17:00', plazas: 9 }
+        ],
 
         //ARTICULO
         cartel: cartel1,
@@ -286,10 +289,50 @@ export const CATALOGO = [
     },
     {
         //CARD 
+        id: 5,
+        slug: 'teen-beach-movie',
+        fecha: 14,
+        tituloEsp: 'Teen Beach Movie',
+        imagen: portada1,
+        imagenCard: portadaCard1,
+        tipo: 'Película',
+        duracion: 90,
+        horario: [{ hora: '12:30', plazas: 3 }],
+
+        //ARTICULO
+        cartel: cartel1,
+        sala: 2,
+
+        //INFO DESPLEGABLE
+        tituloVo: 'Teen Beach Movie',
+        directorx: 'Jeffrey Hornaday',
+        bandaSonora: 'Cruisin` for a Bruisin`',
+        saga: ['Teen Beach 2'],
+        genero: ['Musical', 'Comedia', 'Fantasía'],
+        sinopsis: 'Brady y McKenzie son dos surfistas que acaban siendo transportados mágicamente dentro de una clásica película musical de playa de los años 60 llamada "Amor sin barreras" ("Wet Side Story").',
+
+        //REPARTO DESPLEGABLE
+        personajes: [
+            { id: 1, imagen: troyBolton, actor: 'Ross Lynch', personaje: 'Brady' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Maia Mitchell', personaje: 'McKenzie (Mack)' },
+            { id: 3, imagen: troyBolton, actor: 'Grace Phipps', personaje: 'Lela' },
+            { id: 4, imagen: gabriellaMontez, actor: 'Garrett Clayton', personaje: 'Tanner' }
+        ],
+
+        //TRAILER
+        trailerVideo: 'https://www.youtube.com/embed/fD_bM-D6P34',
+        cita: '«No puedes simplemente cantar sobre lo que sientes en vez de hacerlo realidad».',
+        autorCita: 'McKenzie',
+
+        //GALERIA
+        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+    },
+    {
+        //CARD 
         id: 6,
         slug: 'programa-de-proteccion-de-princesas',
         fecha: 15,
-        tituloEsp: 'Programa de Protección de Princesas',
+        tituloEsp: 'Programa Protección Princesas',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película',
@@ -409,7 +452,7 @@ export const CATALOGO = [
         imagenCard: portadaCard1,
         tipo: 'Película',
         duracion: 90,
-        horario: [{ hora: '19:30', plazas: 10 }],
+        horario: [{ hora: '17:30', plazas: 10 }],
 
         //ARTICULO
         cartel: cartel1,
@@ -509,14 +552,14 @@ export const CATALOGO = [
         id: 11,
         slug: 'los-magos-de-waverly-place',
         fecha: 14,
-        tituloEsp: 'Los magos de Waverly Place',
+        tituloEsp: 'Waverly Place',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 30, // Duración aproximada por episodio
         horario: [
             { hora: '17:30', plazas: 3 },
-            { hora: '20:00', plazas: 15 }
+            { hora: '20:30', plazas: 15 }
         ],
 
         //ARTICULO
@@ -662,7 +705,7 @@ export const CATALOGO = [
         id: 13,
         slug: 'zack-y-cody-todos-a-bordo',
         fecha: 14,
-        tituloEsp: 'Zack y Cody: Todos a bordo',
+        tituloEsp: 'Todos a bordo',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
@@ -706,13 +749,13 @@ export const CATALOGO = [
         id: 14,
         slug: 'buena-suerte-charlie',
         fecha: 15,
-        tituloEsp: '¡Buena suerte, Charlie!',
+        tituloEsp: '¡Suerte, Charlie!',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 30,
         horario: [
-            { hora: '12:00', plazas: 12 },
+            { hora: '12:30', plazas: 12 },
             { hora: '20:30', plazas: 15 }
         ],
 
@@ -793,14 +836,14 @@ export const CATALOGO = [
         id: 16,
         slug: 'mi-perro-tiene-un-blog',
         fecha: 15,
-        tituloEsp: 'Mi perro tiene un blog',
+        tituloEsp: 'Mi perro tiene blog',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 30,
         horario: [
             { hora: '13:00', plazas: 20 },
-            { hora: '18:30', plazas: 15 }
+            { hora: '19:00', plazas: 15 }
         ],
 
         //ARTICULO
@@ -886,7 +929,7 @@ export const CATALOGO = [
         duracion: 30,
         horario: [
             { hora: '18:00', plazas: 20 },
-            { hora: '20:00', plazas: 15 }
+            { hora: '19:30', plazas: 5 }
         ],
 
         //ARTICULO
@@ -966,14 +1009,14 @@ export const CATALOGO = [
         id: 20,
         slug: 'kc-agente-especial',
         fecha: 15,
-        tituloEsp: 'K.C. Agente Especial',
+        tituloEsp: 'K.C. Agente',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 30,
         horario: [
             { hora: '12:00', plazas: 20 },
-            { hora: '20:00', plazas: 15 }
+            { hora: '20:30', plazas: 15 }
         ],
 
         //ARTICULO
@@ -1014,8 +1057,8 @@ export const CATALOGO = [
         tipo: 'Serie',
         duracion: 30,
         horario: [
-            { hora: '13:30', plazas: 20 },
-            { hora: '19:30', plazas: 15 }
+            { hora: '13:30', plazas: 10 },
+            { hora: '18:00', plazas: 15 }
         ],
 
         //ARTICULO
@@ -1099,7 +1142,7 @@ export const CATALOGO = [
         tipo: 'Serie',
         duracion: 30,
         horario: [
-            { hora: '18:00', plazas: 20 },
+            { hora: '17:00', plazas: 20 },
             { hora: '20:00', plazas: 15 }
         ],
 
@@ -1142,7 +1185,7 @@ export const CATALOGO = [
         duracion: 30, // Duración aproximada por episodio
         horario: [
             { hora: '13:00', plazas: 20 },
-            { hora: '17:00', plazas: 15 }
+            { hora: '19:00', plazas: 15 }
         ],
 
         //ARTICULO
@@ -1205,7 +1248,7 @@ export const CATALOGO = [
         tipo: 'Serie',
         duracion: 30, // Duración por bloque de episodios
         horario: [
-            { hora: '18:00', plazas: 20 },
+            { hora: '17:30', plazas: 11 },
             { hora: '19:30', plazas: 15 }
         ],
 
@@ -1268,8 +1311,8 @@ export const CATALOGO = [
         tipo: 'Serie',
         duracion: 30, // Duración aproximada por episodio
         horario: [
-            { hora: '16:30', plazas: 20 },
-            { hora: '18:30', plazas: 15 }
+            { hora: '17:00', plazas: 20 },
+            { hora: '20:00', plazas: 15 }
         ],
 
         //ARTICULO
@@ -1339,7 +1382,7 @@ export const CATALOGO = [
         id: 27,
         slug: 'la-princesa-sofia',
         fecha: 15,
-        tituloEsp: 'La Princesa Sofia',
+        tituloEsp: 'Princesa Sofia',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
@@ -1380,7 +1423,7 @@ export const CATALOGO = [
         id: 28,
         slug: 'patoaventuras',
         fecha: 14,
-        tituloEsp: 'PatoAventuras',
+        tituloEsp: 'Pato Aventuras',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
@@ -1422,14 +1465,14 @@ export const CATALOGO = [
         id: 29,
         slug: 'star-vs-las-fuerzas-del-mal',
         fecha: 15,
-        tituloEsp: 'Star vs. las Fuerzas del Mal',
+        tituloEsp: 'Star vs. Fuerzas',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 30,
         horario: [
-            { hora: '17:30', plazas: 20 },
-            { hora: '19:00', plazas: 15 }
+            { hora: '13:30', plazas: 20 },
+            { hora: '19:30', plazas: 15 }
         ],
 
         //ARTICULO
@@ -1469,7 +1512,7 @@ export const CATALOGO = [
         tipo: 'Serie',
         duracion: 30,
         horario: [
-            { hora: '17:30', plazas: 20 },
+            { hora: '18:30', plazas: 20 },
             { hora: '20:30', plazas: 15 }
         ],
 
@@ -1511,8 +1554,8 @@ export const CATALOGO = [
         tipo: 'Serie',
         duracion: 30,
         horario: [
-            { hora: '19:00', plazas: 20 },
-            { hora: '20:30', plazas: 15 }
+            { hora: '17:30', plazas: 20 },
+            { hora: '19:00', plazas: 15 }
         ],
 
         //ARTICULO
@@ -1547,14 +1590,14 @@ export const CATALOGO = [
         id: 32,
         slug: 'brandy-and-mr-whiskers',
         fecha: 15,
-        tituloEsp: 'Brandy & Mr. Whiskers',
+        tituloEsp: 'Brandy & Whiskers',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Serie',
         duracion: 30,
         horario: [
             { hora: '12:30', plazas: 20 },
-            { hora: '19:00', plazas: 15 }
+            { hora: '20:00', plazas: 15 }
         ],
 
         //ARTICULO
@@ -1671,9 +1714,9 @@ export const CATALOGO = [
     {
         //CARD 
         id: 35,
-        slug: 'mini-taller-manualidades-art-attack-2',
+        slug: 'art-attack-2',
         fecha: 15,
-        tituloEsp: 'Taller de Manualidades: Art Attack (Día 2)',
+        tituloEsp: 'Art Attack',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
@@ -1713,7 +1756,7 @@ export const CATALOGO = [
         id: 36,
         slug: 'gran-obra-escala-art-attack',
         fecha: 14,
-        tituloEsp: 'Art Attack: El Gran Dibujo Colectivo',
+        tituloEsp: 'Art Attack Colectivo',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
@@ -1753,7 +1796,7 @@ export const CATALOGO = [
         id: 37,
         slug: 'concurso-just-dance',
         fecha: 14,
-        tituloEsp: 'Torneo Just Dance: Domina el escenario',
+        tituloEsp: 'Torneo Just Dance',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
@@ -1832,7 +1875,7 @@ export const CATALOGO = [
         id: 39,
         slug: 'concurso-disfraces',
         fecha: 15,
-        tituloEsp: 'Concurso de Disfraces: Estrellas de Disney',
+        tituloEsp: 'Concurso de Disfraces',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
@@ -1843,7 +1886,7 @@ export const CATALOGO = [
 
         //ARTICULO
         cartel: cartel1,
-        sala: 1,
+        sala: 'TODAS',
 
         //INFO DESPLEGABLE
         tituloVo: 'Cosplay and Costume Contest',
@@ -1872,19 +1915,19 @@ export const CATALOGO = [
         id: 40,
         slug: 'gincana-disney-1',
         fecha: 14,
-        tituloEsp: 'Gincana: En busca del Amuleto de Avalor',
+        tituloEsp: 'Gincana',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
         duracion: 30,
         horario: [
             { hora: '12:00', plazas: 20 },
-            { hora: '19:30', plazas: 15 }
+            { hora: '16:30', plazas: 15 }
         ],
 
         //ARTICULO
         cartel: cartel1,
-        sala: 2,
+        sala: 1,
 
         //INFO DESPLEGABLE
         tituloVo: 'Scavenger Hunt: Sofia`s Quest',
@@ -1912,18 +1955,19 @@ export const CATALOGO = [
         id: 41,
         slug: 'kahoot-premios-zeta',
         fecha: 14,
-        tituloEsp: 'Gran Kahoot Zeta: Curiosidades Disney',
+        tituloEsp: 'Kahoot',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
         duracion: 30,
         horario: [
-            { hora: '12:00', plazas: 20 }
+            { hora: '12:00', plazas: 20 },
+            { hora: '20:00', plazas: 4 }
         ],
 
         //ARTICULO
         cartel: cartel1,
-        sala: 1,
+        sala: 2,
 
         //INFO DESPLEGABLE
         tituloVo: 'The Ultimate Disney Trivia',
@@ -1951,18 +1995,18 @@ export const CATALOGO = [
         id: 42,
         slug: 'taller-dibujo-animacion-1',
         fecha: 14,
-        tituloEsp: 'Taller de Dibujo de Animación: Stitch',
+        tituloEsp: 'Taller de Dibujo',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
         duracion: 30,
         horario: [
-            { hora: '16:30', plazas: 20 }
+            { hora: '13:30', plazas: 20 }
         ],
 
         //ARTICULO
         cartel: cartel1,
-        sala: 1,
+        sala: 3,
 
         //INFO DESPLEGABLE
         tituloVo: 'Disney Animation Workshop: Stitch',
@@ -1991,7 +2035,7 @@ export const CATALOGO = [
         id: 43,
         slug: 'taller-dibujo-animacion-2',
         fecha: 15,
-        tituloEsp: 'Taller de Dibujo de Animación: Perry el Ornitorrinco',
+        tituloEsp: 'Taller de Dibujo',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Actividad',
