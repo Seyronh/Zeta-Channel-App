@@ -20,30 +20,37 @@ const Calendario = ({ fecha }) => {
         });
     });
 
+
+
+    // Inyectamos el DESCANSO general SÓLO si es Sábado 14 o Domingo 15
+    if (fecha === 14 || fecha === 15) {
+        sesiones.push({
+            titulo: 'DESCANSO',
+            tipo: 'Descanso',
+            duracion: 150, // 14:00 - 16:30
+            sala: 'TODAS',
+            horaInicio: '14:00'
+        });
+    }
+
     // Para extraer la hora de inicio y poder ordenar cronológicamente (ej: "17:00" -> 1700)
     const obtenerMinutos = (horaInicio) => {
         const [horas, minutos] = horaInicio.split(':').map(Number);
         return horas * 60 + minutos;
     };
 
-    // 3. Función para obtener y ordenar las sesiones de una sala específica
-    const obtenerSesionesPorSala = (numeroSala) => {
-        return sesiones
-            .filter((sesion) => {
-                // Compara tanto si viene como String ("Sala 1") o como Número (1)
-                return sesion.sala === numeroSala;
-            })
-            .sort((a, b) => obtenerMinutos(a.horaInicio) - obtenerMinutos(b.horaInicio));
-        /* sort lo que hace es ordenar los elementos del array según el resultado de la función de comparación */
-    };
-
-    // Obtenemos las listas independientes y ordenadas por tiempo para cada sala
-    const sala1 = obtenerSesionesPorSala(1);
-    const sala2 = obtenerSesionesPorSala(2);
-    const sala3 = obtenerSesionesPorSala(3);
+    // Ordenamos absolutamente todas las sesiones del día por su hora de inicio
+    // Si coinciden en hora, los ordenamos por número de sala para mantener la estructura (Sala 1, Sala 2, Sala 3)
+    const todasLasSesionesOrdenadas = sesiones.sort((a, b) => {
+        const horaFinal = obtenerMinutos(a.horaInicio) - obtenerMinutos(b.horaInicio);
+        if (horaFinal !== 0) return horaFinal;
+        return String(a.sala).localeCompare(String(b.sala));
+    });
+    /* sort lo que hace es ordenar los elementos del array según el resultado de la función de comparación */
 
     // Helper para las clases de fondo
     const obtenerClaseFondo = (tipo) => {
+        if (tipo === 'Descanso') return 'bg-gray-400 text-black';
         if (tipo === 'Película') return 'bg-blue text-black';
         if (tipo === 'Serie') return 'bg-pink text-black';
         return 'bg-green text-black';
@@ -60,10 +67,10 @@ const Calendario = ({ fecha }) => {
     // Al meterlos en columnas separadas, es más fácil usar clases de altura (h-X) o padding proporcional,
     // pero si sigues queriendo usar grid interno dentro de cada columna, usamos flex o grid por sala.
     const obtenerClaseDuracion = (duracion) => {
-        if (duracion === 120) return 'row-span-4';
+        if (duracion >= 120) return 'row-span-4';
         if (duracion === 90) return 'row-span-3';
         if (duracion === 60) return 'row-span-2';
-        return 'row-span-1';
+        return 'row-span-1 sm:h-20';
     };
 
     return (
@@ -75,48 +82,28 @@ const Calendario = ({ fecha }) => {
                 <div>Sala 3</div>
             </div>
 
-            {/* Grid de Eventos Organizado en 3 Columnas Verticales */}
-            <div className="grid grid-cols-3 gap-3 font-sans">
+            {/* UN ÚNICO GRID GLOBAL: Controla las 3 columnas a la vez */}
+            <div className={`grid grid-cols-3 gap-3 font-sans ${fecha === 13 ? 'grid-rows-3' : 'grid-rows-16'} `}>
+                {todasLasSesionesOrdenadas.map((sesion, posicion) => {
+                    // Si el elemento es un descanso o el concurso especial de domingo, ocupa las 3 columnas de golpe
+                    const esAnchoCompleto = sesion.sala === 'TODAS';
 
-                {/* COLUMNA SALA 1 */}
-                <div className="grid grid-cols-1 grid-rows-8 gap-3">
-                    {sala1.map((sesion, posicion) => (
+                    return (
                         <div
-                            key={`sala1-${posicion}`}
-                            className={`flex flex-col justify-center items-center text-center p-2 gap-1 ${obtenerClaseFondo(sesion.tipo)} ${obtenerClaseDuracion(sesion.duracion)}`}
+                            key={`sesion-${posicion}`}
+                            className={`flex flex-col justify-center items-center text-center p-2 gap-1 
+                                ${obtenerClaseFondo(sesion.tipo)} 
+                                ${obtenerClaseDuracion(sesion.duracion)}
+                                ${esAnchoCompleto ? 'col-span-3' : ''} 
+                            `}
                         >
-                            <div className="font-bold text-wrap leading-tight">{sesion.titulo}</div>
-                            <div className="text-sm">{sesion.horaInicio} - {obtenerHoraFin(sesion.horaInicio, sesion.duracion)}</div>
+                            <div className="font-bold text-wrap leading-tight text-center">{sesion.titulo}</div>
+                            <div className="text-sm">
+                                {sesion.horaInicio} - {obtenerHoraFin(sesion.horaInicio, sesion.duracion)}
+                            </div>
                         </div>
-                    ))}
-                </div>
-
-                {/* COLUMNA SALA 2 */}
-                <div className="grid grid-cols-1 grid-rows-8 gap-3">
-                    {sala2.map((sesion, posicion) => (
-                        <div
-                            key={`sala2-${posicion}`}
-                            className={`flex flex-col justify-center items-center text-center p-2 gap-1 ${obtenerClaseFondo(sesion.tipo)} ${obtenerClaseDuracion(sesion.duracion)}`}
-                        >
-                            <div className="font-bold text-wrap leading-tight">{sesion.titulo}</div>
-                            <div className="text-sm">{sesion.horaInicio} - {obtenerHoraFin(sesion.horaInicio, sesion.duracion)}</div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* COLUMNA SALA 3 */}
-                <div className="grid grid-cols-1 grid-rows-8 gap-3">
-                    {sala3.map((sesion, posicion) => (
-                        <div
-                            key={`sala3-${posicion}`}
-                            className={`flex flex-col justify-center items-center text-center p-2 gap-1 ${obtenerClaseFondo(sesion.tipo)} ${obtenerClaseDuracion(sesion.duracion)}`}
-                        >
-                            <div className="font-bold text-wrap leading-tight">{sesion.titulo}</div>
-                            <div className="text-sm">{sesion.horaInicio} - {obtenerHoraFin(sesion.horaInicio, sesion.duracion)}</div>
-                        </div>
-                    ))}
-                </div>
-
+                    );
+                })}
             </div>
         </div>
     );
