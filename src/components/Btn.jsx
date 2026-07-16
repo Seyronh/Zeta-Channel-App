@@ -7,10 +7,11 @@ const Btn = ({
     font = "sans",
     size = "lg",
     estado,
+    className = '', // <--- Aquí ya lo estabas recibiendo, ahora lo vamos a usar
     ...props
 }) => {
-    const baseStyles = 'flex item-center justify-center rounded-full cursor-pointer transition-colors uppercase px-3 py-1 text-center whitespace-nowrap ';
-    /* estilo base de todas las variantes */
+    const baseStyles = 'flex items-center justify-center rounded-full cursor-pointer transition-colors uppercase px-3 py-1 text-center whitespace-nowrap w-full';
+    /* Nota: He añadido 'w-full' por defecto al botón para que use todo el ancho que su contenedor padre le permita */
 
     const estadoStyles = {
         disponible: "outline-solid text-white",
@@ -28,7 +29,6 @@ const Btn = ({
         xs: 'text-base'
     }
 
-
     const variantStyles = {
         solidgreen: "bg-green text-black hover:bg-green-hover",
         outlinegreen: "ring-green ring-2 text-black hover:ring-green-hover",
@@ -38,7 +38,6 @@ const Btn = ({
 
         solidblack: "bg-black text-white hover:bg-pix-dark",
         outlineblack: "ring-black text-black hover:ring-pix-dark group-hover:ring-white group-hover:text-white",
-
 
         solidblue: "bg-blue text-black hover:bg-hover-blue group-hover:bg-pink",
         outlineblue: "ring-blue text-black hover:ring-blue-hover",
@@ -51,12 +50,13 @@ const Btn = ({
 
     const btnClass = `${baseStyles} ${fontStyle[font]} ${sizeStyle[size]} ${variantStyles[variant]} ${estado ? estadoStyles[estado] : ""}`;
 
-    if (to) {
+    // Si pasas "w-full" por className, evitamos que "items-center" del contenedor colapse el botón.
+    const containerClass = `flex flex-col items-center gap-4 ${className.includes('w-full') ? 'w-full' : ''} ${className}`;
 
+    if (to) {
         return (
-            <div className="flex flex-col items-center gap-4">
+            <div className={containerClass}>
                 <Link to={to} className={btnClass} {...props}>
-                    {/* el ...props es para hacer una copia */}
                     {text}
                 </Link>
                 {estado === "ultimasUnidades" && (
@@ -69,7 +69,7 @@ const Btn = ({
     }
 
     return (
-        <div className="flex flex-col items-center gap-4">
+        <div className={containerClass}>
             <button className={btnClass} {...props}>
                 {text}
             </button>
@@ -80,6 +80,6 @@ const Btn = ({
             )}
         </div>
     )
-
 }
+
 export default Btn;
