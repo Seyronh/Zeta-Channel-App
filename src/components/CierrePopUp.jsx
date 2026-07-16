@@ -3,7 +3,7 @@ import minimizar from "../assets/img/icon/icon-minimizar.svg";
 import salir from "../assets/img/icon/icon-salir.svg";
 
 const CierrePopUp = ({ setpopupIsOpen, text, className }) => (
-    <div className={`flex justify-between rounded-t-xl bg-black dark:bg-neutral-900 py-3 px-5 md:py-4 ${className}`}>
+    <div className={`flex justify-between rounded-t-xl py-3 px-5 md:py-4 ${className && className.includes('bg-') ? className : ` bg-black dark:bg-neutral-900 ${className}`}`}>
         <h3 className="uppercase font-sans text-white text-xl">{text}</h3>
         <ul className="flex gap-6 justify-end">
 
@@ -18,7 +18,7 @@ const CierrePopUp = ({ setpopupIsOpen, text, className }) => (
                     <img src={salir} alt="Salir" className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
             </li>
-        </ul >
+        </ul>
     </div>
 );
 
