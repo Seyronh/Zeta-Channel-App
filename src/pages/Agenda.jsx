@@ -10,7 +10,7 @@ const Agenda = () => (
 
     <>
         <Pix4 className="absolute top-13 right-0 w-40 h-40 text-pix-light dark:text-pix-dark" />
-        <div className="relative pt-23 flex items-center gap-4 justify-center mb-12">
+        <div className="relative pt-23 flex items-center gap-6 justify-center mb-12">
             <img src={agendaIcon} alt="Icono de Agenda" className="w-11 h-11 dark:invert" />
             <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white">AGENDA</h1>
         </div>
