@@ -144,7 +144,8 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
                                     <img src={payPal} alt="PayPal" className="w-12 h-12" />
                                 </button></li>
                             </ul>
-                            <Btn to="#" text="Comprar" variant='solidgreen' size='xs' font='sans' onClick={() => setHasPagado(!hasPagado)} />
+
+                            <Btn to="#" text="Comprar" variant='solidgreen' size='xs' font='sans' className="w-full" onClick={() => setHasPagado(!hasPagado)} />
 
                             {hasPagado && (
                                 <div className="flex flex-col items-center gap-4">
