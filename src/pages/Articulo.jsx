@@ -169,7 +169,7 @@ const Articulo = () => {
                         <p className="font-pixel text-white text-lg text-nowrap">Autocine Madrid - C. Isla de Java, 2</p>
                     </li>
                     <li className="flex justify-center">
-                        <Btn to="/Entradas" text="comprar" variant='solidgreen' size='xs' font='sans' />
+                        <Btn to="/Entradas" text="comprar" variant='solidgreen' size='xs' font='sans' className="w-full" />
                     </li>
                 </ul>
 
