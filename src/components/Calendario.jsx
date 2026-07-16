@@ -16,7 +16,8 @@ const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
                 duracion: evento.duracion,
                 sala: evento.sala,
                 horaInicio: hora.hora,
-                plazas: hora.plazas
+                plazas: hora.plazas,
+                id: evento.id
             });
         });
     });
@@ -96,6 +97,8 @@ const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
 
     const esInteractivo = seleccionados !== undefined && setSeleccionados !== undefined;
 
+
+
     return (
         <div className="w-full py-4">
             {/* Cabecera de Columnas - Salas */}
@@ -107,17 +110,19 @@ const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
 
             {/* UN ÚNICO GRID GLOBAL: Controla las 3 columnas a la vez */}
             <div className={`grid grid-cols-3 gap-3 font-sans ${fecha === 13 ? 'grid-rows-3' : 'grid-rows-16'} `}>
-                {todasLasSesionesOrdenadas.map((sesion, posicion) => {
+                {todasLasSesionesOrdenadas.map((sesion) => {
                     // Si el elemento es un descanso o el concurso especial de domingo, ocupa las 3 columnas de golpe
                     const esAnchoCompleto = sesion.sala === 'TODAS';
 
+                    const llave = `${sesion.id}-${sesion.sala}-${sesion.horaInicio}`; // Generamos una llave única para cada sesión
+
                     // Comprobaciones de estado
-                    const estaSeleccionado = esInteractivo && seleccionados.includes(posicion);
+                    const estaSeleccionado = esInteractivo && seleccionados.includes(llave);
 
                     // Está bloqueado si NO está seleccionado, pero se solapa con ALGUNA de las sesiones que SÍ están seleccionadas
-                    const estaBloqueado = esInteractivo && !estaSeleccionado && (seleccionados.some((indexSeleccionado) => {
-                        const sesionSeleccionada = todasLasSesionesOrdenadas[indexSeleccionado];
-                        return seSolapan(sesion, sesionSeleccionada);
+                    const estaBloqueado = esInteractivo && !estaSeleccionado && (seleccionados.some((llaveSeleccionada) => {
+                        const sesionSeleccionada = todasLasSesionesOrdenadas.find((s) => `${s.id}-${s.sala}-${s.horaInicio}` === llaveSeleccionada);
+                        return sesionSeleccionada && seSolapan(sesion, sesionSeleccionada);
                     })
                         || sesion.plazas <= 0); // También bloqueamos si no hay plazas disponibles
 
@@ -134,9 +139,9 @@ const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
                     }
                     return (
                         <button
-                            onClick={() => esInteractivo && !estaBloqueado && sesion.tipo !== 'Descanso' && AlternarSeleccion(posicion)}
+                            onClick={() => esInteractivo && !estaBloqueado && sesion.tipo !== 'Descanso' && AlternarSeleccion(llave)}
                             disabled={estaBloqueado}
-                            key={`sesion-${posicion}`}
+                            key={`sesion-${llave}`}
                             className={`flex flex-col justify-center items-center text-center p-2 gap-1 transition-all duration-200
                                 ${claseColor}
                                 ${obtenerClaseDuracion(sesion.duracion)}
@@ -167,49 +172,3 @@ const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
 
 export default Calendario;
 
-{/* Sala 1: Evento 1 */ }
-{/* <div className="row-span-2">
-                    <div className="w-full h-full p-2 bg-blue text-black flex flex-col justify-center transform hover:bg-blue-hover transition-transform text-center text-[calc(0.9rem+0.25vw)]">
-                        <div className="font-bold line-clamp-2 leading-tight">
-                            Camp Rock
-                        </div>
-                        <div>
-                            17:00 - 18:30
-                        </div>
-                    </div>
-                </div> */}
-
-{/* Sala 2: Evento Casi Lleno (Serie) */ }
-{/* <div className="flex flex-col gap-2">
-                    <div className="w-full p-2.5 rounded-lg border bg-pink-300 text-slate-900 border-pink-400 shadow-sm flex flex-col justify-between h-22 relative transform hover:scale-[1.02] transition-transform cursor-pointer"> */}
-{/* Badge de Casi Lleno */ }
-{/* <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-amber-500 text-white text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wide whitespace-nowrap shadow animate-pulse">
-                            🔥 CASI LLENO
-                        </span>
-                        <div className="font-bold text-xs line-clamp-2 leading-tight mt-1">
-                            Lizzie McGuire
-                        </div>
-                        <div className="flex justify-between items-center text-[10px] font-bold mt-2">
-                            <span>17:00 - 18:30</span>
-                            <span className="bg-amber-600 text-white px-1.5 py-0.2 rounded-full text-[9px]">3</span>
-                        </div>
-                    </div>
-                </div> */}
-
-{/* Sala 3: Evento Completo / Agotado (Actividad) */ }
-{/* <div className="flex flex-col gap-2">
-                    <div className="w-full p-2.5 rounded-lg border bg-slate-200 text-slate-400 border-slate-300 dark:bg-slate-900 dark:text-slate-600 dark:border-slate-800 opacity-60 flex flex-col justify-between h-22 cursor-not-allowed">
-                        <div>
-                            <span className="text-[8px] font-black uppercase text-red-600 dark:text-red-500 tracking-wider block mb-1">
-                                ⚠️ COMPLETO
-                            </span>
-                            <div className="font-bold text-xs line-clamp-2 leading-tight line-through">
-                                Kahoot Disney
-                            </div>
-                        </div>
-                        <div className="flex justify-between items-center text-[10px] font-semibold mt-2">
-                            <span>17:00 - 18:30</span>
-                            <span className="text-[8px] italic">Agotado</span>
-                        </div>
-                    </div>
-                </div> */}
