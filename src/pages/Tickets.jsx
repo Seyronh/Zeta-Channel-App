@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect } from 'react';
 
 
@@ -15,7 +14,7 @@ import { Pix2 } from '../components/Pixel.jsx';
 
 
 
-const Tickets = () => {
+const Tickets = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo, setSeleccionadosViernes, setSeleccionadosSabado, setSeleccionadosDomingo, entradaDia, entradaInfantilDia, entrada3Dias, entradaInfantil3Dias, setEntradaDia, setEntradaInfantilDia, setEntrada3Dias, setEntradaInfantil3Dias }) => {
     const [popupCheckOut, setpopupCheckOut] = useState(true);
 
     // --- ESTADO PARA CONTROLAR LOS ACORDEONES PRINCIPALES ---
@@ -31,24 +30,16 @@ const Tickets = () => {
         setSeccionActiva(siguienteSeccion);
     };
 
-    const [entradaDia, setEntradaDia] = useState(1);
-    const [entradaInfantilDia, setEntradaInfantilDia] = useState(0);
-    const [entrada3Dias, setEntrada3Dias] = useState(0);
-    const [entradaInfantil3Dias, setEntradaInfantil3Dias] = useState(0);
-
     const [infoEntradaDia, setInfoEntradaDia] = useState(false);
     const [infoEntradaInfantilDia, setInfoEntradaInfantilDia] = useState(false);
     const [infoEntrada3Dias, setInfoEntrada3Dias] = useState(false);
     const [infoEntradaInfantil3Dias, setInfoEntradaInfantil3Dias] = useState(false);
 
-    const [seleccionadosViernes, setSeleccionadosViernes] = useState([]);
-    const [seleccionadosSabado, setSeleccionadosSabado] = useState([]);
-    const [seleccionadosDomingo, setSeleccionadosDomingo] = useState([]);
-
     useEffect(() => {
         setSeleccionadosViernes([]);
         setSeleccionadosSabado([]);
         setSeleccionadosDomingo([]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [entradaDia, entradaInfantilDia, entrada3Dias, entradaInfantil3Dias]);
 
     const precioEntradas = {
