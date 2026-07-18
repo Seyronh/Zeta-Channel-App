@@ -124,7 +124,7 @@ const Error404 = () => {
                         user
                     </div>
                 </Link>
-                <Link className="relative bottom-20 left-20 mx-auto cursor-pointer flex flex-col" to="/">
+                <Link className="relative bottom-20 left-0 pl-35 cursor-pointer flex flex-col" to="/">
                     <div className="relative w-30 h-20 mx-auto">
                         <img src={pegatinaHome} alt="Pegatina Home" className="w-full h-full mx-auto" />
                         <img src={IconoHome} alt="Icono home" className="absolute bottom-0 right-3 w-14 h-14" />
