@@ -3,7 +3,7 @@ import historiaIconos from '../assets/img/historia-iconos.webp';
 import historiaZoog from '../assets/img/historia-zoog.webp';
 import quienesSomos from '../assets/img/quienes-somos.webp';
 
-export const sobreNosotros = [
+const sobreNosotros = [
     {
         id: 1,
         pregunta: "¿Quiénes somos?",
@@ -48,3 +48,5 @@ export const sobreNosotros = [
             'Gran Kahoot Zeta: Preguntas nivel experto sobre tramas secundarias y curiosidades. Solo un verdadero fan podrá alzarse con el trofeo, donde puedes ganar un pack de regalo de varias series y películas de tu infancia.']
     },
 ];
+
+export default sobreNosotros;
