@@ -6,10 +6,13 @@ import { Pix4, /* PixFondo */ } from '../components/Pixel.jsx';
 import btnMas from '../assets/img/icon/icon-btn-mas.svg';
 import Btn from '../components/Btn.jsx';
 
-const Agenda = () => (
+const Agenda = ({ nobtnVisible }) => (
 
     <>
-        <Pix4 className="absolute top-13 right-0 w-40 h-40 text-pix-light dark:text-pix-dark" />
+        {!nobtnVisible && (
+            <Pix4 className="absolute top-13 right-0 w-40 h-40 text-pix-light dark:text-pix-dark" />
+        )}
+
         <div className="relative pt-23 flex items-center gap-6 justify-center mb-12">
             <img src={agendaIcon} alt="Icono de Agenda" className="w-11 h-11 dark:invert" />
             <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white">AGENDA</h1>
@@ -102,9 +105,11 @@ const Agenda = () => (
                 </>
             )}
         </Disclosure>
-        <div className="mt-6 pb-12">
-            <Btn to="#" text="Descargar Agenda" variant='solidgreen' color='green' size='xs' font='sans' />
-        </div>
+        {!nobtnVisible && (
+            <div className="mt-6 pb-12 px-6">
+                <Btn to="#" text="Descargar Agenda" variant='solidgreen' color='green' size='xs' font='sans' />
+            </div>
+        )}
     </>
 
 );
