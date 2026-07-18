@@ -50,7 +50,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
         <>
             <div className="relative pt-13 lg:pt-30 bg-pix-light dark:bg-pix-dark">
                 <div>
-                    {!popupQuepasa && (<Link className={`absolute top-20 left-8 mx-auto pt-6 cursor-pointer flex flex-col`} to="/Festival">
+                    {!popupQuepasa && (<Link className={`absolute top-20 left-8 mx-auto pt-6 cursor-pointer flex flex-col md:pl-10 lg:top-30 lg:left-60`} to="/Festival">
                         <div className="relative w-30 h-20 mx-auto">
                             <img src={pegatinaFestival} alt="Pegatina user" className="w-full h-full mx-auto" />
                             <img src={IconoFestival} alt="Icono festival" className="absolute -bottom-1 right-3 w-14 h-14" />
@@ -59,7 +59,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                             festival
                         </div>
                     </Link>)}
-                    {!popupQuepasa && (<Link className={`absolute top-20 right-8 mx-auto pt-6 cursor-pointer flex flex-col`} to="/Tickets">
+                    {!popupQuepasa && (<Link className={`absolute top-20 right-8 mx-auto pt-6 cursor-pointer flex flex-col pr-10 lg:top-30 lg:right-60`} to="/Tickets">
                         <div className="relative w-30 h-20 mx-auto">
                             <img src={pegatinaTickets} alt="Pegatina user" className="w-full h-full mx-auto" />
                             <img src={IconoTickets} alt="Icono tickets" className="absolute -bottom-2 right-3 w-14 h-14" />
@@ -68,7 +68,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                             tickets
                         </div>
                     </Link>)}
-                    {!popupQuepasa && (<Link className={`relative mt-50  right-0 left-0 mx-auto pt-6 cursor-pointer flex flex-col`} to="/Agenda">
+                    {!popupQuepasa && (<Link className={`relative mt-50  right-0 left-0 mx-auto pt-6 cursor-pointer flex flex-col lg:mt-40`} to="/Agenda">
                         <div className="relative w-30 h-20 mx-auto">
                             <img src={pegatinaAgenda} alt="Pegatina user" className="w-full h-full mx-auto" />
                             <img src={IconoAgenda} alt="Icono agenda" className="absolute bottom-0 right-3 w-14 h-14" />
@@ -78,16 +78,18 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                         </div>
                     </Link>)}
                     {popupHome && (
-                        <div className={`relative flex flex-col mt-22 -mb-45  mx-6 ${popupHome ? 'block' : 'hidden'}`}>
+                        <div className={`relative flex flex-col mt-20 -mb-45 mx-6 md:mx-40 lg:mx-150 ${popupHome ? 'block' : 'hidden'}`}>
                             <div className="p-5 bg-white rounded-xl">
                                 <CierrePopUp text="alerta festival" setpopupIsOpen={setpopupHome} className="absolute top-0 right-0 left-0 mx-auto bg-blue" />
 
-                                <div className="mt-13">
-                                    <div className="flex gap-4 items-center px-3">
-                                        <img src={IconoAlert} alt="Imagen alerta" className="w-25 h-25 mx-auto" />
+                                <div className="mt-13 md:mt-20">
+                                    <div className="flex gap-4 items-center justify-center px-3 md:gap-8">
+                                        <div>
+                                            <img src={IconoAlert} alt="Imagen alerta" className="w-20 h-20 mx-auto " />
+                                        </div>
                                         <h1 className="text-5xl font-bold font-sans">ALERTA</h1>
                                     </div>
-                                    <div className=" justify-center mt-6">
+                                    <div className=" justify-center mt-8 mb-4 md:mt-12 md:mx-10">
                                         <Btn text="¿Qué pasa?" onClick={() => {
                                             setpopupQuepasa(true)
                                             setpopupHome(false)
@@ -98,17 +100,18 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                         </div>
                     )}
                     {popupQuepasa && (
-                        <div className={`relative mt-13 mx-auto flex flex-col px-4 ${popupQuepasa ? 'block' : 'hidden'}`}>
+                        <div className={`relative mt-13 pb-10 mx-auto flex flex-col px-4 md:px-10 lg:px-100 ${popupQuepasa ? 'block' : 'hidden'}`}>
                             <div className="pt-20 px-6 bg-white rounded-xl">
-                                <CierrePopUp text="alerta festival" setpopupIsOpen={setpopupQuepasa} className="absolute top-0 right-0 left-0 mx-4 bg-blue" />
-                                <div className="flex flex-col gap-8 items-center text-center mb-12">
-                                    <h1 className="text-5xl font-bold font-sans">Estás viendo Zeta Channel</h1>
-                                    <h2 className="text-2xl font-medium">Tu infancia merece un reencuentro</h2>
+                                <CierrePopUp text="alerta festival" setpopupIsOpen={setpopupQuepasa} className="absolute top-0 right-0 left-0 mx-4 md:mx-10 lg:mx-100 bg-blue" />
+
+                                <div className="flex flex-col gap-8 items-center text-center mb-12 md:mt-12 md:gap-12">
+                                    <h1 className="text-5xl font-bold font-sans md:text-7xl">Estás viendo Zeta Channel</h1>
+                                    <h2 className="text-2xl font-medium md:text-3xl text-balance">Tu infancia merece un reencuentro</h2>
                                     <Btn to="/Tickets" text="Compra tu entrada" />
                                 </div>
-                                <div className="flex flex-col gap-4 w-full max-w-md mx-auto mb-12">
+                                <div className="flex flex-col gap-4 mx-auto mb-12 md:flex-row md:pt-6 ">
 
-                                    {/* FOTO GRANDE PRINCIPAL */}
+                                    {/* FOTO GRANDE PRINCIPAL*/}
                                     <div className="w-full aspect-3/4 rounded-xl overflow-hidden bg-slate-200">
                                         <img
                                             src={fotos[fotoSeleccionada]}
@@ -118,10 +121,10 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                                     </div>
 
                                     {/* CONTENEDOR DE MINIATURAS (Dividido en Bloque Izquierdo y Bloque Derecho) */}
-                                    <div className="grid grid-cols-3 gap-3 w-full">
+                                    <div className="grid grid-cols-3 gap-3 w-full md:w-1/2 lg:w-full md:grid-cols-1">
 
                                         {/* BLOQUE IZQUIERDO: Las 6 primeras fotos (2 filas de 3) */}
-                                        <div className="col-span-2 grid grid-cols-3 gap-3">
+                                        <div className="col-span-2 grid grid-cols-3 gap-3 md:grid-cols-2 ">
                                             {fotos.slice(0, 6).map((foto, index) => (
                                                 <div
                                                     key={index}
@@ -164,7 +167,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                             </div>
                         </div>
                     )}
-                    {!popupHome && !popupQuepasa && (<div className={`absolute top-115 left-0 right-0 mx-auto pt-6 cursor-pointer flex flex-col ${popupHome ? 'hidden' : 'block'}`} onClick={() => setpopupHome(true)}>
+                    {!popupHome && !popupQuepasa && (<div className={`absolute top-115 left-0 right-0 mx-auto pt-6 cursor-pointer flex flex-col lg:top-130 ${popupHome ? 'hidden' : 'block'}`} onClick={() => setpopupHome(true)}>
                         <div className={`relative w-30 h-20 mx-auto ${styles.animateheartbeat}`}>
                             <img src={pegatinaAlert} alt="Pegatina alerta" className="w-full h-auto mx-auto" />
                             <img src={IconoAlert} alt="Icono alerta" className="absolute bottom-0 right-0 left-0  mx-auto w-14 h-14" />
@@ -173,7 +176,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                             </div>
                         </div>
                     </div>)}
-                    {!popupQuepasa && (<Link className={`relative my-60 ml-40 pt-6 cursor-pointer flex flex-col`} to="/Cartelera">
+                    {!popupQuepasa && (<Link className={`relative my-60 ml-40 pt-6 cursor-pointer flex flex-col md:ml-100 lg:pl-80`} to="/Cartelera">
                         <div className="relative w-30 h-20 mx-auto">
                             <img src={pegatinaCartelera} alt="Pegatina user" className="w-full h-full mx-auto" />
                             <img src={IconoCartelera} alt="Icono cartelera" className="absolute bottom-0 right-3 w-14 h-14" />
@@ -182,7 +185,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                             cartelera
                         </div>
                     </Link>)}
-                    {!popupQuepasa && (<Link className={`relative bottom-60 -left-30 mx-auto pt-6 cursor-pointer flex flex-col`} to="/User">
+                    {!popupQuepasa && (<Link className={`relative bottom-60 -left-30 mx-auto pt-6 cursor-pointer flex flex-col md:pr-60 md:bottom-70 lg:mr-120`} to="/User">
                         <div className="relative w-30 h-20 mx-auto">
                             <img src={pegatinaUser} alt="Pegatina user" className="w-full h-full mx-auto" />
                             <img src={IconoUser} alt="Icono user" className="absolute bottom-0 right-3 w-14 h-14" />
@@ -191,7 +194,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                             user
                         </div>
                     </Link>)}
-                    {!popupQuepasa && (<Link className={`absolute bottom-25 right-20 mx-auto pt-6 cursor-pointer flex flex-col`} to="/">
+                    {!popupQuepasa && (<Link className={`absolute bottom-25 right-20 mx-auto pt-6 cursor-pointer flex flex-col md:right-80 lg:right-1/2 lg:bottom-35`} to="/">
                         <div className="relative w-30 h-20 mx-auto">
                             <img src={pegatinaHome} alt="Pegatina Home" className="w-full h-full mx-auto" />
                             <img src={IconoHome} alt="Icono home" className="absolute bottom-0 right-3 w-14 h-14" />

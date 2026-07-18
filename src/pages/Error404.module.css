@@ -4,13 +4,13 @@ height: 120px;
 display: flex;
 align-items: flex-end;
 justify-content: center;
-margin-top: 1.5rem;
+margin-top: 3rem;
 }
 
 /* --- CLASE BASE DEL DINO CON ANIMACIÓN DE ESPERA (IDLE) --- */
 .dino {
-width: 80px;
-height: 80px;
+width: 100px;
+height: 100px;
 cursor: pointer;
   /* Esta animación de respiración estará siempre activa */
 animation: dinoIdle 1.5s 0.5s;
@@ -52,4 +52,17 @@ animation: chromeJump 0.55s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
 100% {
     transform: translateY(0);
 }
+}
+
+@media (min-width: 48rem) {
+
+    .dinoStage {
+margin-top: 7rem;
+}
+
+    .dino {
+width: 120px;
+height: 120px;
+}
+
 }

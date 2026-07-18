@@ -37,7 +37,7 @@ const Btn = ({
         outlinewhite: "ring-white hover:ring-pix-light",
 
         solidblack: "bg-black text-white hover:bg-pix-dark",
-        outlineblack: "ring-black text-black hover:ring-pix-dark group-hover:ring-white group-hover:text-white",
+        outlineblack: "ring-black  ring-2 text-black hover:ring-pix-dark group-hover:ring-white group-hover:text-white",
 
         solidblue: "bg-blue text-black hover:bg-hover-blue group-hover:bg-pink",
         outlineblue: "ring-blue text-black hover:ring-blue-hover",
