@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, /* Navigate */ } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -10,7 +10,7 @@ import Agenda from './pages/Agenda';
 import User from './pages/User';
 import ScrollToTop from './components/routes/ScrollToTop';
 import Articulo from './pages/Articulo';
-/* import Error404 from './pages/Error404'; */
+import Error404 from './pages/Error404';
 import Footer from './components/Footer';
 
 const App = () => {
@@ -43,9 +43,9 @@ const App = () => {
           <Route path="/Agenda" element={<Agenda />} />
           <Route path="/User" element={<User seleccionadosViernes={seleccionadosViernes} seleccionadosSabado={seleccionadosSabado} seleccionadosDomingo={seleccionadosDomingo} entradaDia={entradaDia} entradaInfantilDia={entradaInfantilDia} entrada3Dias={entrada3Dias} entradaInfantil3Dias={entradaInfantil3Dias} userIniciado={userIniciado} setUserIniciado={setUserIniciado} />} />
           <Route path="/Articulo/:slug" element={<Articulo />} />
-          {/*<Route path="/Error404" element={<Error404 />} />
-        <Route path="*" element={<Navigate to="/Error404" replace />} /> */}
-          {/* Ruta para cualquier otra ruta no definida y usamos Navigate para redirigir a la página de error */}
+          <Route path="/Error404" element={<Error404 />} />
+          <Route path="*" element={<Navigate to="/Error404" replace />} />
+          Ruta para cualquier otra ruta no definida y usamos Navigate para redirigir a la página de error
         </Routes>
       </main>
 
