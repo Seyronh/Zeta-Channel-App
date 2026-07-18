@@ -2,12 +2,9 @@
 import portada1 from '../assets/img/cartelera/high-school-musical/portada.webp';
 import portadaCard1 from '../assets/img/cartelera/high-school-musical/portada-card.webp';
 import cartel1 from '../assets/img/cartelera/high-school-musical/cartel.webp';
-import troyBolton from '../assets/img/cartelera/high-school-musical/personaje-troy_bolton.webp';
-import gabriellaMontez from '../assets/img/cartelera/high-school-musical/personaje-gabriella_montez.webp';
-import sharpayEvans from '../assets/img/cartelera/high-school-musical/personaje-sharpay_evans.webp';
-import ryanEvans from '../assets/img/cartelera/high-school-musical/personaje-ryan_evans.webp';
-import chadDanforth from '../assets/img/cartelera/high-school-musical/personaje-chad_danforth.webp';
-import taylorMcKessie from '../assets/img/cartelera/high-school-musical/personaje-taylor-mckessie.webp';
+import troyBolton from '../assets/img/cartelera/high-school-musical/personaje-troy-bolton.webp';
+import gabriellaMontez from '../assets/img/cartelera/high-school-musical/personaje-gabriella-montez.webp';
+
 import galeriaHs1 from '../assets/img/cartelera/high-school-musical/galeria-1.webp';
 import galeriaHs2 from '../assets/img/cartelera/high-school-musical/galeria-2.webp';
 import galeriaHs3 from '../assets/img/cartelera/high-school-musical/galeria-3.webp';
@@ -16,9 +13,9 @@ import galeriaHs5 from '../assets/img/cartelera/high-school-musical/galeria-5.we
 import galeriaHs6 from '../assets/img/cartelera/high-school-musical/galeria-6.webp';
 import galeriaHs7 from '../assets/img/cartelera/high-school-musical/galeria-7.webp';
 import galeriaHs8 from '../assets/img/cartelera/high-school-musical/galeria-8.webp';
+const imagenesCartelera = import.meta.glob('../assets/img/cartelera/**/*.webp', { eager: true });
 
-
-export const CATALOGO = [
+const CATALOGO = [
 
     /* Películas */
     {
@@ -27,8 +24,6 @@ export const CATALOGO = [
         slug: 'high-school-musical',
         fecha: 14,
         tituloEsp: 'High School Musical', // poner , y no ; !!!
-        imagen: portada1,
-        imagenCard: portadaCard1,
         tipo: 'Película', // serie, pelicula o actividad
         duracion: 90,
         horario: [
@@ -37,7 +32,6 @@ export const CATALOGO = [
         ], // ponemos un array para el horario, ya que puede haber más de uno
 
         //ARTICULO -- info anterior y esta
-        cartel: cartel1,
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -53,38 +47,32 @@ export const CATALOGO = [
         personajes: [ // array de objetos, cada objeto con id, imagen, nombre y personaje
             {
                 id: 1,
-                imagen: troyBolton,
                 actor: 'Zac Efron',
                 personaje: 'Troy Bolton'
             },
             {
                 id: 2,
-                imagen: gabriellaMontez,
                 actor: 'Vanessa Hudgens',
                 personaje: 'Gabriella Montez'
             },
 
             {
                 id: 3,
-                imagen: sharpayEvans,
                 actor: 'Ashley French',
                 personaje: 'Sharpay Evans'
             },
             {
                 id: 4,
-                imagen: ryanEvans,
                 actor: 'Lucas Grabeel',
                 personaje: 'Ryan Evans'
             },
             {
                 id: 5,
-                imagen: chadDanforth,
                 actor: 'Corbin Bleu',
                 personaje: 'Chad Danforth'
             },
             {
                 id: 6,
-                imagen: taylorMcKessie,
                 actor: 'Monique Coleman',
                 personaje: 'Taylor McKessie'
             }
@@ -97,7 +85,6 @@ export const CATALOGO = [
         autorCita: 'Troy Bolton',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
     }
     ,
     {
@@ -2071,3 +2058,32 @@ export const CATALOGO = [
         imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
     }
 ];
+function getImagenesPelicula() {
+
+    // Recorremos todas las imágenes encontradas por el glob
+    Object.keys(imagenesCartelera).forEach((ruta) => {
+        // Verificamos si la ruta pertenece a la película que buscamos
+        const resultado = CATALOGO.find(pelicula => ruta.includes(pelicula.slug));
+        const url = imagenesCartelera[ruta].default;
+
+        // Extraemos el nombre del archivo para clasificarlo
+        const nombreArchivo = ruta.split('/').pop();
+
+        if (nombreArchivo.startsWith('portada.')) resultado.imagen = url;
+        else if (nombreArchivo.startsWith('portada-card.')) resultado.imagenCard = url;
+        else if (nombreArchivo.startsWith('cartel.')) resultado.cartel = url;
+        else if (nombreArchivo.startsWith('personaje-')) {
+            // Guardamos los personajes dinámicamente usando su nombre como clave
+            const nombrePersonaje = nombreArchivo.replace('personaje-', '').replace('.webp', '');
+            if (!resultado.personajes) resultado.personajes = {};
+            const personaje = resultado.personajes.find((p) => p.personaje.toLowerCase().trim().replaceAll(" ", "-") === nombrePersonaje);
+            if (personaje) personaje.imagen = url;
+        }
+        else if (nombreArchivo.startsWith('galeria-')) {
+            if (!resultado.imagenesGaleria) resultado.imagenesGaleria = [];
+            resultado.imagenesGaleria.push(url);
+        }
+    });
+}
+getImagenesPelicula()
+export { CATALOGO };
