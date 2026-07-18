@@ -2,7 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 
 import festivalIcon from '../assets/img/icon/icon-festival.svg';
 import btnMas from '../assets/img/icon/icon-btn-mas.svg';
-import { sobreNosotros } from '../data/sobreNosotros.js';
+import sobreNosotros from '../data/sobreNosotros.js';
 import MapaFestival from '../components/MapaFestival.jsx';
 import { Pix3, /* PixFondo TO DO*/ } from '../components/Pixel.jsx';
 
@@ -38,6 +38,7 @@ const Festival = () => (
 
                             {/* 1. RENDERIZADO DE PÁRRAFOS (Solo si existen) */}
                             {info.parrafo1 && <span className="block">{info.parrafo1}</span>}
+                            {info.parrafo2 && <span className="block">{info.parrafo2}</span>}
 
 
                             {/* 2. RENDERIZADO DE LISTAS CON PUNTO (Solo si existe la lista) */}
