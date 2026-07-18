@@ -94,7 +94,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                             <div className="flex flex-col gap-4 w-full max-w-md mx-auto mb-12">
 
                                 {/* FOTO GRANDE PRINCIPAL */}
-                                <div className="w-full aspect-[3/4] rounded-[2rem] overflow-hidden bg-slate-200">
+                                <div className="w-full aspect-3/4 rounded-xl overflow-hidden bg-slate-200">
                                     <img
                                         src={fotos[fotoSeleccionada]}
                                         alt={`Foto ${fotoSeleccionada + 1}`}
