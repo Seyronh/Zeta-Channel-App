@@ -184,7 +184,7 @@ const Articulo = () => {
                         <CierrePopUp text="Ficha Técnica" setpopupIsOpen={setpopupFicha} className="absolute top-0 right-0 left-0 mx-4 md:mx-16" />
                         <AcordeonArticulo desplegable={catalogo} />
                         <div className="pt-6 flex flex-col gap-6">
-                            <h2 className="text-2xl font-pixel uppercase text-black">trailer</h2>
+                            <h2 className="text-2xl font-pixel uppercase text-black md:text-3xl">trailer</h2>
                             <iframe src={trailerVideo} title={`Trailer - ${tituloEsp}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen style={{ filter: 'grayscale(100%)' }} className="w-full aspect-video rounded-xl"
                             ></iframe>
                             {/* puedo hacer que con un estado lea si le ha dado play y ponga el video o sino la imagen que yo quiera TO DO QUIZÁS MÁS ADELANTE */}

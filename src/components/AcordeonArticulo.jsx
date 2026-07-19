@@ -14,7 +14,7 @@ const AcordeonArticulo = ({ desplegable }) => {
     return (
         <>
             <Disclosure>
-                <DisclosureButton className="mt-12 flex w-full items-center uppercase font-pixel text-2xl">
+                <DisclosureButton className="mt-12 flex w-full items-center uppercase font-pixel text-2xl md:mt-14 md:text-3xl">
                     {({ open }) => (
                         <>
                             <span className="flex-1 text-left">información</span>
@@ -61,7 +61,7 @@ const AcordeonArticulo = ({ desplegable }) => {
                 </DisclosurePanel>
             </Disclosure>
             <Disclosure>
-                <DisclosureButton className="pt-6 flex w-full items-center uppercase font-pixel text-2xl">
+                <DisclosureButton className="pt-6 flex w-full items-center uppercase font-pixel text-2xl md:text-3xl">
                     {({ open }) => (
                         <>
                             <span className="flex-1 text-left">reparto</span>
