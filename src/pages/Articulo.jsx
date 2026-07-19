@@ -1,4 +1,4 @@
-import { useParams, /* Navigate, */ Link } from 'react-router-dom';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 import { CATALOGO } from '../data/films.js';
@@ -18,28 +18,30 @@ import iconCartel from '../assets/img/icon/articulo-cartel-icon.svg';
 import iconDesplegable from '../assets/img/icon/articulo-desplegable-icon.svg';
 import iconUbicacion from '../assets/img/icon/icon-ubicacion.svg';
 import AcordeonArticulo from '../components/AcordeonArticulo.jsx';
-/* import pixelFondo from '../assets/img/pixel-fondo.svg';
- */
+
+
 const Articulo = () => {
+    const [popupIsOpen, setpopupIsOpen] = useState(true);
+    const [popupFicha, setpopupFicha] = useState(true);
+
+    /* has seleccionado un horario? */
+    const [horariosSeleccionados, setHorariosSeleccionados] = useState([]);
+
     /* 1. Capturamos el slug de la URL */
     const { slug } = useParams();
     /* 2. Buscamos el artículo en el catálogo */
     const catalogo = CATALOGO.find(item => item.slug === slug);
-    /* 3. Si no encontramos el artículo, redirigimos a la página de error TO DO */
-    /* if (!catalogo) {
-        return <Navigate to="/Error404" replace />; */
-
+    /* 3. Si no encontramos el artículo, redirigimos a la página de error  */
+    if (!catalogo) {
+        return <Navigate to="/Error404" replace />;
+    }
 
     const { tituloEsp, imagen, cartel, horario, genero, fecha, tipo, duracion, sala, trailerVideo, cita, autorCita, imagenesGaleria } = catalogo;
 
     /* 4.Si la pelicula existe, mostramos su información */
 
     /* está el articulo abierto? */
-    const [popupIsOpen, setpopupIsOpen] = useState(true);
-    const [popupFicha, setpopupFicha] = useState(true);
 
-    /* has seleccionado un horario? */
-    const [horariosSeleccionados, setHorariosSeleccionados] = useState([]);
     const cambiarHorarioSeleccionado = (hora) => {
         if (horariosSeleccionados.includes(hora)) {
             const horaQuitada = horariosSeleccionados.filter(horaSeleccionada => horaSeleccionada !== hora)
@@ -91,30 +93,30 @@ const Articulo = () => {
     ].filter(Boolean); // Filtramos los que sean undefined
 
     return (
-        <article className="relative pt-30">
+        <article className="relative pt-30 lg:pt-40">
             {/* TAPADERA CARD */}
-            <div className="absolute bottom-full top-21 right-0 -mb-11 z-10 ml-27.5">
+            <div className="absolute bottom-0 top-21 right-0 -mb-11 ml-27.5 lg:mt-8 z-10 pointer-events-none">
 
                 <LabelCard className="w-full h-12 relative text-blue" />
 
                 {/* He tenido que crear un componente al svg para poder ponerle el hover como className y además hacer el group-hover para que se haga en modo grupo */}
             </div>
             {/* CONTENIDO */}
-            <div className="pt-7 bg-blue rounded-tl-4xl md:pt-12">
+            <div className="pt-7 bg-blue rounded-tl-4xl md:pt-12 lg:pt-20">
                 {/* PRIMERA PARTE - IMAGEN -  BTNES - TITULO PRINCIPAL */}
-                <div className="flex flex-col gap-6 px-6 md:px-10">
-                    <div className="relative flex flex-col gap-4 md:flex-row md:gap-8">
-                        <Link to="/Entradas" className="absolute z-997 top-0 right-0 w-auto h-auto">
+                <div className="flex flex-col gap-6 px-6 md:px-10 lg:flex-row lg:mx-20 lg:items-center lg:gap-30 lg:justify-center" >
+                    <div className="relative flex flex-col gap-4 md:flex-row md:gap-8 lg:order-2 ">
+                        <Link to="/Tickets" className="absolute z-997 top-0 right-0 w-auto h-auto">
                             <img src={btnMas} alt="Más información" />
                         </Link>
-                        <div className="relative w-full onject-cover overflow-hidden rounded-4xl">
+                        <div className="relative object-cover overflow-hidden rounded-4xl  lg:h-100">
                             <img src={imagen} alt={tituloEsp} className="w-full" />
                         </div>
                         <div className="absolute top-0 bottom-0 left-0 right-0 z-997 flex items-center justify-center">
-                            <Btn to="/Entradas" text="comprar" variant='solidgreen' size='lg' font='sans' />
+                            <Btn to="/Tickets" text="comprar" variant='solidgreen' size='lg' font='sans' />
                         </div>
                     </div>
-                    <h1 className="text-4xl font-bold uppercase md:text-6xl">{tituloEsp}</h1>
+                    <h1 className="text-4xl font-bold uppercase md:text-6xl lg:order-1 lg:text-8xl lg:flex-1/2">{tituloEsp}</h1>
                 </div>
 
                 {/*  TIRA ROLL */}
@@ -123,12 +125,12 @@ const Articulo = () => {
                         style={{ backgroundImage: `url(${tiraRollText})` }}
                         className={`w-full h-4 ${styles.roll}`}>
                     </div>
-                    {/* TO DO: quizás plantear un roll que conforme scrollees se lea */}
+
                 </div>
 
-                <div className="md:flex md:container md:gap-12 md:px-10 md:items-center">
+                <div className="md:flex md:container md:gap-12 md:px-10 md:items-center md:mx-auto lg:mx-auto lg:pl-50">
                     {/* CARTEL + EASTER EGG CERRADO */}
-                    <div className={`relative flex flex-col px-10 md:px-0 md:flex-1/2 ${popupIsOpen ? 'block' : 'hidden'}`}>
+                    <div className={`relative flex flex-col px-10 md:px-0 md:flex-1/2 lg:flex-1/10 ${popupIsOpen ? 'block' : 'hidden'}`}>
                         <div className="p-6 bg-white rounded-xl">
                             <CierrePopUp text="Cartel" setpopupIsOpen={setpopupIsOpen} className="absolute top-0 right-0 left-0 mx-10 md:mx-0" />
 
@@ -147,13 +149,13 @@ const Articulo = () => {
                     </div>
 
                     {/* INFORMACIÓN DE LA PELÚCULA - HORARIOS, SALA, LUGAR Y BTN COMPRA */}
-                    <ul className="flex flex-col gap-4 p-6 md:p-0 md:gap-6 md:flex-1/2">
+                    <ul className="flex flex-col gap-4 p-6 md:p-0 md:gap-6 md:flex-1/2 lg:px-60  ">
                         <li className="flex justify-between">
                             <p className="text-[calc(1.25rem+0.25vw)] font-sans text-white">{tipo}</p>
                             <p className="text-[calc(1.25rem+0.25vw)] text-white font-pixel">{duracion} min</p>
                         </li>
                         <li className="w-full h-0.5 bg-white"></li>
-                        <li className="flex justify-between md:flex-col md:gap-8">
+                        <li className="flex justify-between md:flex-col md:gap-8 ">
                             <div className="md:flex md:items-center md:justify-between">
                                 <Btn text={`${fecha} sep`} variant='solidpink' size='xs' font='pixel' />
                                 <p className="font-pixel text-xl text-white uppercase hidden md:block">Sala {sala}</p>
@@ -165,21 +167,20 @@ const Articulo = () => {
                                     onClick={() => { if (hora.plazas > 0) { cambiarHorarioSeleccionado(hora.hora); } }} />
                             )
                             )}
-
-
                             <p className="font-pixel text-xl text-white uppercase md:hidden">Sala {sala}</p>
                         </li>
+
                         <li className="flex items-center gap-3 mx-auto py-2 md:gap-6">
                             <img src={iconUbicacion} alt='Ubicación' />
-                            <p className="font-pixel text-white text-lg text-nowrap md:text-wrap md:flex md:flex-col">Autocine Madrid - <span>C. Isla de Java, 2</span></p>
+                            <p className="font-pixel text-white text-lg text-nowrap md:text-wrap md:flex md:flex-col lg:flex-row">Autocine Madrid - <span>C. Isla de Java, 2</span></p>
                         </li>
                         <li className="flex justify-center">
-                            <Btn to="/Entradas" text="comprar" variant='solidgreen' size='xs' font='sans' className="w-full" />
+                            <Btn to="/Tickets" text="comprar" variant='solidgreen' size='xs' font='sans' className="w-full" />
                         </li>
                     </ul>
                 </div>
                 {/* FICHA TÉCNICA + EASTER EGG CERRADO */}
-                <div className={`relative flex flex-col px-4 my-6 md:px-16 md:my-16 ${popupFicha ? 'block' : 'hidden'}`}>
+                <div className={`relative flex flex-col px-4 my-6 md:px-16 md:my-16 lg:mx-50 ${popupFicha ? 'block' : 'hidden'}`}>
                     <div className="p-6 bg-white rounded-xl">
                         <CierrePopUp text="Ficha Técnica" setpopupIsOpen={setpopupFicha} className="absolute top-0 right-0 left-0 mx-4 md:mx-16" />
                         <AcordeonArticulo desplegable={catalogo} />
@@ -210,8 +211,8 @@ const Articulo = () => {
                 </div>
 
                 {/* GALERIA */}
-                <div className="flex flex-col">
-                    <h2 className="text-3xl font-pixel uppercase text-white p-6 md:px-10 md:text-4xl">Galería</h2>
+                <div className="flex flex-col ">
+                    <h2 className="text-3xl font-pixel uppercase text-white p-6 md:px-10 md:text-4xl lg:text-5xl lg:px-26">Galería</h2>
                     <CarruselGaleria imagenesGaleria={imagenesGaleria} />
                 </div>
                 {/*  TIRA ROLL 2 */}
@@ -220,26 +221,21 @@ const Articulo = () => {
                         style={{ backgroundImage: `url(${tiraRollText})` }}
                         className={`w-full h-4 ${styles.roll}`}>
                     </div>
-                    {/* TO DO: quizás plantear un roll que conforme scrollees se lea */}
+
                 </div>
-
-
-                {/* <div> TO DO: poner el pixel-fondo de fondo de la sección de recomendaciones */}
-                {/* <img src={pixelFondo} alt="Pixel fondo" className="text-pix-light dark:bg-pix-dark w-full" />
-            </div> */}
 
                 {/* PELICULAS RELACIONADAS */}
 
                 {recomendaciones.length > 0 && (
                     <div className="mt-20 border-t-2 border-black/10 pt-12 bg-pix-light dark:bg-pix-dark p-4 md:px-10">
                         {/* aquí iria de fondo el pix-fondo */}
-                        <h2 className="text-3xl font-sans font-bold p-3 mb-3 uppercase text-black dark:text-white">También te podría interesar</h2>
+                        <h2 className="text-3xl font-sans font-bold p-3 mb-3 uppercase text-black dark:text-white lg:px-26 lg:text-4xl">También te podría interesar</h2>
 
                         <div className="container mx-auto grid grid-cols-1 gap-12 md:gap-x-10 md:gap-y-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-28 pb-16">
                             {recomendaciones.map(({ peli, motivo }) => (
                                 <div key={peli.id} className="flex flex-col gap-10">
                                     {/* El texto sutil encima de la tarjeta */}
-                                    <span className="uppercase text-neutral-600 font-medium p-3 font-sans dark:text-neutral-300 md:h-16">
+                                    <span className="uppercase text-neutral-600 font-medium p-3 font-sans dark:text-neutral-300 md:h-16 lg:text-lg lg:mx-auto">
                                         {motivo === "Mismo género" && `Si te gusta el ${genero.join(' / ')}`}
                                         {motivo === "Mismo formato" && `Otra ${catalogo.tipo} clave`}
                                         {motivo === "Mismo día" && "Otra opción para el mismo día"}
@@ -255,9 +251,7 @@ const Articulo = () => {
             </div>
 
 
-        </article>
+        </article >
     );
 }
 export default Articulo;
-/* TO DO: versión tablet y pc */
-/* TO DO: reseteo etiquetas div app entera -- article / section */

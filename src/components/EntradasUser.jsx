@@ -16,7 +16,7 @@ const EntradasUser = ({ diaSeleccionado, entradaDia, entradaInfantilDia, entrada
         <div className="mb-4">
 
             {/* CONTENEDOR PRINCIPAL DE LA ENTRADA */}
-            <div className="relative flex p-5 font-sans">
+            <div className="relative flex p-5 font-sans justify-center">
 
                 {/* SVG DE FONDO (Controlado por color de texto gracias a fill="currentColor") */}
                 <svg
@@ -34,22 +34,23 @@ const EntradasUser = ({ diaSeleccionado, entradaDia, entradaInfantilDia, entrada
                     />
                 </svg>
 
+
                 {/* CONTENIDO DE LA ENTRADA (Capa superior) */}
-                <div className="relative z-10 w-full h-full flex flex-col pt-10 px-3 text-black">
+                <div className="relative z-10 flex flex-col pt-10 px-3 text-black ">
 
                     {/* FECHA */}
                     {diaSeleccionado === 'viernes' && (
-                        <h2 className="text-3xl font-bold uppercase mb-4">
+                        <h2 className="text-2xl font-bold uppercase mb-4">
                             Viernes 13 Sep
                         </h2>
                     )}
                     {diaSeleccionado === 'sabado' && (
-                        <h2 className="text-3xl font-bold uppercase mb-4">
+                        <h2 className="text-2xl font-bold uppercase mb-4">
                             Sábado 14 Sep
                         </h2>
                     )}
                     {diaSeleccionado === 'domingo' && (
-                        <h2 className="text-3xl font-bold uppercase mb-4">
+                        <h2 className="text-2xl font-bold uppercase mb-4">
                             Domingo 15 Sep
                         </h2>
                     )}

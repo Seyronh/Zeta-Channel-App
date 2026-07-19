@@ -15,10 +15,10 @@ const CarruselGaleria = ({ imagenesGaleria }) => {
     return (
         <div className="relative">
             <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex touch-pan-y touch-pinch-zoom -ml-6">
+                <div className="flex touch-pan-y touch-pinch-zoom -ml-6 lg:gap-10">
                     {/* esto es para cuando le des con el dedo arrastrar o agrandar */}
                     {imagenesGaleria.map((imagen, posicion) => (
-                        <div className="shrink-0 grow-0 basis-full min-w-0 pl-6 first:basis-[85%]" key={posicion}>
+                        <div className="shrink-0 grow-0 basis-full min-w-0 pl-6 lg:basis-[40%] lg:first:basis-[40%] first:basis-[85%]" key={posicion}>
                             <div className="w-full h-full overflow-hidden rounded-xl relative bg-olive-300">
                                 <img
                                     src={imagen}

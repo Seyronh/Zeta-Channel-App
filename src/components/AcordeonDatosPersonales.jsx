@@ -4,10 +4,10 @@ import Btn from '../components/Btn.jsx';
 
 
 const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente }) => (
-    <div className="mt-12">
+    <div className="mt-12 md:mt-14 md:px-2">
         <button
             onClick={() => toggleSeccion(3)}
-            className="flex w-full items-center uppercase font-pixel text-2xl text-left"
+            className="flex w-full items-center uppercase font-pixel text-2xl text-left md:text-3xl"
         >
             <span className="flex-1">3. Datos Personales</span>
             <img
@@ -19,8 +19,8 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente }) => (
         </button>
 
         {seccionActiva === 3 && (
-            <div className="mt-4">
-                <ul className="flex flex-col text-black font-sans gap-8 mt-6">
+            <div className="mt-4 m">
+                <ul className="flex flex-col text-black font-sans gap-8 mt-6 lg:mx-20">
                     <li>
                         <FormsInput
                             label="Nombre y Apellido"
@@ -72,7 +72,7 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente }) => (
                         </p>
                     </li>
                     <li>
-                        <Btn to="#" type="button" text="Siguiente" variant='solidgreen' size='xs' font='sans' onClick={() => irASiguiente(4)} />
+                        <Btn to="#" type="button" text="Siguiente" variant='solidgreen' size='xs' font='sans' onClick={() => irASiguiente(4)} className=" lg:mx-75" />
                     </li>
                 </ul>
             </div>

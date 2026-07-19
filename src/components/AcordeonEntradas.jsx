@@ -8,10 +8,10 @@ import iconInfo from '../assets/img/icon/icon-info.svg';
 const AcordeonEntradas = ({ toggleSeccion, seccionActiva, setInfoEntradaDia, infoEntradaDia, esViernes, precioEntradas, entradaDia, setEntradaDia, unicoDia, hayAlgunaSeleccion, irASiguiente, setInfoEntradaInfantilDia, infoEntradaInfantilDia, entradaInfantilDia, setEntradaInfantilDia, entrada3Dias, setInfoEntradaInfantil3Dias, infoEntradaInfantil3Dias, setInfoEntrada3Dias, infoEntrada3Dias, setEntrada3Dias, entradaInfantil3Dias, setEntradaInfantil3Dias, precioTotal }) => (
 
 
-    <div className="mt-12">
+    <div className="mt-12 md:mt-16">
         <button
             onClick={() => toggleSeccion(1)}
-            className="flex w-full items-center uppercase font-pixel text-2xl text-left"
+            className="flex w-full items-center uppercase font-pixel text-2xl text-left md:text-3xl md:px-2"
         >
             <span className="flex-1">1. Entrada</span>
             <img
@@ -23,8 +23,8 @@ const AcordeonEntradas = ({ toggleSeccion, seccionActiva, setInfoEntradaDia, inf
         </button>
 
         {seccionActiva === 1 && (
-            <div className="mt-4">
-                <ul className="flex flex-col text-black font-sans gap-3">
+            <div className="mt-4 md:px-2">
+                <ul className="flex flex-col text-black font-sans gap-3 md:gap-6">
                     <li className="flex flex-col gap-4 py-3">
                         <div className="flex justify-between items-end">
                             <div className="flex flex-col gap-2">
@@ -38,7 +38,7 @@ const AcordeonEntradas = ({ toggleSeccion, seccionActiva, setInfoEntradaDia, inf
                             </div>
                             <EntradasIndicador entrada={entradaDia} setEntrada={setEntradaDia} desactivado={!unicoDia && hayAlgunaSeleccion} />
                         </div>
-                        {infoEntradaDia && <p className="text-sm text-neutral-500 text-balance">Incluye todas las proyecciones y actividades de los 3 días del festival</p>}
+                        {infoEntradaDia && <p className="text-sm text-neutral-500 text-pretty md:text-lg">Incluye todas las proyecciones y actividades de los 3 días del festival</p>}
                     </li>
                     <li className="flex flex-col gap-4 py-3">
                         <div className="flex justify-between items-end">
@@ -53,7 +53,7 @@ const AcordeonEntradas = ({ toggleSeccion, seccionActiva, setInfoEntradaDia, inf
                             </div>
                             <EntradasIndicador entrada={entradaInfantilDia} setEntrada={setEntradaInfantilDia} desactivado={!unicoDia && hayAlgunaSeleccion} />
                         </div>
-                        {infoEntradaInfantilDia && <p className="text-sm text-neutral-500 text-balance">*MENORES DE 12 AÑOS acompañados por un adulto</p>}
+                        {infoEntradaInfantilDia && <p className="text-sm text-neutral-500 text-pretty md:text-lg">*MENORES DE 12 AÑOS acompañados por un adulto</p>}
                     </li>
                     <li className="flex flex-col gap-4 py-3">
                         <div className="flex justify-between items-end">
@@ -68,7 +68,7 @@ const AcordeonEntradas = ({ toggleSeccion, seccionActiva, setInfoEntradaDia, inf
                             </div>
                             <EntradasIndicador entrada={entrada3Dias} setEntrada={setEntrada3Dias} desactivado={unicoDia && hayAlgunaSeleccion} />
                         </div>
-                        {infoEntrada3Dias && <p className="text-sm text-neutral-500 text-balance">Incluye todas las proyecciones y actividades de los 3 días del festival</p>}
+                        {infoEntrada3Dias && <p className="text-sm text-neutral-500 text-pretty md:text-lg">Incluye todas las proyecciones y actividades de los 3 días del festival</p>}
                     </li>
                     <li className="flex flex-col gap-4 py-3">
                         <div className="flex justify-between items-end">
@@ -83,16 +83,16 @@ const AcordeonEntradas = ({ toggleSeccion, seccionActiva, setInfoEntradaDia, inf
                             </div>
                             <EntradasIndicador entrada={entradaInfantil3Dias} setEntrada={setEntradaInfantil3Dias} desactivado={unicoDia && hayAlgunaSeleccion} />
                         </div>
-                        {infoEntradaInfantil3Dias && <p className="text-sm text-neutral-500 text-balance">*MENORES DE 12 AÑOS acompañados por un adulto</p>}
+                        {infoEntradaInfantil3Dias && <p className="text-sm text-neutral-500 text-pretty md:text-lg">*MENORES DE 12 AÑOS acompañados por un adulto</p>}
                     </li>
                 </ul>
-                <div>
+                <div className="flex flex-col gap-3 mt-6 md:mt-8">
                     <div className="flex items-end justify-between ">
-                        <p className="text-xl font-bold mt-6">Total {precioTotal} €</p>
+                        <p className="text-xl font-bold">Total {precioTotal} €</p>
                         <p className="text-xl font-bold">{entradaDia + entradaInfantilDia + entrada3Dias + entradaInfantil3Dias} Entradas</p>
                     </div>
-                    <p className="text-sm text-neutral-500 text-pretty mt-1 mb-2">*El coste de la entrada del viernes es a mitad de precio</p>
-                    <Btn to="#" text="Siguiente" variant='solidgreen' size='xs' font='sans' onClick={() => irASiguiente(2)} />
+                    <p className="text-sm text-neutral-500 text-pretty mt-1 mb-2 md:text-lg">*El coste de la entrada del viernes es a mitad de precio</p>
+                    <Btn to="#" text="Siguiente" variant='solidgreen' size='xs' font='sans' onClick={() => irASiguiente(2)} className="md:mx-20 md:mt-4 lg:mx-75" />
                 </div>
             </div>
         )}

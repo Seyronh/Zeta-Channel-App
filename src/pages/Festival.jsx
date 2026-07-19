@@ -7,12 +7,12 @@ import MapaFestival from '../components/MapaFestival.jsx';
 import { Pix3, /* PixFondo TO DO*/ } from '../components/Pixel.jsx';
 
 const Festival = () => (
-    <section className="pb-10 pt-23">
-        <Pix3 className="absolute top-13 right-0 w-30 h-30 z-[-1] text-pix-light dark:text-pix-dark" />
+    <section className="pb-10 pt-23 lg:pt-42">
+        <Pix3 className="absolute top-13 right-0 w-30 h-30 z-0 lg:top-23 text-pix-light dark:text-pix-dark" />
         {/* Cabecera del Festival */}
         <div className="flex items-center gap-6 justify-center mb-6 dark:text-white">
-            <img src={festivalIcon} alt="Icono de Festival" className="w-11 h-11 dark:invert" />
-            <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white">Festival</h1>
+            <img src={festivalIcon} alt="Icono de Festival" className="w-11 h-11 dark:invert lg:w-15 lg:h-15" />
+            <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white lg:text-7xl">Festival</h1>
         </div>
 
         {/* Acordeones Dinámicos */}
@@ -20,30 +20,31 @@ const Festival = () => (
             <Disclosure
                 key={info.id}
                 as="div"
-                className="p-6 dark:text-white"
+                className="p-6 dark:text-white md:gap-10 md:mx-8 lg:container lg:mx-auto lg:gap-12"
                 // Si es el primer elemento (posicion 0), defaultOpen será true
                 defaultOpen={posicion === 0}>
                 {({ open }) => (
                     <>
                         <DisclosureButton className="flex justify-between w-full text-left border-b-2 border-black dark:border-white pb-2">
-                            <span className="font-pixel text-xl uppercase"> {info.pregunta} </span>
+                            <span className="font-pixel text-xl uppercase lg:text-2xl"> {info.pregunta} </span>
                             <img
                                 src={btnMas}
                                 alt="btn desplegar"
-                                className={`h-6 w-6 transition-transform ${open ? 'rotate-180' : ''}`}
+                                className={`h-6 w-6 lg:w-7 lg:h-7 transition-transform ${open ? 'rotate-180' : ''}`}
                             />
                         </DisclosureButton>
 
                         <DisclosurePanel transition className="origin-top transition duration-200 ease-out data-closed:-translate-y-6 data-closed:opacity-0 pt-4 flex flex-col gap-4 text-sans">
 
                             {/* 1. RENDERIZADO DE PÁRRAFOS (Solo si existen) */}
-                            {info.parrafo1 && <span className="block">{info.parrafo1}</span>}
-                            {info.parrafo2 && <span className="block">{info.parrafo2}</span>}
-
+                            <div className="flex flex-col gap-4 md:flex md:flex-row md:gap-12 md:text-pretty lg:ml-20">
+                                {info.parrafo1 && <span className="block md:text-lg md:px-2">{info.parrafo1}</span>}
+                                {info.parrafo2 && <span className="block md:text-lg md:px-2">{info.parrafo2}</span>}
+                            </div>
 
                             {/* 2. RENDERIZADO DE LISTAS CON PUNTO (Solo si existe la lista) */}
                             {info.lista && (
-                                <ul className="flex flex-col gap-2 pl-2">
+                                <ul className="flex flex-col gap-2 pl-2 lg:grid lg:grid-cols-3 lg:gap-10">
                                     {info.lista.map((elemento, index) => (
                                         <li key={index} className="flex gap-2">
                                             <span>•</span>
@@ -57,10 +58,10 @@ const Festival = () => (
 
                             {/* ─── RENDEREAR IMAGEN (SUELTA O EN ARRAY) ─── */}
                             {info.imagen && (
-                                <div className="mt-4">
+                                <div className="mt-4 md:mx-20 lg:mx-100">
                                     {Array.isArray(info.imagen) ? (
                                         /* SI ES UN ARRAY: Creamos una cuadrícula para que salgan una al lado de la otra */
-                                        <div className="flex flex-col gap-4 -mx-6 dark:bg-white">
+                                        <div className="flex flex-col gap-4 -mx-6 md:flex md:flex-row md:-mx-25 lg:h-100  dark:bg-white">
                                             {info.imagen.map((imgSrc, posicion) => (
                                                 <div key={posicion}>
                                                     <img
@@ -93,7 +94,7 @@ const Festival = () => (
 
                             {/* 3. RENDERIZADO DE FAQ (Emparejando Pregunta + Respuesta una debajo de otra) */}
                             {info.faq && info.respuestas && (
-                                <div className="flex flex-col gap-6">
+                                <div className="flex flex-col gap-6 md:grid md:grid-cols-2">
                                     {info.faq.map((preguntaFaq, posicion) => (
                                         <div key={posicion} className="flex flex-col gap-1">
                                             {/* Pregunta */}
@@ -119,4 +120,3 @@ const Festival = () => (
 
 export default Festival;
 
-/* adaptar a tablet y pc TO DO */

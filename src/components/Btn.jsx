@@ -42,8 +42,6 @@ const Btn = ({
         solidblue: "bg-blue text-black hover:bg-hover-blue group-hover:bg-pink",
         outlineblue: "ring-blue text-black hover:ring-blue-hover",
 
-        /* TO DO: ARREGLAR CONTRASTE BTN AZUL */
-
         solidpink: "bg-pink text-black hover:bg-pink-hover",
         outlinepink: "ring-pink  text-black hover:ring-pink-hover",
     };

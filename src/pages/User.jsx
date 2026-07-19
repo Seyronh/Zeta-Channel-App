@@ -37,18 +37,18 @@ const User = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo,
 
     return (
 
-        <div className={`pt-23 px-6 pb-6 ${userIniciado && ('bg-pix-light dark:bg-pix-dark')}`}>
-            <Pix4 className={`absolute top-13 right-0 w-40 h-40 text-pix-light dark:text-pix-dark ${userIniciado && ('text-white')}`} />
+        <div className={`pt-23 px-6 pb-6 lg:pt-45 ${userIniciado && ('bg-pix-light dark:bg-pix-dark')}`}>
+            <Pix4 className={`absolute top-13 right-0 w-40 h-40 text-pix-light dark:text-pix-dark lg:top-23 ${userIniciado && ('text-white')}`} />
             <div className="relative flex items-center gap-6 justify-center mb-12">
                 {!userIniciado && (
-                    <img src={IconoUsuario} alt="Icono de Usuario" className="w-11 h-11 dark:invert" />
+                    <img src={IconoUsuario} alt="Icono de Usuario" className="w-11 h-11 lg:w-14 lg:h-14 dark:invert" />
 
                 )}
                 {userIniciado && (
-                    <img src={IconoRegistrarse} alt="Icono de Usuario" className="w-11 h-11 dark:invert" />
+                    <img src={IconoRegistrarse} alt="Icono de Usuario" className="w-11 h-11 lg:w-14 lg:h-14 dark:invert" />
                 )}
 
-                <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white">user</h1>
+                <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white md:text-7xl">user</h1>
             </div>
             {!userIniciado && (
                 <>
@@ -65,9 +65,9 @@ const User = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo,
                     <div className="relative bg-pix-light dark:bg-pix-dark text-center">
                         <h3 className="text-2xl uppercase text-black dark:text-white font-pixel">Bienvenido de nuevo
                         </h3>
-                        <h2 className="text-3xl uppercase text-black dark:text-white font-pixel mb-8"> Usuario
+                        <h2 className="text-3xl uppercase text-black dark:text-white font-pixel mb-8 lg:text-4xl"> Usuario
                         </h2>
-                        <div className={`${popupUser ? 'block' : 'hidden'}`}>
+                        <div className={`${popupUser ? 'block' : 'hidden'} md:mx-10 lg:mx-100`}>
                             <CierrePopUp text="Tu cuenta" setpopupIsOpen={setpopupUser} className="bg-blue" />
 
                             <ul className="flex flex-col text-black dark:text-white font-sans bg-white px-5 rounded-b-3xl pt-2" >
@@ -191,7 +191,7 @@ const User = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo,
                                                             </>
                                                         )}
                                                     </div>
-                                                    <div className="flex flex-col gap-12 my-6">
+                                                    <div className="flex flex-col justify-center gap-12 my-6 lg:grid lg:grid-cols-2 lg:gap-x-2">
                                                         {seleccionadosViernes.length > 0 && (
                                                             <EntradasUser diaSeleccionado="viernes" entradaDia={entradaDia} entrada3Dias={entrada3Dias} entradaInfantilDia={entradaInfantilDia} entradaInfantil3Dias={entradaInfantil3Dias} />
                                                         )}
@@ -221,8 +221,11 @@ const User = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo,
                                 Zona User
                             </div>
                         </div>
-                        <div className={`flex justify-center ${userIniciado && ('mt-6')}`}>
+                        <div className={`flex justify-center md:hidden ${userIniciado && ('mt-6')}`}>
                             <Btn to="#" text="Cerrar sesión" variant='solidgreen' size='xs' font='sans' onClick={() => { setUserIniciado(false); setUserRegistrado(false) }} />
+                        </div>
+                        <div className={`hidden md:flex justify-center lg:mt-12 ${userIniciado && ('mt-6')}`}>
+                            <Btn to="#" text="Cerrar sesión" variant='solidgreen' size='lg' font='sans' onClick={() => { setUserIniciado(false); setUserRegistrado(false) }} />
                         </div>
                     </div>
                 </>

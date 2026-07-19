@@ -73,5 +73,3 @@ const BottomBar = () => {
 }
 
 export default BottomBar;
-
-/* TO DO: que cuando esté el user añadido cambie el icono de User */

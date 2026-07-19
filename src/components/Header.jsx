@@ -159,4 +159,3 @@ const Header = () => {
 
 export default Header;
 
-/* TO DO: Hacer la version tablet y pc para dejarlos listos */

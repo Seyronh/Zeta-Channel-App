@@ -66,6 +66,3 @@ const Card = ({ card }) => {
 };
 
 export default Card;
-
-
-/* TO DO: Filtros */

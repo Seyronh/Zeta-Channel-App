@@ -16,10 +16,10 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
     const [hasPagado, setHasPagado] = useState(false);
 
     return (
-        <div className="mt-12">
+        <div className="mt-12 md:mt-14 md:px-2">
             <button
                 onClick={() => toggleSeccion(4)}
-                className="flex w-full items-center uppercase font-pixel text-2xl text-left"
+                className="flex w-full items-center uppercase font-pixel text-2xl text-left md:text-3xl"
             >
                 <span className="flex-1">4. Pagos</span>
                 <img
@@ -31,17 +31,17 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
             </button>
 
             {seccionActiva === 4 && (
-                <div className="mt-4">
+                <div className="mt-4 lg:mx-20">
                     <ul className="flex flex-col gap-3 text-black font-sans">
                         <li className="flex flex-col items-center py-3">
-                            <p className="font-bold text-2xl p-2 uppercase">RESUMEN DE LA COMPRA</p>
+                            <p className="font-bold text-2xl p-2 uppercase md:text-3xl">RESUMEN DE LA COMPRA</p>
                         </li>
                         <li className="flex flex-col gap-4">
                             <div className="flex justify-between">
-                                <p className="font-semibold text-black text-lg">Detalles personales</p>
+                                <p className="font-semibold text-black text-lg md:text-xl">Detalles personales</p>
                                 <Btn to="#" text="Editar" variant='solidgreen' size='xs' font='sans' onClick={() => { setSeccionActiva(3) }} />
                             </div>
-                            <div className="flex justify-between text-black">
+                            <div className="flex justify-between text-black md:text-lg">
                                 <div className="flex flex-col gap-1">
                                     <p className="text-black">Juanlu Molina Ruiz</p>
                                     <p className="text-black">juanlu@lahauss.com</p>
@@ -51,11 +51,11 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
                         </li>
                         <li className="flex flex-col gap-4 mt-6">
                             <div className="flex justify-between">
-                                <p className="font-semibold text-black text-lg ">Agenda</p>
+                                <p className="font-semibold text-black text-lg md:text-xl">Agenda</p>
                                 <Btn to="#" text="Editar" variant='solidgreen' size='xs' font='sans' onClick={() => { setSeccionActiva(2) }} />
                             </div>
-                            <div className="flex flex-col gap-6 text-black items-center">
-                                <p className="text-black mt-3">Autocine Madrid - C. Isla de Java, 2</p>
+                            <div className="flex flex-col gap-6 text-black items-center ">
+                                <p className="text-black mt-3 md:text-xl">Autocine Madrid - C. Isla de Java, 2</p>
                                 {seleccionadosViernes.length > 0 && <p className="text-black font-bold text-xl mt-3">Viernes 13 SEP</p>}
 
                                 <GridSeleccionados Seleccionados={seleccionadosViernes} />
@@ -67,11 +67,11 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
                         </li>
                         <li className="flex flex-col gap-8 mt-6">
                             <div className="flex justify-between">
-                                <p className="font-semibold text-black text-lg">Tickets</p>
+                                <p className="font-semibold text-black text-lg md:text-xl">Tickets</p>
                                 <Btn to="#" text="Editar" variant='solidgreen' size='xs' font='sans' onClick={() => { setSeccionActiva(1) }} />
                             </div>
                             <div className="flex flex-col gap-6 text-black">
-                                <div className="grid grid-cols-3 gap-x-4 gap-y-3 px-3 w-full items-center font-sans">
+                                <div className="grid grid-cols-3 gap-x-4 gap-y-3 px-3 w-full items-center font-sans md:text-xl">
                                     {/* Cabecera del Grid (3 columnas iguales) */}
                                     <span className="text-black font-bold text-center">Entradas</span>
                                     <span className="text-black font-bold text-center">Tipo</span>
@@ -122,15 +122,15 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
                                     />
                                 </div>
                                 <div className="h-0.5 w-full bg-black my-4"></div>
-                                <div className="flex justify-between items-end">
-                                    <p className="text-black text-xl font-bold">Total</p>
-                                    <p className="text-black text-xl font-bold">{precioTotal} €</p>
+                                <div className="flex justify-between items-end ">
+                                    <p className="text-black text-xl font-bold md:text-2xl">Total</p>
+                                    <p className="text-black text-xl font-bold md:text-2xl">{precioTotal} €</p>
                                 </div>
                             </div>
                         </li>
-                        <li className="flex flex-col items-center gap-6 py-3">
-                            <p className="font-bold text-2xl p-2 uppercase">Método de pago</p>
-                            <ul className="flex gap-6 items-center mb-4">
+                        <li className="flex flex-col items-center gap-6 py-3 md:gap-8">
+                            <p className="font-bold text-2xl p-2 uppercase md:text-3xl">Método de pago</p>
+                            <ul className="flex gap-6 items-center mb-4 lg:gap-12">
                                 <li><button className="bg-green p-2 cursor-pointer">
                                     <img src={visa} alt="Visa" className="w-12 h-12" />
                                 </button></li>
@@ -144,8 +144,14 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
                                     <img src={payPal} alt="PayPal" className="w-12 h-12" />
                                 </button></li>
                             </ul>
+                            <div className="md:hidden">
+                                <Btn to="#" text="Comprar" variant='solidgreen' size='xs' font='sans' className="w-full" onClick={() => setHasPagado(!hasPagado)} />
 
-                            <Btn to="#" text="Comprar" variant='solidgreen' size='xs' font='sans' className="w-full" onClick={() => setHasPagado(!hasPagado)} />
+                            </div>
+                            <div className=" hidden md:block md:w-full lg:w-1/2">
+                                <Btn to="#" text="Comprar" variant='solidgreen' size='lg' font='sans' className="w-full" onClick={() => setHasPagado(!hasPagado)} />
+
+                            </div>
 
                             {hasPagado && (
                                 <div className="flex flex-col items-center gap-4">

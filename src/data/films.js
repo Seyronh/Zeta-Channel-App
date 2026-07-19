@@ -1,20 +1,4 @@
-/* HIGH SCHOOL MUSICAL */
-import portada1 from '../assets/img/cartelera/high-school-musical/portada.webp';
-import portadaCard1 from '../assets/img/cartelera/high-school-musical/portada-card.webp';
-import cartel1 from '../assets/img/cartelera/high-school-musical/cartel.webp';
-import troyBolton from '../assets/img/cartelera/high-school-musical/personaje-troy-bolton.webp';
-import gabriellaMontez from '../assets/img/cartelera/high-school-musical/personaje-gabriella-montez.webp';
-
-import galeriaHs1 from '../assets/img/cartelera/high-school-musical/galeria-1.webp';
-import galeriaHs2 from '../assets/img/cartelera/high-school-musical/galeria-2.webp';
-import galeriaHs3 from '../assets/img/cartelera/high-school-musical/galeria-3.webp';
-import galeriaHs4 from '../assets/img/cartelera/high-school-musical/galeria-4.webp';
-import galeriaHs5 from '../assets/img/cartelera/high-school-musical/galeria-5.webp';
-import galeriaHs6 from '../assets/img/cartelera/high-school-musical/galeria-6.webp';
-import galeriaHs7 from '../assets/img/cartelera/high-school-musical/galeria-7.webp';
-import galeriaHs8 from '../assets/img/cartelera/high-school-musical/galeria-8.webp';
-const imagenesCartelera = import.meta.glob('../assets/img/cartelera/**/*.webp', { eager: true });
-
+const imagenesCartelera = import.meta.glob('../assets/img/cartelera/**/*.{webp,jpg,png}', { eager: true });
 const CATALOGO = [
 
     /* Películas */
@@ -93,14 +77,11 @@ const CATALOGO = [
         slug: 'lemonade-mouth',
         fecha: 13,
         tituloEsp: 'Lemonade Mouth',
-        imagen: portada1,
-        imagenCard: portadaCard1,
         tipo: 'Película',
         duracion: 90,
         horario: [{ hora: '17:00', plazas: 20 }],
 
         //ARTICULO
-        cartel: cartel1,
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -116,31 +97,29 @@ const CATALOGO = [
         personajes: [
             {
                 id: 1,
-                imagen: troyBolton,
                 actor: 'Bridgit Mendler',
                 personaje: 'Olivia White'
             },
             {
                 id: 2,
-                imagen: troyBolton,
                 actor: 'Adam Hicks',
                 personaje: 'Wendell "Wen" Gifford'
             },
             {
                 id: 3,
-                imagen: troyBolton,
+
                 actor: 'Hayley Kiyoko',
                 personaje: 'Stella Yamada'
             },
             {
                 id: 4,
-                imagen: troyBolton,
+
                 actor: 'Naomi Scott',
                 personaje: 'Mo Banjaree'
             },
             {
                 id: 5,
-                imagen: troyBolton,
+
                 actor: 'Blake Michael',
                 personaje: 'Charlie Delgado'
             }
@@ -160,8 +139,8 @@ const CATALOGO = [
         slug: 'camp-rock',
         fecha: 13,
         tituloEsp: 'Camp Rock',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Película',
         duracion: 90,
         horario: [
@@ -169,7 +148,7 @@ const CATALOGO = [
             { hora: '19:00', plazas: 4 }
         ],
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -185,37 +164,37 @@ const CATALOGO = [
         personajes: [
             {
                 id: 1,
-                imagen: troyBolton,
+
                 actor: 'Demi Lovato',
                 personaje: 'Mitchie Torres'
             },
             {
                 id: 2,
-                imagen: troyBolton,
+
                 actor: 'Joe Jonas',
                 personaje: 'Shane Gray'
             },
             {
                 id: 3,
-                imagen: troyBolton,
+
                 actor: 'Meaghan Martin',
                 personaje: 'Tess Tyler'
             },
             {
                 id: 4,
-                imagen: troyBolton,
+
                 actor: 'Alyson Stoner',
                 personaje: 'Caitlyn Gellar'
             },
             {
                 id: 5,
-                imagen: troyBolton,
+
                 actor: 'Nick Jonas',
                 personaje: 'Nate Gray'
             },
             {
                 id: 6,
-                imagen: troyBolton,
+
                 actor: 'Kevin Jonas',
                 personaje: 'Jason Gray'
             }
@@ -236,8 +215,8 @@ const CATALOGO = [
         slug: 'descendientes',
         fecha: 15,
         tituloEsp: 'Des-cendientes',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Película',
         duracion: 120,
         horario: [
@@ -246,7 +225,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -259,11 +238,11 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Dove Cameron', personaje: 'Mal' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Sofia Carson', personaje: 'Evie' },
-            { id: 3, imagen: troyBolton, actor: 'Cameron Boyce', personaje: 'Carlos' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Booboo Stewart', personaje: 'Jay' },
-            { id: 5, imagen: troyBolton, actor: 'Mitchell Hope', personaje: 'Rey Ben' }
+            { id: 1, actor: 'Dove Cameron', personaje: 'Mal' },
+            { id: 2, actor: 'Sofia Carson', personaje: 'Evie' },
+            { id: 3, actor: 'Cameron Boyce', personaje: 'Carlos' },
+            { id: 4, actor: 'Booboo Stewart', personaje: 'Jay' },
+            { id: 5, actor: 'Mitchell Hope', personaje: 'Rey Ben' }
         ],
 
         //TRAILER
@@ -272,7 +251,7 @@ const CATALOGO = [
         autorCita: 'Mal',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -280,14 +259,14 @@ const CATALOGO = [
         slug: 'teen-beach-movie',
         fecha: 14,
         tituloEsp: 'Teen Beach Movie',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Película',
         duracion: 90,
         horario: [{ hora: '12:30', plazas: 3 }],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -300,10 +279,10 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Ross Lynch', personaje: 'Brady' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Maia Mitchell', personaje: 'McKenzie (Mack)' },
-            { id: 3, imagen: troyBolton, actor: 'Grace Phipps', personaje: 'Lela' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Garrett Clayton', personaje: 'Tanner' }
+            { id: 1, actor: 'Ross Lynch', personaje: 'Brady' },
+            { id: 2, actor: 'Maia Mitchell', personaje: 'McKenzie (Mack)' },
+            { id: 3, actor: 'Grace Phipps', personaje: 'Lela' },
+            { id: 4, actor: 'Garrett Clayton', personaje: 'Tanner' }
         ],
 
         //TRAILER
@@ -312,7 +291,7 @@ const CATALOGO = [
         autorCita: 'McKenzie',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -320,14 +299,14 @@ const CATALOGO = [
         slug: 'programa-de-proteccion-de-princesas',
         fecha: 15,
         tituloEsp: 'Protección  de Princesas',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Película',
         duracion: 90,
         horario: [{ hora: '19:30', plazas: 15 }],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -340,8 +319,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Selena Gomez', personaje: 'Carter Mason' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Demi Lovato', personaje: 'Princesa Rosalinda' }
+            { id: 1, actor: 'Selena Gomez', personaje: 'Carter Mason' },
+            { id: 2, actor: 'Demi Lovato', personaje: 'Princesa Rosalinda' }
         ],
 
         //TRAILER
@@ -350,7 +329,7 @@ const CATALOGO = [
         autorCita: 'Princesa Rosalinda',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -358,14 +337,14 @@ const CATALOGO = [
         slug: 'el-chico-ideal',
         fecha: 13,
         tituloEsp: 'El Chico Ideal',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Película',
         duracion: 90,
         horario: [{ hora: '19:00', plazas: 5 }],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -378,9 +357,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Kelli Berglund', personaje: 'Mae Hartley' },
-            { id: 2, imagen: gabriellaMontez, actor: 'China Anne McClain', personaje: 'Gabby Harrison' },
-            { id: 3, imagen: troyBolton, actor: 'Marshall Williams', personaje: 'Albert Banks' }
+            { id: 1, actor: 'Kelli Berglund', personaje: 'Mae Hartley' },
+            { id: 2, actor: 'China Anne McClain', personaje: 'Gabby Harrison' },
+            { id: 3, actor: 'Marshall Williams', personaje: 'Albert Banks' }
         ],
 
         //TRAILER
@@ -389,7 +368,7 @@ const CATALOGO = [
         autorCita: 'Gabby Harrison',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -397,14 +376,14 @@ const CATALOGO = [
         slug: '16-deseos',
         fecha: 14,
         tituloEsp: '16 Deseos',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Película',
         duracion: 90,
         horario: [{ hora: '17:00', plazas: 0 }],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -417,8 +396,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Debby Ryan', personaje: 'Abby Jensen' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Jay Kepler', personaje: 'Jay Kepler' }
+            { id: 1, actor: 'Debby Ryan', personaje: 'Abby Jensen' },
+            { id: 2, actor: 'Jay Kepler', personaje: 'Jay Kepler' }
         ],
 
         //TRAILER
@@ -427,7 +406,7 @@ const CATALOGO = [
         autorCita: 'Abby Jensen',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -435,14 +414,14 @@ const CATALOGO = [
         slug: 'radio-rebelde',
         fecha: 15,
         tituloEsp: 'Radio Rebelde',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Película',
         duracion: 90,
         horario: [{ hora: '17:30', plazas: 10 }],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -455,9 +434,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Debby Ryan', personaje: 'Tara Adams' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Audrey', personaje: 'Audrey' },
-            { id: 3, imagen: troyBolton, actor: 'Gavin', personaje: 'Gavin' }
+            { id: 1, actor: 'Debby Ryan', personaje: 'Tara Adams' },
+            { id: 2, actor: 'Audrey', personaje: 'Audrey' },
+            { id: 3, actor: 'Gavin', personaje: 'Gavin' }
         ],
 
         //TRAILER
@@ -466,7 +445,7 @@ const CATALOGO = [
         autorCita: 'Radio Rebelde',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
 
     /* SERIES */
@@ -476,8 +455,8 @@ const CATALOGO = [
         slug: 'austin-y-ally',
         fecha: 13,
         tituloEsp: 'Austin y Ally',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30, // Duración aproximada por episodio
         horario: [
@@ -486,7 +465,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -502,25 +481,25 @@ const CATALOGO = [
         personajes: [
             {
                 id: 1,
-                imagen: troyBolton,
+
                 actor: 'Ross Lynch',
                 personaje: 'Austin Moon'
             },
             {
                 id: 2,
-                imagen: troyBolton,
+
                 actor: 'Laura Marano',
                 personaje: 'Ally Dawson'
             },
             {
                 id: 3,
-                imagen: troyBolton,
+
                 actor: 'Raini Rodriguez',
                 personaje: 'Trish De la Rosa'
             },
             {
                 id: 4,
-                imagen: troyBolton,
+
                 actor: 'Calum Worthy',
                 personaje: 'Dez Wade'
             }
@@ -540,8 +519,8 @@ const CATALOGO = [
         slug: 'los-magos-de-waverly-place',
         fecha: 14,
         tituloEsp: 'Waverly Place',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30, // Duración aproximada por episodio
         horario: [
@@ -550,7 +529,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -566,37 +545,37 @@ const CATALOGO = [
         personajes: [
             {
                 id: 1,
-                imagen: troyBolton,
+
                 actor: 'Selena Gomez',
                 personaje: 'Alex Russo'
             },
             {
                 id: 2,
-                imagen: troyBolton,
+
                 actor: 'David Henrie',
                 personaje: 'Justin Russo'
             },
             {
                 id: 3,
-                imagen: troyBolton,
+
                 actor: 'Jake T. Austin',
                 personaje: 'Max Russo'
             },
             {
                 id: 4,
-                imagen: troyBolton,
+
                 actor: 'Jennifer Stone',
                 personaje: 'Harper Finkle'
             },
             {
                 id: 5,
-                imagen: troyBolton,
+
                 actor: 'Maria Canals-Barrera',
                 personaje: 'Theresa Russo'
             },
             {
                 id: 6,
-                imagen: troyBolton,
+
                 actor: 'David DeLuise',
                 personaje: 'Jerry Russo'
             }
@@ -616,8 +595,8 @@ const CATALOGO = [
         slug: 'dulce-hotel-zack-y-cody',
         fecha: 13,
         tituloEsp: 'Dulce hotel',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30, // Duración aproximada por episodio
         horario: [
@@ -626,7 +605,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -642,37 +621,37 @@ const CATALOGO = [
         personajes: [
             {
                 id: 1,
-                imagen: troyBolton,
+
                 actor: 'Dylan Sprouse',
                 personaje: 'Zack Martin'
             },
             {
                 id: 2,
-                imagen: troyBolton,
+
                 actor: 'Cole Sprouse',
                 personaje: 'Cody Martin'
             },
             {
                 id: 3,
-                imagen: troyBolton,
+
                 actor: 'Ashley Tisdale',
                 personaje: 'Maddie Fitzpatrick'
             },
             {
                 id: 4,
-                imagen: troyBolton,
+
                 actor: 'Brenda Song',
                 personaje: 'London Tipton'
             },
             {
                 id: 5,
-                imagen: troyBolton,
+
                 actor: 'Phill Lewis',
                 personaje: 'Sr. Moseby'
             },
             {
                 id: 6,
-                imagen: troyBolton,
+
                 actor: 'Kim Rhodes',
                 personaje: 'Carey Martin'
             }
@@ -693,8 +672,8 @@ const CATALOGO = [
         slug: 'zack-y-cody-todos-a-bordo',
         fecha: 14,
         tituloEsp: 'Todos a bordo',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -703,7 +682,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -716,11 +695,11 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Dylan Sprouse', personaje: 'Zack Martin' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Cole Sprouse', personaje: 'Cody Martin' },
-            { id: 3, imagen: troyBolton, actor: 'Brenda Song', personaje: 'London Tipton' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Debby Ryan', personaje: 'Bailey Pickett' },
-            { id: 5, imagen: troyBolton, actor: 'Phill Lewis', personaje: 'Marion Moseby' }
+            { id: 1, actor: 'Dylan Sprouse', personaje: 'Zack Martin' },
+            { id: 2, actor: 'Cole Sprouse', personaje: 'Cody Martin' },
+            { id: 3, actor: 'Brenda Song', personaje: 'London Tipton' },
+            { id: 4, actor: 'Debby Ryan', personaje: 'Bailey Pickett' },
+            { id: 5, actor: 'Phill Lewis', personaje: 'Marion Moseby' }
         ],
 
         //TRAILER
@@ -729,7 +708,7 @@ const CATALOGO = [
         autorCita: 'Marion Moseby',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -737,8 +716,8 @@ const CATALOGO = [
         slug: 'buena-suerte-charlie',
         fecha: 15,
         tituloEsp: '¡Suerte, Charlie!',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -747,7 +726,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -760,10 +739,10 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Bridgit Mendler', personaje: 'Teddy Duncan' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Mia Talerico', personaje: 'Charlie Duncan' },
-            { id: 3, imagen: troyBolton, actor: 'Jason Dolley', personaje: 'PJ Duncan' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Bradley Steven Perry', personaje: 'Gabe Duncan' }
+            { id: 1, actor: 'Bridgit Mendler', personaje: 'Teddy Duncan' },
+            { id: 2, actor: 'Mia Talerico', personaje: 'Charlie Duncan' },
+            { id: 3, actor: 'Jason Dolley', personaje: 'PJ Duncan' },
+            { id: 4, actor: 'Bradley Steven Perry', personaje: 'Gabe Duncan' }
         ],
 
         //TRAILER
@@ -772,7 +751,7 @@ const CATALOGO = [
         autorCita: 'Teddy Duncan',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -780,8 +759,8 @@ const CATALOGO = [
         slug: 'jessie',
         fecha: 13,
         tituloEsp: 'Jessie',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -790,7 +769,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -803,11 +782,11 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Debby Ryan', personaje: 'Jessie Prescott' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Peyton List', personaje: 'Emma Ross' },
-            { id: 3, imagen: troyBolton, actor: 'Cameron Boyce', personaje: 'Luke Ross' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Karan Brar', personaje: 'Ravi Ross' },
-            { id: 5, imagen: troyBolton, actor: 'Skai Jackson', personaje: 'Zuri Ross' }
+            { id: 1, actor: 'Debby Ryan', personaje: 'Jessie Prescott' },
+            { id: 2, actor: 'Peyton List', personaje: 'Emma Ross' },
+            { id: 3, actor: 'Cameron Boyce', personaje: 'Luke Ross' },
+            { id: 4, actor: 'Karan Brar', personaje: 'Ravi Ross' },
+            { id: 5, actor: 'Skai Jackson', personaje: 'Zuri Ross' }
         ],
 
         //TRAILER
@@ -816,7 +795,7 @@ const CATALOGO = [
         autorCita: 'Jessie Prescott',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -824,8 +803,8 @@ const CATALOGO = [
         slug: 'mi-perro-tiene-un-blog',
         fecha: 15,
         tituloEsp: 'Mi perro tiene blog',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -834,7 +813,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -847,10 +826,10 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Kuma / Mick (Voz de Stephen Full)', personaje: 'Stan (El Perro)' },
-            { id: 2, imagen: gabriellaMontez, actor: 'G. Hannelius', personaje: 'Avery Jennings' },
-            { id: 3, imagen: troyBolton, actor: 'Blake Michael', personaje: 'Tyler James' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Francesca Capaldi', personaje: 'Chloe James' }
+            { id: 1, actor: 'Kuma / Mick (Voz de Stephen Full)', personaje: 'Stan (El Perro)' },
+            { id: 2, actor: 'G. Hannelius', personaje: 'Avery Jennings' },
+            { id: 3, actor: 'Blake Michael', personaje: 'Tyler James' },
+            { id: 4, actor: 'Francesca Capaldi', personaje: 'Chloe James' }
         ],
 
         //TRAILER
@@ -859,7 +838,7 @@ const CATALOGO = [
         autorCita: 'Stan',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -867,8 +846,8 @@ const CATALOGO = [
         slug: 'raven',
         fecha: 14,
         tituloEsp: 'Raven',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -877,7 +856,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -890,10 +869,10 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Raven-Symoné', personaje: 'Raven Baxter' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Anneliese van der Pol', personaje: 'Chelsea Daniels' },
-            { id: 3, imagen: troyBolton, actor: 'Orlando Brown', personaje: 'Eddie Thomas' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Kyle Massey', personaje: 'Cory Baxter' }
+            { id: 1, actor: 'Raven-Symoné', personaje: 'Raven Baxter' },
+            { id: 2, actor: 'Anneliese van der Pol', personaje: 'Chelsea Daniels' },
+            { id: 3, actor: 'Orlando Brown', personaje: 'Eddie Thomas' },
+            { id: 4, actor: 'Kyle Massey', personaje: 'Cory Baxter' }
         ],
 
         //TRAILER
@@ -902,7 +881,7 @@ const CATALOGO = [
         autorCita: 'Raven Baxter',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -910,8 +889,8 @@ const CATALOGO = [
         slug: 'hannah-montana',
         fecha: 14,
         tituloEsp: 'Hannah Montana',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -920,7 +899,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -933,11 +912,11 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Miley Cyrus', personaje: 'Hannah Montana' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Emily Osment', personaje: 'Lola Luftnagle' },
-            { id: 3, imagen: troyBolton, actor: 'Mitchel Musso', personaje: 'Oliver Oken' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Jason Earles', personaje: 'Jackson Stewart' },
-            { id: 5, imagen: troyBolton, actor: 'Billy Ray Cyrus', personaje: 'Robby Ray Stewart' }
+            { id: 1, actor: 'Miley Cyrus', personaje: 'Hannah Montana' },
+            { id: 2, actor: 'Emily Osment', personaje: 'Lola Luftnagle' },
+            { id: 3, actor: 'Mitchel Musso', personaje: 'Oliver Oken' },
+            { id: 4, actor: 'Jason Earles', personaje: 'Jackson Stewart' },
+            { id: 5, actor: 'Billy Ray Cyrus', personaje: 'Robby Ray Stewart' }
         ],
 
         //TRAILER
@@ -946,7 +925,7 @@ const CATALOGO = [
         autorCita: 'Hannah Montana',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -954,8 +933,8 @@ const CATALOGO = [
         slug: 'shake-it-up',
         fecha: 13,
         tituloEsp: 'Shake It Up',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -964,7 +943,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -977,10 +956,10 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Bella Thorne', personaje: 'CeCe Jones' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Zendaya', personaje: 'Rocky Blue' },
-            { id: 3, imagen: troyBolton, actor: 'Davis Cleveland', personaje: 'Flynn Jones' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Adam Irigoyen', personaje: 'Deuce Martinez' }
+            { id: 1, actor: 'Bella Thorne', personaje: 'CeCe Jones' },
+            { id: 2, actor: 'Zendaya', personaje: 'Rocky Blue' },
+            { id: 3, actor: 'Davis Cleveland', personaje: 'Flynn Jones' },
+            { id: 4, actor: 'Adam Irigoyen', personaje: 'Deuce Martinez' }
         ],
 
         //TRAILER
@@ -989,7 +968,7 @@ const CATALOGO = [
         autorCita: 'CeCe Jones',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -997,8 +976,8 @@ const CATALOGO = [
         slug: 'kc-agente-especial',
         fecha: 15,
         tituloEsp: 'K.C. Agente',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1007,7 +986,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1020,9 +999,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Zendaya', personaje: 'K.C. Cooper' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Veronica Dunne', personaje: 'Marisa Clark' },
-            { id: 3, imagen: troyBolton, actor: 'Kamil McFadden', personaje: 'Ernie Cooper' }
+            { id: 1, actor: 'Zendaya', personaje: 'K.C. Cooper' },
+            { id: 2, actor: 'Veronica Dunne', personaje: 'Marisa Clark' },
+            { id: 3, actor: 'Kamil McFadden', personaje: 'Ernie Cooper' }
         ],
 
         //TRAILER
@@ -1031,7 +1010,7 @@ const CATALOGO = [
         autorCita: 'K.C. Cooper',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1039,8 +1018,8 @@ const CATALOGO = [
         slug: 'riley-y-el-mundo',
         fecha: 15,
         tituloEsp: 'Riley y el Mundo',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1049,7 +1028,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -1062,10 +1041,10 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Rowan Blanchard', personaje: 'Riley Matthews' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Sabrina Carpenter', personaje: 'Maya Hart' },
-            { id: 3, imagen: troyBolton, actor: 'Peyton Meyer', personaje: 'Lucas Friar' },
-            { id: 4, imagen: gabriellaMontez, actor: 'Ben Savage', personaje: 'Cory Matthews' }
+            { id: 1, actor: 'Rowan Blanchard', personaje: 'Riley Matthews' },
+            { id: 2, actor: 'Sabrina Carpenter', personaje: 'Maya Hart' },
+            { id: 3, actor: 'Peyton Meyer', personaje: 'Lucas Friar' },
+            { id: 4, actor: 'Ben Savage', personaje: 'Cory Matthews' }
         ],
 
         //TRAILER
@@ -1074,7 +1053,7 @@ const CATALOGO = [
         autorCita: 'Riley Matthews',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1082,8 +1061,8 @@ const CATALOGO = [
         slug: 'lizzie-mcguire',
         fecha: 14,
         tituloEsp: 'Lizzie McGuire',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1092,7 +1071,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -1105,9 +1084,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Hilary Duff', personaje: 'Lizzie McGuire' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Adam Lamberg', personaje: 'David "Gordo" Gordon' },
-            { id: 3, imagen: troyBolton, actor: 'Lalaine', personaje: 'Miranda Sánchez' }
+            { id: 1, actor: 'Hilary Duff', personaje: 'Lizzie McGuire' },
+            { id: 2, actor: 'Adam Lamberg', personaje: 'David "Gordo" Gordon' },
+            { id: 3, actor: 'Lalaine', personaje: 'Miranda Sánchez' }
         ],
 
         //TRAILER
@@ -1116,7 +1095,7 @@ const CATALOGO = [
         autorCita: 'Lizzie animada',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1124,8 +1103,8 @@ const CATALOGO = [
         slug: 'liv-and-maddie',
         fecha: 15,
         tituloEsp: 'Liv and Maddie',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1134,7 +1113,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -1147,9 +1126,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Dove Cameron', personaje: 'Liv Rooney / Maddie Rooney' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Joey Bragg', personaje: 'Joey Rooney' },
-            { id: 3, imagen: troyBolton, actor: 'Parker Rooney', personaje: 'Parker Rooney' }
+            { id: 1, actor: 'Dove Cameron', personaje: 'Liv Rooney / Maddie Rooney' },
+            { id: 2, actor: 'Joey Bragg', personaje: 'Joey Rooney' },
+            { id: 3, actor: 'Parker Rooney', personaje: 'Parker Rooney' }
         ],
 
         //TRAILER
@@ -1158,7 +1137,7 @@ const CATALOGO = [
         autorCita: 'Liv Rooney',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     /* ANIMACIÓN */
     {
@@ -1166,8 +1145,8 @@ const CATALOGO = [
         slug: 'little-einsteins',
         fecha: 15,
         tituloEsp: 'Little Einsteins',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30, // Duración aproximada por episodio
         horario: [
@@ -1176,7 +1155,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1192,25 +1171,25 @@ const CATALOGO = [
         personajes: [
             {
                 id: 1,
-                imagen: troyBolton,
+
                 actor: 'Jesse Schwartz',
                 personaje: 'Leo'
             },
             {
                 id: 2,
-                imagen: troyBolton,
+
                 actor: 'Erica Huang',
                 personaje: 'June'
             },
             {
                 id: 3,
-                imagen: troyBolton,
+
                 actor: 'Aiden Pompey',
                 personaje: 'Quincy'
             },
             {
                 id: 4,
-                imagen: troyBolton,
+
                 actor: 'Natalia Wojcik',
                 personaje: 'Annie'
             }
@@ -1230,8 +1209,8 @@ const CATALOGO = [
         slug: 'pecezuelos',
         fecha: 15,
         tituloEsp: 'Pecezuelos',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30, // Duración por bloque de episodios
         horario: [
@@ -1240,7 +1219,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -1256,25 +1235,25 @@ const CATALOGO = [
         personajes: [
             {
                 id: 1,
-                imagen: troyBolton,
+
                 actor: 'Kyle Massey',
                 personaje: 'Milo'
             },
             {
                 id: 2,
-                imagen: troyBolton,
+
                 actor: 'Chelsea Kane',
                 personaje: 'Bea'
             },
             {
                 id: 3,
-                imagen: troyBolton,
+
                 actor: 'Justin Roiland',
                 personaje: 'Oscar'
             },
             {
                 id: 4,
-                imagen: troyBolton,
+
                 actor: 'Alex Kramer',
                 personaje: 'Shellsea'
             }
@@ -1293,8 +1272,8 @@ const CATALOGO = [
         slug: 'phineas-y-ferb',
         fecha: 14,
         tituloEsp: 'Phineas y Ferb',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30, // Duración aproximada por episodio
         horario: [
@@ -1303,7 +1282,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -1319,37 +1298,37 @@ const CATALOGO = [
         personajes: [
             {
                 id: 1,
-                imagen: troyBolton,
+
                 actor: 'Vincent Martella',
                 personaje: 'Phineas Flynn'
             },
             {
                 id: 2,
-                imagen: troyBolton,
+
                 actor: 'Thomas Brodie-Sangster',
                 personaje: 'Ferb Fletcher'
             },
             {
                 id: 3,
-                imagen: troyBolton,
+
                 actor: 'Ashley Tisdale',
                 personaje: 'Candace Flynn'
             },
             {
                 id: 4,
-                imagen: troyBolton,
+
                 actor: 'Dan Povenmire',
                 personaje: 'Dr. Heinz Doofenshmirtz'
             },
             {
                 id: 5,
-                imagen: troyBolton,
+
                 actor: 'Dee Bradley Baker',
                 personaje: 'Perry el Ornitorrinco'
             },
             {
                 id: 6,
-                imagen: troyBolton,
+
                 actor: 'Alyson Stoner',
                 personaje: 'Isabella Garcia-Shapiro'
             }
@@ -1370,8 +1349,8 @@ const CATALOGO = [
         slug: 'la-princesa-sofia',
         fecha: 15,
         tituloEsp: 'Princesa Sofia',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1380,7 +1359,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -1393,8 +1372,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Ariel Winter (Voz)', personaje: 'Princesa Sofia' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Wayne Brady (Voz)', personaje: 'Clover (Conejo)' }
+            { id: 1, actor: 'Ariel Winter (Voz)', personaje: 'Princesa Sofia' },
+            { id: 2, actor: 'Wayne Brady (Voz)', personaje: 'Clover (Conejo)' }
         ],
 
         //TRAILER
@@ -1403,7 +1382,7 @@ const CATALOGO = [
         autorCita: 'Princesa Sofia',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1411,8 +1390,8 @@ const CATALOGO = [
         slug: 'patoaventuras',
         fecha: 14,
         tituloEsp: 'Pato Aventuras',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1421,7 +1400,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -1434,9 +1413,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'David Tennant (Voz)', personaje: 'Gilito McPato' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Tony Anselmo (Voz)', personaje: 'Pato Donald' },
-            { id: 3, imagen: troyBolton, actor: 'Kate Micucci (Voz)', personaje: 'Rosita (Webby Vanderquack)' }
+            { id: 1, actor: 'David Tennant (Voz)', personaje: 'Gilito McPato' },
+            { id: 2, actor: 'Tony Anselmo (Voz)', personaje: 'Pato Donald' },
+            { id: 3, actor: 'Kate Micucci (Voz)', personaje: 'Rosita (Webby Vanderquack)' }
         ],
 
         //TRAILER
@@ -1445,7 +1424,7 @@ const CATALOGO = [
         autorCita: 'Gilito McPato',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1453,8 +1432,8 @@ const CATALOGO = [
         slug: 'star-vs-las-fuerzas-del-mal',
         fecha: 15,
         tituloEsp: 'Star vs. Fuerzas',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1463,7 +1442,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1476,8 +1455,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Eden Sher (Voz)', personaje: 'Star Butterfly' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Adam McArthur (Voz)', personaje: 'Marco Diaz' }
+            { id: 1, actor: 'Eden Sher (Voz)', personaje: 'Star Butterfly' },
+            { id: 2, actor: 'Adam McArthur (Voz)', personaje: 'Marco Diaz' }
         ],
 
         //TRAILER
@@ -1486,7 +1465,7 @@ const CATALOGO = [
         autorCita: 'Star Butterfly',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1494,8 +1473,8 @@ const CATALOGO = [
         slug: 'gravity-falls',
         fecha: 14,
         tituloEsp: 'Gravity Falls',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1504,7 +1483,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1517,9 +1496,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Jason Ritter (Voz)', personaje: 'Dipper Pines' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Kristen Schaal (Voz)', personaje: 'Mabel Pines' },
-            { id: 3, imagen: troyBolton, actor: 'Alex Hirsch (Voz)', personaje: 'Tío Stan' }
+            { id: 1, actor: 'Jason Ritter (Voz)', personaje: 'Dipper Pines' },
+            { id: 2, actor: 'Kristen Schaal (Voz)', personaje: 'Mabel Pines' },
+            { id: 3, actor: 'Alex Hirsch (Voz)', personaje: 'Tío Stan' }
         ],
 
         //TRAILER
@@ -1528,7 +1507,7 @@ const CATALOGO = [
         autorCita: 'Dipper Pines',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1536,8 +1515,8 @@ const CATALOGO = [
         slug: 'la-banda-del-patio',
         fecha: 14,
         tituloEsp: 'La banda del patio',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1546,7 +1525,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1559,9 +1538,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Ross Malinger (Voz)', personaje: 'T.J. Detweiler' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Pamela Adlon (Voz)', personaje: 'Ashley Spinelli' },
-            { id: 3, imagen: troyBolton, actor: 'Rickey D`Shon Collins (Voz)', personaje: 'Vince LaSalle' }
+            { id: 1, actor: 'Ross Malinger (Voz)', personaje: 'T.J. Detweiler' },
+            { id: 2, actor: 'Pamela Adlon (Voz)', personaje: 'Ashley Spinelli' },
+            { id: 3, actor: 'Rickey D`Shon Collins (Voz)', personaje: 'Vince LaSalle' }
         ],
 
         //TRAILER
@@ -1570,7 +1549,7 @@ const CATALOGO = [
         autorCita: 'T.J. Detweiler',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1578,8 +1557,8 @@ const CATALOGO = [
         slug: 'brandy-and-mr-whiskers',
         fecha: 15,
         tituloEsp: 'Brandy & Whiskers',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1588,7 +1567,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1601,8 +1580,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Kaley Cuoco (Voz)', personaje: 'Brandy Harrington' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Charlie Adler (Voz)', personaje: 'Mr. Whiskers' }
+            { id: 1, actor: 'Kaley Cuoco (Voz)', personaje: 'Brandy Harrington' },
+            { id: 2, actor: 'Charlie Adler (Voz)', personaje: 'Mr. Whiskers' }
         ],
 
         //TRAILER
@@ -1611,7 +1590,7 @@ const CATALOGO = [
         autorCita: 'Brandy',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1619,8 +1598,8 @@ const CATALOGO = [
         slug: 'kim-possible',
         fecha: 13,
         tituloEsp: 'Kim Possible',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Serie',
         duracion: 30,
         horario: [
@@ -1629,7 +1608,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1642,9 +1621,9 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Christy Carlson Romano (Voz)', personaje: 'Kim Possible' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Will Friedle (Voz)', personaje: 'Ron Imparable' },
-            { id: 3, imagen: troyBolton, actor: 'John DiMaggio (Voz)', personaje: 'Dr. Drakken' }
+            { id: 1, actor: 'Christy Carlson Romano (Voz)', personaje: 'Kim Possible' },
+            { id: 2, actor: 'Will Friedle (Voz)', personaje: 'Ron Imparable' },
+            { id: 3, actor: 'John DiMaggio (Voz)', personaje: 'Dr. Drakken' }
         ],
 
         //TRAILER
@@ -1653,7 +1632,7 @@ const CATALOGO = [
         autorCita: 'Kim Possible',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
 
     /* ACTIVIDADES */
@@ -1664,8 +1643,8 @@ const CATALOGO = [
         slug: 'taller-art-attack-1',
         fecha: 13,
         tituloEsp: 'Art Attack',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 30,
         horario: [
@@ -1673,7 +1652,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -1686,8 +1665,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Jordi Cruz', personaje: 'Presentador Legendario' },
-            { id: 2, imagen: gabriellaMontez, actor: 'El Cabezón (Animatronic)', personaje: 'Consejero de Arte' }
+            { id: 1, actor: 'Jordi Cruz', personaje: 'Presentador Legendario' },
+            { id: 2, actor: 'El Cabezón (Animatronic)', personaje: 'Consejero de Arte' }
         ],
 
         //TRAILER
@@ -1696,7 +1675,7 @@ const CATALOGO = [
         autorCita: 'Jordi Cruz',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1704,8 +1683,8 @@ const CATALOGO = [
         slug: 'art-attack-2',
         fecha: 15,
         tituloEsp: 'Art Attack',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 30,
         horario: [
@@ -1713,7 +1692,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -1726,8 +1705,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Jordi Cruz', personaje: 'Presentador Legendario' },
-            { id: 2, imagen: gabriellaMontez, actor: 'El Cabezón (Animatronic)', personaje: 'Consejero de Arte' }
+            { id: 1, actor: 'Jordi Cruz', personaje: 'Presentador Legendario' },
+            { id: 2, actor: 'El Cabezón (Animatronic)', personaje: 'Consejero de Arte' }
         ],
 
         //TRAILER
@@ -1736,7 +1715,7 @@ const CATALOGO = [
         autorCita: 'Jordi Cruz',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1744,8 +1723,8 @@ const CATALOGO = [
         slug: 'gran-obra-escala-art-attack',
         fecha: 14,
         tituloEsp: 'Art Attack Colectivo',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 60,
         horario: [
@@ -1753,7 +1732,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -1766,8 +1745,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Alex "El Manitas"', personaje: 'Artista de campo' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Jordi Cruz', personaje: 'Coordinador artístico' }
+            { id: 1, actor: 'Alex "El Manitas"', personaje: 'Artista de campo' },
+            { id: 2, actor: 'Jordi Cruz', personaje: 'Coordinador artístico' }
         ],
 
         //TRAILER
@@ -1776,7 +1755,7 @@ const CATALOGO = [
         autorCita: 'Alex "El Manitas"',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1784,8 +1763,8 @@ const CATALOGO = [
         slug: 'concurso-just-dance',
         fecha: 14,
         tituloEsp: 'Torneo Just Dance',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 60,
         horario: [
@@ -1793,7 +1772,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1806,8 +1785,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Sergio Martín', personaje: 'Presentador y Animador' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Andrea Guasch', personaje: 'Jurado Estrella de Baile' }
+            { id: 1, actor: 'Sergio Martín', personaje: 'Presentador y Animador' },
+            { id: 2, actor: 'Andrea Guasch', personaje: 'Jurado Estrella de Baile' }
         ],
 
         //TRAILER
@@ -1816,7 +1795,7 @@ const CATALOGO = [
         autorCita: 'Sergio Martín',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1824,8 +1803,8 @@ const CATALOGO = [
         slug: 'kahoot-premios-zeta',
         fecha: 13,
         tituloEsp: 'Kahoot',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 30,
         horario: [
@@ -1833,7 +1812,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -1846,7 +1825,7 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'David Moreno', personaje: 'Presentador del Quiz' }
+            { id: 1, actor: 'David Moreno', personaje: 'Presentador del Quiz' }
         ],
 
         //TRAILER
@@ -1855,7 +1834,7 @@ const CATALOGO = [
         autorCita: 'David Moreno',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1863,8 +1842,8 @@ const CATALOGO = [
         slug: 'concurso-disfraces',
         fecha: 15,
         tituloEsp: 'Concurso de Disfraces',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 30,
         horario: [
@@ -1872,7 +1851,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 'TODAS',
 
         //INFO DESPLEGABLE
@@ -1885,8 +1864,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Andrea Guasch', personaje: 'Maestra de Ceremonias' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Jordi Cruz', personaje: 'Miembro del Jurado' }
+            { id: 1, actor: 'Andrea Guasch', personaje: 'Maestra de Ceremonias' },
+            { id: 2, actor: 'Jordi Cruz', personaje: 'Miembro del Jurado' }
         ],
 
         //TRAILER
@@ -1895,7 +1874,7 @@ const CATALOGO = [
         autorCita: 'Andrea Guasch',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1903,8 +1882,8 @@ const CATALOGO = [
         slug: 'gincana-disney-1',
         fecha: 14,
         tituloEsp: 'Gincana',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 30,
         horario: [
@@ -1913,7 +1892,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 1,
 
         //INFO DESPLEGABLE
@@ -1926,7 +1905,7 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Sergio Martín', personaje: 'Capitán de la Gincana' }
+            { id: 1, actor: 'Sergio Martín', personaje: 'Capitán de la Gincana' }
         ],
 
         //TRAILER
@@ -1935,16 +1914,16 @@ const CATALOGO = [
         autorCita: 'Sergio Martín',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
         id: 41,
-        slug: 'kahoot-premios-zeta',
+        slug: 'kahoot-premios-zeta-2',
         fecha: 14,
         tituloEsp: 'Kahoot',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 30,
         horario: [
@@ -1953,7 +1932,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -1966,7 +1945,7 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'David Moreno', personaje: 'Presentador del Quiz' }
+            { id: 1, actor: 'David Moreno', personaje: 'Presentador del Quiz' }
         ],
 
         //TRAILER
@@ -1975,7 +1954,7 @@ const CATALOGO = [
         autorCita: 'David Moreno',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -1983,8 +1962,8 @@ const CATALOGO = [
         slug: 'taller-dibujo-animacion-1',
         fecha: 14,
         tituloEsp: 'Taller de Dibujo',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 30,
         horario: [
@@ -1992,7 +1971,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 3,
 
         //INFO DESPLEGABLE
@@ -2005,8 +1984,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Álvaro Pascual (Pascu)', personaje: 'Ilustrador y Divulgador' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Rodrigo Septién (Rodri)', personaje: 'Narrador e Historiador de Animación' }
+            { id: 1, actor: 'Álvaro Pascual (Pascu)', personaje: 'Ilustrador y Divulgador' },
+            { id: 2, actor: 'Rodrigo Septién (Rodri)', personaje: 'Narrador e Historiador de Animación' }
         ],
 
         //TRAILER
@@ -2015,7 +1994,7 @@ const CATALOGO = [
         autorCita: 'Pascu y Rodri',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     },
     {
         //CARD 
@@ -2023,8 +2002,8 @@ const CATALOGO = [
         slug: 'taller-dibujo-animacion-2',
         fecha: 15,
         tituloEsp: 'Taller de Dibujo',
-        imagen: portada1,
-        imagenCard: portadaCard1,
+
+
         tipo: 'Actividad',
         duracion: 30,
         horario: [
@@ -2032,7 +2011,7 @@ const CATALOGO = [
         ],
 
         //ARTICULO
-        cartel: cartel1,
+
         sala: 2,
 
         //INFO DESPLEGABLE
@@ -2045,8 +2024,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Álvaro Pascual (Pascu)', personaje: 'Ilustrador y Divulgador' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Rodrigo Septién (Rodri)', personaje: 'Narrador e Historiador de Animación' }
+            { id: 1, actor: 'Álvaro Pascual (Pascu)', personaje: 'Ilustrador y Divulgador' },
+            { id: 2, actor: 'Rodrigo Septién (Rodri)', personaje: 'Narrador e Historiador de Animación' }
         ],
 
         //TRAILER
@@ -2055,7 +2034,7 @@ const CATALOGO = [
         autorCita: 'Pascu y Rodri',
 
         //GALERIA
-        imagenesGaleria: [galeriaHs1, galeriaHs2, galeriaHs3, galeriaHs4, galeriaHs5, galeriaHs6, galeriaHs7, galeriaHs8]
+
     }
 ];
 function getImagenesPelicula() {
@@ -2074,13 +2053,14 @@ function getImagenesPelicula() {
         else if (nombreArchivo.startsWith('cartel.')) resultado.cartel = url;
         else if (nombreArchivo.startsWith('personaje-')) {
             // Guardamos los personajes dinámicamente usando su nombre como clave
-            const nombrePersonaje = nombreArchivo.replace('personaje-', '').replace('.webp', '');
+            const nombrePersonaje = nombreArchivo.replace('personaje-', '').replace('.webp', '').replace('.jpg', '').replace('.png', '');
             if (!resultado.personajes) resultado.personajes = {};
             const personaje = resultado.personajes.find((p) => p.personaje.toLowerCase().trim().replaceAll(" ", "-") === nombrePersonaje);
             if (personaje) personaje.imagen = url;
         }
         else if (nombreArchivo.startsWith('galeria-')) {
             if (!resultado.imagenesGaleria) resultado.imagenesGaleria = [];
+            console.log(`Agregando imagen de galería para ${resultado.tituloEsp}: ${url}`);
             resultado.imagenesGaleria.push(url);
         }
     });

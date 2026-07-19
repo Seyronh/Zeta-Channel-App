@@ -64,5 +64,4 @@ const PopupMenu = ({ popupIsOpen, setpopupIsOpen }) => (
 
 export default PopupMenu;
 
-/* TO DO: Hacer la version table y pc */
 /* TO DO: hacer que el pop up se pueda mover Y ARRASTRAR */

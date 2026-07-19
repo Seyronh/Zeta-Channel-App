@@ -71,7 +71,7 @@ const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
         if (duracion >= 120) return 'row-span-4';
         if (duracion === 90) return 'row-span-3';
         if (duracion === 60) return 'row-span-2';
-        return 'row-span-1 sm:h-20';
+        return 'row-span-1 sm:h-20 md:h-28';
     };
 
     /* --------ESTA PARTE ES PARA EL CHECKOUT----------- */
@@ -100,9 +100,9 @@ const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
 
 
     return (
-        <div className="w-full py-4">
+        <div className="w-full py-4 md:py-6">
             {/* Cabecera de Columnas - Salas */}
-            <div className="grid grid-cols-3 gap-3 text-center text-xl font-pixel text-black dark:text-white mb-3">
+            <div className="grid grid-cols-3 gap-3 text-center text-xl font-pixel text-black dark:text-white mb-3 md:text-2xl md:mb-6">
                 <div>Sala 1</div>
                 <div>Sala 2</div>
                 <div>Sala 3</div>
@@ -142,23 +142,23 @@ const Calendario = ({ fecha, seleccionados, setSeleccionados }) => {
                             onClick={() => esInteractivo && !estaBloqueado && sesion.tipo !== 'Descanso' && AlternarSeleccion(llave)}
                             disabled={estaBloqueado}
                             key={`sesion-${llave}`}
-                            className={`flex flex-col justify-center items-center text-center p-2 gap-1 transition-all duration-200
+                            className={`flex flex-col justify-center items-center text-center p-2 gap-1 transition-all duration-200 md:gap-1 lg:gap-2
                                 ${claseColor}
                                 ${obtenerClaseDuracion(sesion.duracion)}
                                 ${esAnchoCompleto ? 'col-span-3' : ''} 
                             `}
                         >
-                            <div className="font-bold text-wrap leading-tight text-center">{sesion.titulo}</div>
-                            <div className="text-sm">
+                            <div className="font-bold text-wrap leading-tight text-center text-md lg:text-lg">{sesion.titulo}</div>
+                            <div className="text-sm md:text-base">
                                 {sesion.horaInicio} - {obtenerHoraFin(sesion.horaInicio, sesion.duracion)}
                             </div>
                             {sesion.plazas === 0 && esInteractivo && (
-                                <span className="relative top-0 bg-black text-white text-[10px] font-sans font-bold px-3 py-0.5 rounded-full uppercase mt-0.5">
+                                <span className="relative top-0 bg-black text-white text-[10px] font-sans font-bold px-3 py-0.5 rounded-full uppercase mt-0.5 md:text-[12px]">
                                     agotado
                                 </span>
                             )}
                             {sesion.plazas <= 10 && sesion.plazas > 0 && esInteractivo && (
-                                <span className="relative top-0 bg-white text-black text-[10px] font-sans font-bold px-3 py-0.5 rounded-full uppercase mt-0.5 mb-0.5">
+                                <span className="relative top-0 bg-white text-black text-[10px] font-sans font-bold px-3 py-0.5 rounded-full uppercase mt-0.5 mb-0.5 md:text-[12px]">
                                     casi lleno
                                 </span>
                             )}

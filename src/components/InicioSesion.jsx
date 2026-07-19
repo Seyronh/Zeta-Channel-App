@@ -18,7 +18,7 @@ const IncioSesion = ({ setUserIniciado, setUserRegistrado }) => {
     }
 
     return (
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 md:mx-20 md:gap-10 lg:mx-82">
             <h2 className="text-xl font-sans font-bold uppercase text-black dark:text-white mb-4">Iniciar Sesión</h2>
             <FormsInput
                 label="Correo Electrónico"

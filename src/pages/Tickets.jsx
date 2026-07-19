@@ -67,11 +67,11 @@ const Tickets = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomin
     return (
         <>
             <Pix2 className="absolute top-13 left-0 w-40 h-40 text-white" />
-            <div className="bg-pix-light dark:bg-pix-dark pt-26 pb-6">
+            <div className="bg-pix-light dark:bg-pix-dark pt-26 pb-6 ">
 
-                <div className={`relative flex flex-col px-4 my-6 ${popupCheckOut ? 'block' : 'hidden'}`}>
+                <div className={`container mx-auto relative flex flex-col px-4 my-6 md:px-25 lg:px-60 ${popupCheckOut ? 'block' : 'hidden'}`}>
                     <div className="p-5 bg-white rounded-xl">
-                        <CierrePopUp text="Tickets" setpopupIsOpen={setpopupCheckOut} className="absolute top-0 right-0 left-0 mx-4" />
+                        <CierrePopUp text="Tickets" setpopupIsOpen={setpopupCheckOut} className="absolute top-0 right-0 left-0 mx-4 md:mx-25 lg:mx-60" />
 
                         {/* ------------ ACORDEÓN 1: ENTRADAS ----------- */}
                         <AcordeonEntradas
@@ -115,7 +115,7 @@ const Tickets = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomin
                     </div>
 
                 </div>
-                <div className={`mx-auto pt-6 cursor-pointer flex flex-col ${popupCheckOut ? 'hidden' : 'block'}`} onClick={() => setpopupCheckOut(true)}>
+                <div className={`mx-auto pt-6 cursor-pointer flex flex-col md:py-40 ${popupCheckOut ? 'hidden' : 'block'}`} onClick={() => setpopupCheckOut(true)}>
                     <div className="relative w-30 h-20 mx-auto">
                         <img src={pegatinaCheckout} alt="Pegatina checkout" className="w-full h-full mx-auto" />
                         <img src={iconTickets} alt="Icono tickets" className="absolute -bottom-2 right-3 w-14 h-14" />
