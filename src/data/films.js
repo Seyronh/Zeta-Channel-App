@@ -319,7 +319,7 @@ const CATALOGO = [
         id: 6,
         slug: 'programa-de-proteccion-de-princesas',
         fecha: 15,
-        tituloEsp: 'Programa Protección Princesas',
+        tituloEsp: 'Protección  de Princesas',
         imagen: portada1,
         imagenCard: portadaCard1,
         tipo: 'Película',

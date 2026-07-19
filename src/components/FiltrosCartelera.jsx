@@ -42,7 +42,7 @@ const FiltrosCartelera = ({ tipoSeleccionado, setTipoSeleccionado, totalResultad
     return (
         <div>
             {/* Cambiamos a un contenedor flex inteligente con transiciones en sus elementos */}
-            <nav className={`flex items-center gap-3 justify-between flex-wrap font-sans ${tipoSeleccionado !== "all" || generoSeleccionado !== "all" || fechaSeleccionada !== "all" ? 'mb-10' : 'mb-16'}`}>
+            <nav className={`flex items-center gap-3 justify-between flex-wrap font-sans md:gap-12 lg:gap-36 ${tipoSeleccionado !== "all" || generoSeleccionado !== "all" || fechaSeleccionada !== "all" ? 'mb-10' : 'mb-16'}`}>
 
                 {/* ─── DESPLEGABLE 1: TIPO ─── */}
                 <Listbox value={tipoSeleccionado} onChange={setTipoSeleccionado}>
@@ -71,7 +71,7 @@ const FiltrosCartelera = ({ tipoSeleccionado, setTipoSeleccionado, totalResultad
                                     key={tipo.id}
                                     value={tipo.id}
                                     className={({ selected }) => `
-                                    cursor-pointer select-none px-4 py-2.5 text-sm font-semi-bold uppercase rounded-xl transition-colors mb-0.5 last:mb-0 lg:data-focus:bg-black/10
+                                    cursor-pointer select-none px-4 py-2.5 text-sm font-semi-bold uppercase rounded-xl transition-colors mb-0.5 last:mb-0 lg:data-focus:bg-black/10 md:text-lg
                                     ${selected ? 'bg-black text-green font-bold' : 'text-black hover:bg-black/10'}
                                 `}
                                 >
@@ -109,7 +109,7 @@ const FiltrosCartelera = ({ tipoSeleccionado, setTipoSeleccionado, totalResultad
                                     key={tipo.id}
                                     value={tipo.id}
                                     className={({ selected }) => `
-                                    cursor-pointer select-none px-4 py-2.5 text-sm font-semi-bold uppercase rounded-xl transition-colors mb-0.5 last:mb-0 lg:data-focus:bg-black/10
+                                    cursor-pointer select-none px-4 py-2.5 text-sm font-semi-bold uppercase rounded-xl transition-colors mb-0.5 last:mb-0 lg:data-focus:bg-black/10 md:text-lg
                                     ${selected ? 'bg-black text-green font-bold' : 'text-black hover:bg-black/10'}
                                 `}
                                 >
@@ -148,7 +148,7 @@ const FiltrosCartelera = ({ tipoSeleccionado, setTipoSeleccionado, totalResultad
                                     key={tipo.id}
                                     value={tipo.id}
                                     className={({ selected }) => `
-                                    cursor-pointer select-none px-4 py-2.5 text-sm font-semi-bold uppercase rounded-xl transition-colors mb-0.5 last:mb-0 lg:data-focus:bg-black/10
+                                    cursor-pointer select-none px-4 py-2.5 text-sm font-semi-bold uppercase rounded-xl transition-colors mb-0.5 last:mb-0 lg:data-focus:bg-black/10 md:text-lg
                                     ${selected ? 'bg-black text-green font-bold' : 'text-black hover:bg-black/10'}
                                 `}
                                 >
@@ -161,8 +161,8 @@ const FiltrosCartelera = ({ tipoSeleccionado, setTipoSeleccionado, totalResultad
             </nav>
 
             {(fechaSeleccionada !== "all" || tipoSeleccionado !== "all" || generoSeleccionado !== 'all') && (
-                <p className="uppercase text-black font-sans mb-17 text-right">
-                    <span className="font-bold bg-grey rounded-full px-3.5 py-2">{totalResultados}</span> Resultados
+                <p className="uppercase text-black font-sans mb-17 text-right md:mb-10 lg:my-12">
+                    <span className="font-bold bg-grey rounded-full px-3.5 py-2 md:py-3 lg:px-4.5 lg:mr-6">{totalResultados}</span> Resultados
                 </p>
             )}
         </div>
