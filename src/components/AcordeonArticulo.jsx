@@ -28,33 +28,33 @@ const AcordeonArticulo = ({ desplegable }) => {
                     )}
                 </DisclosureButton>
                 <DisclosurePanel>
-                    <ul className="flex flex-col text-black font-sans">
+                    <ul className="flex flex-col text-black font-sans md:grid md:grid-cols-2 md:justify-between md:gap-x-8 md:gap-y-2 md:mt-4">
                         <li className="flex justify-between border-b-2 border-black py-3">
-                            <p className="font-bold">Título ESP</p>
+                            <p className="font-bold md:text-lg">Título ESP</p>
                             <p>{tituloEsp}</p>
                         </li>
                         <li className="flex justify-between border-b-2 border-black py-3">
-                            <p className="font-bold">Título VO</p>
+                            <p className="font-bold md:text-lg">Título VO</p>
                             <p>{tituloVo}</p>
                         </li>
                         <li className="flex justify-between border-b-2 border-black py-3">
-                            <p className="font-bold">Dirección</p>
+                            <p className="font-bold md:text-lg">Dirección</p>
                             <p>{directorx}</p>
                         </li>
                         <li className="flex justify-between border-b-2 border-black py-3">
-                            <p className="font-bold">Música</p>
+                            <p className="font-bold md:text-lg">Música</p>
                             <p>{bandaSonora}</p>
                         </li>
                         <li className="flex justify-between border-b-2 border-black py-3">
-                            <p className="font-bold">Saga</p>
+                            <p className="font-bold md:text-lg">Saga</p>
                             <p>{saga.join('  - ')}</p>
                         </li>
                         <li className="flex justify-between border-b-2 border-black py-3">
-                            <p className="font-bold">Categoria</p>
+                            <p className="font-bold md:text-lg">Categoria</p>
                             <p>{genero.join('  - ')}</p>
                         </li>
-                        <li className="flex flex-col justify-between gap-3 py-3">
-                            <p className="font-bold">Sinopsis</p>
+                        <li className="flex flex-col justify-between gap-3 py-3 md:col-span-2">
+                            <p className="font-bold md:text-lg">Sinopsis</p>
                             <p>{sinopsis}</p>
                         </li>
                     </ul>
