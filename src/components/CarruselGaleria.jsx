@@ -34,7 +34,7 @@ const CarruselGaleria = ({ imagenesGaleria }) => {
             </div>
 
             {/* Optional: Add navigation controls here */}
-            <div className="absolute bottom-0 top-0 left-0 right-0 flex  justify-between mx-3 mb-6">
+            <div className="absolute bottom-0 top-0 left-0 right-0 flex  justify-between mx-3 mb-6 md:mx-10">
                 <PrevButton disabled={prevBtnDisabled} onClick={onPrevButtonClick} />
                 <NextButton disabled={nextBtnDisabled} onClick={onNextButtonClick} />
             </div>

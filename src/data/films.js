@@ -933,8 +933,8 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Miley Cyrus', personaje: 'Miley Stewart / Hannah Montana' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Emily Osment', personaje: 'Lilly Truscott / Lola Luftnagle' },
+            { id: 1, imagen: troyBolton, actor: 'Miley Cyrus', personaje: 'Hannah Montana' },
+            { id: 2, imagen: gabriellaMontez, actor: 'Emily Osment', personaje: 'Lola Luftnagle' },
             { id: 3, imagen: troyBolton, actor: 'Mitchel Musso', personaje: 'Oliver Oken' },
             { id: 4, imagen: gabriellaMontez, actor: 'Jason Earles', personaje: 'Jackson Stewart' },
             { id: 5, imagen: troyBolton, actor: 'Billy Ray Cyrus', personaje: 'Robby Ray Stewart' }

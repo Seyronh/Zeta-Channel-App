@@ -211,7 +211,7 @@ const Articulo = () => {
 
                 {/* GALERIA */}
                 <div className="flex flex-col">
-                    <h2 className="text-3xl font-pixel uppercase text-white p-6">Galería</h2>
+                    <h2 className="text-3xl font-pixel uppercase text-white p-6 md:px-10 md:text-4xl">Galería</h2>
                     <CarruselGaleria imagenesGaleria={imagenesGaleria} />
                 </div>
                 {/*  TIRA ROLL 2 */}
@@ -224,22 +224,22 @@ const Articulo = () => {
                 </div>
 
 
-                {/* <div>
-                <img src={pixelFondo} alt="Pixel fondo" className="text-pix-light dark:bg-pix-dark w-full" />
+                {/* <div> TO DO: poner el pixel-fondo de fondo de la sección de recomendaciones */}
+                {/* <img src={pixelFondo} alt="Pixel fondo" className="text-pix-light dark:bg-pix-dark w-full" />
             </div> */}
 
                 {/* PELICULAS RELACIONADAS */}
 
                 {recomendaciones.length > 0 && (
-                    <div className="mt-20 border-t-2 border-black/10 pt-12 bg-pix-light dark:bg-pix-dark p-4">
+                    <div className="mt-20 border-t-2 border-black/10 pt-12 bg-pix-light dark:bg-pix-dark p-4 md:px-10">
                         {/* aquí iria de fondo el pix-fondo */}
                         <h2 className="text-3xl font-sans font-bold p-3 mb-3 uppercase text-black dark:text-white">También te podría interesar</h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                        <div className="container mx-auto grid grid-cols-1 gap-12 md:gap-x-10 md:gap-y-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-28 pb-16">
                             {recomendaciones.map(({ peli, motivo }) => (
                                 <div key={peli.id} className="flex flex-col gap-10">
                                     {/* El texto sutil encima de la tarjeta */}
-                                    <span className="uppercase text-neutral-600 font-medium p-3 font-sans dark:text-neutral-300">
+                                    <span className="uppercase text-neutral-600 font-medium p-3 font-sans dark:text-neutral-300 md:h-16">
                                         {motivo === "Mismo género" && `Si te gusta el ${genero.join(' / ')}`}
                                         {motivo === "Mismo formato" && `Otra ${catalogo.tipo} clave`}
                                         {motivo === "Mismo día" && "Otra opción para el mismo día"}
