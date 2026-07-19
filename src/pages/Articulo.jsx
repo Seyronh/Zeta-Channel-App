@@ -185,21 +185,21 @@ const Articulo = () => {
                         <AcordeonArticulo desplegable={catalogo} />
                         <div className="pt-6 flex flex-col gap-6">
                             <h2 className="text-2xl font-pixel uppercase text-black">trailer</h2>
-                            <iframe src={trailerVideo} title={`Trailer - ${tituloEsp}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen style={{ filter: 'grayscale(100%)' }}
+                            <iframe src={trailerVideo} title={`Trailer - ${tituloEsp}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen style={{ filter: 'grayscale(100%)' }} className="w-full aspect-video rounded-xl"
                             ></iframe>
                             {/* puedo hacer que con un estado lea si le ha dado play y ponga el video o sino la imagen que yo quiera TO DO QUIZÁS MÁS ADELANTE */}
                             <blockquote>
-                                <p className="text-black font-sans leading-6">
+                                <p className="text-black font-sans leading-6 md:text-xl">
                                     {cita}
                                 </p>
-                                <div className="flex justify-end">
-                                    <cite className="text-lg font-bold not-italic">{autorCita}</cite>
+                                <div className="flex justify-end md:pr-4">
+                                    <cite className="text-lg font-bold not-italic md:text-xl">{autorCita}</cite>
                                 </div>
                             </blockquote>
                         </div>
                     </div>
                 </div>
-                <div className={`mx-auto my-6 flex flex-col ${popupFicha ? 'hidden' : 'block'}`} onClick={() => setpopupFicha(true)}>
+                <div className={`mx-auto my-8 flex flex-col md:my-16 ${popupFicha ? 'hidden' : 'block'}`} onClick={() => setpopupFicha(true)}>
                     <div className="relative w-30 h-20 mx-auto">
                         <img src={pegatinaDesplegable} alt="Pegatina cartel" className="mx-auto" />
                         <img src={iconDesplegable} alt="Icono cartel" className="absolute bottom-0 right-2 w-12 h-12" />

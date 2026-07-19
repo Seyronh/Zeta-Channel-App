@@ -76,7 +76,7 @@ const AcordeonArticulo = ({ desplegable }) => {
                 </DisclosureButton>
                 <DisclosurePanel className="text-black">
 
-                    <div className="grid grid-cols-2 justify-between">
+                    <div className="grid grid-cols-2 justify-between md:grid-cols-3 gap-1 md:gap-4">
 
                         {personajes.map((actores, posicion) => {
                             const fondo = fondos[posicion % fondos.length];
@@ -89,7 +89,7 @@ const AcordeonArticulo = ({ desplegable }) => {
                         */}
 
                             return (
-                                <div key={actores.id} className="flex flex-col gap-2 items-center w-full">
+                                <div key={actores.id} className="flex flex-col items-center w-full justify-between">
 
                                     {/* CONTENEDOR PRINCIPAL */}
                                     <div className="relative aspect-square p-4 flex items-center justify-center overflow-hidden">
@@ -111,8 +111,8 @@ const AcordeonArticulo = ({ desplegable }) => {
                                     </div>
 
                                     {/* TEXTOS */}
-                                    <div className="text-center">
-                                        <h3 className="text-base font-bold text-black leading-tight">{actores.actor}</h3>
+                                    <div className="text-center leading-tight">
+                                        <h3 className="text-base font-bold text-black leading-tight md:text-lg">{actores.actor}</h3>
                                         <p className="text-neutral-600 font-sans mt-0.5">{actores.personaje}</p>
                                     </div>
 

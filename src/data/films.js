@@ -341,7 +341,7 @@ const CATALOGO = [
         //REPARTO DESPLEGABLE
         personajes: [
             { id: 1, imagen: troyBolton, actor: 'Selena Gomez', personaje: 'Carter Mason' },
-            { id: 2, imagen: gabriellaMontez, actor: 'Demi Lovato', personaje: 'Princesa Rosalinda / Rosie' }
+            { id: 2, imagen: gabriellaMontez, actor: 'Demi Lovato', personaje: 'Princesa Rosalinda' }
         ],
 
         //TRAILER
@@ -455,7 +455,7 @@ const CATALOGO = [
 
         //REPARTO DESPLEGABLE
         personajes: [
-            { id: 1, imagen: troyBolton, actor: 'Debby Ryan', personaje: 'Tara Adams / Radio Rebelde' },
+            { id: 1, imagen: troyBolton, actor: 'Debby Ryan', personaje: 'Tara Adams' },
             { id: 2, imagen: gabriellaMontez, actor: 'Audrey', personaje: 'Audrey' },
             { id: 3, imagen: troyBolton, actor: 'Gavin', personaje: 'Gavin' }
         ],
