@@ -2,7 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 
 import Calendario from '../components/Calendario';
 import agendaIcon from '../assets/img/icon/icon-agenda.svg';
-import { Pix4, ZonaPixelMovil, ZonaPixelTablet, ZonaPixelPc } from '../components/Pixel.jsx';
+import { Pix4 } from '../components/Pixel.jsx';
 import btnMas from '../assets/img/icon/icon-btn-mas.svg';
 import Btn from '../components/Btn.jsx';
 
@@ -118,19 +118,7 @@ const Agenda = ({ nobtnVisible }) => (
                 </>
             )}
         </div>
-        {!nobtnVisible && (
-            <div className="absolute bottom-0 rotate-180 w-full -z-10 pointer-events-none overflow-hidden mx-6">
-                <div className="block w-full md:hidden">
-                    <ZonaPixelMovil className="text-pix-light dark:text-pix-dark w-full" />
-                </div>
-                <div className="hidden w-full md:block lg:hidden">
-                    <ZonaPixelTablet className="text-pix-light dark:text-pix-dark w-full" />
-                </div>
-                <div className="hidden w-full lg:block">
-                    <ZonaPixelPc className="text-pix-light dark:text-pix-dark w-full" />
-                </div>
-            </div>
-        )}
+
     </div>
 
 );

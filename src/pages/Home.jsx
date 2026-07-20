@@ -211,7 +211,7 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                 </div>
             </div >
 
-            <div className="relative pointer-events-none w-screen">
+            <div className="relative pointer-events-none">
                 <div className="absolute inset-x-0 top-0 z-0 -mt-2 overflow-hidden w-full">
                     <div className="block w-full md:hidden">
                         <ZonaPixelMovil className="text-pix-light dark:text-pix-dark w-full" />
