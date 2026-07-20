@@ -1,0 +1,68 @@
+/* Escenario fijo */
+.dinoStage {
+height: 120px;
+display: flex;
+align-items: flex-end;
+justify-content: center;
+margin-top: 3rem;
+}
+
+/* --- CLASE BASE DEL DINO CON ANIMACIÓN DE ESPERA (IDLE) --- */
+.dino {
+width: 100px;
+height: 100px;
+cursor: pointer;
+  /* Esta animación de respiración estará siempre activa */
+animation: dinoIdle 1.5s 0.5s;
+}
+
+/* --- CLASE DE SALTO (SOBRESCRIBE LA ESPERA) --- */
+.jump {
+  /* Al activarse 'jump', cancelamos la animación idle y ponemos la de salto */
+animation: chromeJump 0.55s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+
+/* DEFINICIÓN DE ANIMACIONES (@keyframes) */
+
+/* 1. Animación de Espera: El dino "respira" suavemente */
+@keyframes dinoIdle {
+0% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(-300px); /* Pausa en la cima */
+}
+100% {
+    transform: translateY(0);
+}
+}
+
+/* 2. Animación de Salto: Simulación de gravedad ( Chrome style) */
+@keyframes chromeJump {
+0% {
+    transform: translateY(0);
+}
+45% {
+    transform: translateY(-300px); /* Pausa en la cima */
+}
+55% {
+    transform: translateY(-300px); /* Pausa en la cima */
+}
+100% {
+    transform: translateY(0);
+}
+}
+
+@media (min-width: 48rem) {
+
+    .dinoStage {
+margin-top: 7rem;
+}
+
+    .dino {
+width: 120px;
+height: 120px;
+}
+
+}

@@ -42,10 +42,9 @@ const Header = () => {
     <header className="w-full">
 
 
-      <nav className="bg-light dark:bg-dark text-black dark:text-white flex items-center w-full justify-between px-3 fixed top-0 left-0 z-998 lg:px-6">
+      <nav className="bg-light dark:bg-dark text-black dark:text-white flex items-center w-full justify-between px-3 fixed top-0 left-0 z-998 lg:px-8">
 
         {/* Burguer y componente btn para TABLET  */}
-
         <div className="items-center gap-5 hidden md:flex lg:hidden">
           <BtnBurguer popupIsOpen={popupIsOpen} setpopupIsOpen={setpopupIsOpen} />
           <Btn
@@ -159,4 +158,3 @@ const Header = () => {
 
 export default Header;
 
-/* TO DO: Hacer la version tablet y pc para dejarlos listos */

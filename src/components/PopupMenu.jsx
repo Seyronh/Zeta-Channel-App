@@ -10,7 +10,7 @@ import festivalIcon from '../assets/img/icon/icon-festival.svg';
 
 
 const PopupMenu = ({ popupIsOpen, setpopupIsOpen }) => (
-    <>
+    <div className={`fixed top-0 left-0 w-full h-full z-999 lg:hidden ${popupIsOpen ? '' : 'hidden'}`}>
         <div className={`absolute w-full h-full bg-black opacity-60 z-999 ${popupIsOpen ? '' : 'hidden'}`} onClick={() => setpopupIsOpen(false)}>
         </div>
         <nav className={`flex flex-col rounded-xl bg-pink absolute z-999 left-0 right-0 top-0 bottom-0 my-auto h-fit mx-auto w-fit ${popupIsOpen ? '' : 'hidden'}  `} >
@@ -59,10 +59,9 @@ const PopupMenu = ({ popupIsOpen, setpopupIsOpen }) => (
                 </ul>
             </ul>
         </nav >
-    </>
+    </div>
 )
 
 export default PopupMenu;
 
-/* TO DO: Hacer la version table y pc */
 /* TO DO: hacer que el pop up se pueda mover Y ARRASTRAR */
