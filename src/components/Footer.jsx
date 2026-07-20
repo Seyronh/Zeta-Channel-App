@@ -6,7 +6,7 @@ import iconTiktok from '../assets/img/icon/icon-tiktok.svg';
 import LogoZetaInteractivo from "./LogoZetaInteractivo";
 
 const Footer = () => (
-    <footer className="bg-pix-light dark:bg-pix-dark pt-12 flex flex-col gap-6 items-center justify-center text-center -mt-1 mb-9 lg:mb-0 lg:px-140 ">
+    <footer className="bg-pix-light dark:bg-pix-dark relative z-20 pt-12 flex flex-col gap-6 items-center justify-center text-center -mt-1 mb-9 lg:mb-0 lg:px-140 ">
 
         <div className="text-black dark:text-white">
             <h1 className="text-3xl font-bold font-sans lg:text-5xl">Zeta Channel</h1>

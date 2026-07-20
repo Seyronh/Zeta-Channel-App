@@ -2,18 +2,18 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 
 import Calendario from '../components/Calendario';
 import agendaIcon from '../assets/img/icon/icon-agenda.svg';
-import { Pix4, /* PixFondo */ } from '../components/Pixel.jsx';
+import { Pix4, ZonaPixelMovil, ZonaPixelTablet, ZonaPixelPc } from '../components/Pixel.jsx';
 import btnMas from '../assets/img/icon/icon-btn-mas.svg';
 import Btn from '../components/Btn.jsx';
 
 const Agenda = ({ nobtnVisible }) => (
 
-    <>
+    <div className="relative">
         {!nobtnVisible && (
-            <Pix4 className="absolute top-13 right-0 w-40 h-40 text-pix-light dark:text-pix-dark md:top-14" />
+            <Pix4 className="absolute top-13 right-0 w-40 h-40 text-pix-light dark:text-pix-dark md:top-14 lg:mt-26" />
         )}
 
-        <div className="relative pt-23 flex items-center gap-6 justify-center mb-12 md:pt-32 lg:pt-40 lg:mb-16">
+        <div className="relative z-10 pt-23 flex items-center gap-6 justify-center mb-12 md:pt-32 lg:pt-40 lg:mb-16">
             <img src={agendaIcon} alt="Icono de Agenda" className="w-11 h-11 dark:invert md:w-16 md:h-16" />
             <h1 className="text-5xl leading-0 font-pixel uppercase text-black dark:text-white md:text-7xl">AGENDA</h1>
         </div>
@@ -42,7 +42,7 @@ const Agenda = ({ nobtnVisible }) => (
             </ul>
         </div>
 
-        <div className="md:container md:px-8 mx-auto">
+        <div className="md:container md:px-8 mx-auto relative z-10">
 
             <Disclosure as="div" className="p-6" defaultOpen={true}>
 
@@ -118,7 +118,20 @@ const Agenda = ({ nobtnVisible }) => (
                 </>
             )}
         </div>
-    </>
+        {!nobtnVisible && (
+            <div className="absolute bottom-0 rotate-180 w-full -z-10 pointer-events-none overflow-hidden mx-6">
+                <div className="block w-full md:hidden">
+                    <ZonaPixelMovil className="text-pix-light dark:text-pix-dark w-full" />
+                </div>
+                <div className="hidden w-full md:block lg:hidden">
+                    <ZonaPixelTablet className="text-pix-light dark:text-pix-dark w-full" />
+                </div>
+                <div className="hidden w-full lg:block">
+                    <ZonaPixelPc className="text-pix-light dark:text-pix-dark w-full" />
+                </div>
+            </div>
+        )}
+    </div>
 
 );
 

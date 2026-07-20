@@ -10,7 +10,7 @@ import { PrevButton, NextButton } from "../components/BtnCarrusel.jsx";
 import { useCarruselIndicadores } from "../data/useCarruselIndicadores.js";
 import { DotButton } from "../components/CarruselIndicadores.jsx";
 
-import { Pix1, /* PixFondo */ } from '../components/Pixel.jsx';
+import { Pix1 } from '../components/Pixel.jsx';
 
 
 const Cartelera = () => {
@@ -77,7 +77,7 @@ const Cartelera = () => {
             {/* MAÑANA ARREGLAR PONER LOS PIXELES POR TAMAÑO */}
             {/* </div> */}
 
-            <div className="p-4 md:p-0">
+            <div className="relative z-10 p-4 md:p-0">
 
                 <div className="relative flex items-center gap-6 justify-center mb-12 md:my-16">
                     <img src={carteleraIcon} alt="Icono de Cartelera" className="w-11 h-11 dark:invert md:w-16 md:h-16" />
@@ -131,6 +131,7 @@ const Cartelera = () => {
                     </div>
                 )}
             </div>
+
         </div>
 
     );

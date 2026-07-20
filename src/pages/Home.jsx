@@ -29,6 +29,7 @@ import LogoZeta from '../assets/img/logo-zeta-channel.svg';
 import CierrePopUp from '../components/CierrePopUp.jsx';
 import Card from '../components/Card.jsx';
 import Btn from '../components/Btn.jsx';
+import { ZonaPixelMovil, ZonaPixelTablet, ZonaPixelPc } from '../components/Pixel.jsx';
 import Agenda from './Agenda.jsx';
 import SobreNosotros from '../data/sobreNosotros.js';
 
@@ -210,13 +211,27 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                 </div>
             </div >
 
-            <div className="relative w-30 my-14 h-20 mx-auto">
+            <div className="relative pointer-events-none w-screen">
+                <div className="absolute inset-x-0 top-0 z-0 -mt-2 overflow-hidden w-full">
+                    <div className="block w-full md:hidden">
+                        <ZonaPixelMovil className="text-pix-light dark:text-pix-dark w-full" />
+                    </div>
+                    <div className="hidden w-full md:block lg:hidden">
+                        <ZonaPixelTablet className="text-pix-light dark:text-pix-dark w-full" />
+                    </div>
+                    <div className="hidden w-full lg:block">
+                        <ZonaPixelPc className="text-pix-light dark:text-pix-dark w-full" />
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative w-30 my-14 h-20 mx-auto z-1">
                 <img src={pegatinaCarpeta} alt="Pegatina Carpeta" className="mx-auto" />
                 <img src={IconoCarpeta} alt="Icono Carpeta" className="absolute -bottom-2 right-2 w-12 h-12" />
             </div>
 
-            <section className="mx-auto py-10 gap-16 px-5 flex flex-col md:px-10">
-                <h2 className="text-4xl font-pixel text-black dark:text-white uppercase text-center md:text-5xl md:mb-5">¿QUÉ TE APETECE RECORDAR?</h2>
+            <section className="relative mx-auto py-10 gap-16 px-5 flex flex-col md:px-10 z-1">
+                <h2 className="flex justify-center text-4xl font-pixel text-black dark:text-white uppercase text-center md:text-5xl md:mb-5">¿QUÉ TE APETECE RECORDAR?</h2>
                 <div className="grid grid-cols-1 gap-16 md:gap-x-10 md:gap-y-18 md:grid-cols-2 lg:grid-cols-3 lg:container lg:mx-auto lg:px-30 lg:gap-20">
                     <Card card={CATALOGO.find((peli) => peli.id === 1)} />
                     <Card card={CATALOGO.find((peli) => peli.id === 3)} />
@@ -239,15 +254,30 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                 <img src={IconoDinosauro} alt="Icono Dinosauro" className="absolute -bottom-14 left-2 w-14 h-14 dark:invert" />
             </div>
 
-            <section className="flex flex-col mx-6 gap-6 text-black dark:text-white md:gap-10 md:mx-8 lg:container lg:mx-auto lg:gap-12">
-                <h2 className="text-4xl font-pixel uppercase text-center md:text-5xl">¿Quienes somos?</h2>
-                <div className="md:flex md:gap-4 md:text-balance lg:ml-20">
-                    <p className="md:text-lg">{informacion.parrafo1}</p>
-                    <p className="md:text-lg">{informacion.parrafo2}</p>
+            <div className="relative z-10">
+                <section className="flex flex-col mx-6 gap-6 text-black dark:text-white md:gap-10 md:mx-8 lg:container lg:mx-auto lg:gap-12">
+                    <h2 className="text-4xl font-pixel uppercase text-center md:text-5xl">¿Quienes somos?</h2>
+                    <div className="flex flex-col md:flex-row gap-6 md:text-balance lg:ml-20">
+                        <p className="md:text-lg">{informacion.parrafo1}</p>
+                        <p className="md:text-lg">{informacion.parrafo2}</p>
+                    </div>
+                    <img src={informacion.imagen} alt="Imagen sobre nosotros" className="mx-auto my-6 bg-white overflow-hidden rounded-2xl md:w-3/4 md:my-1 lg:w-1/2" />
+                    <Btn to="/Festival" text="Más Info" className="mx-auto mb-16" />
+                </section>
+
+                <div className="absolute bottom-0 rotate-180 w-full -z-10 pointer-events-none overflow-hidden mx-6">
+                    <div className="block w-full md:hidden">
+                        <ZonaPixelMovil className="text-pix-light dark:text-pix-dark w-full" />
+                    </div>
+                    <div className="hidden w-full md:block lg:hidden">
+                        <ZonaPixelTablet className="text-pix-light dark:text-pix-dark w-full" />
+                    </div>
+                    <div className="hidden w-full lg:block">
+                        <ZonaPixelPc className="text-pix-light dark:text-pix-dark w-full" />
+                    </div>
                 </div>
-                <img src={informacion.imagen} alt="Imagen sobre nosotros" className="mx-auto my-6 bg-white overflow-hidden rounded-2xl md:w-3/4 md:my-1 lg:w-1/2" />
-                <Btn to="/Festival" text="Más Info" className="mx-auto mb-16" />
-            </section>
+            </div>
+
         </>
     )
 }

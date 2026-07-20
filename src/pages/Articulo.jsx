@@ -102,7 +102,7 @@ const Articulo = () => {
                 {/* He tenido que crear un componente al svg para poder ponerle el hover como className y además hacer el group-hover para que se haga en modo grupo */}
             </div>
             {/* CONTENIDO */}
-            <div className="pt-7 bg-blue rounded-tl-4xl md:pt-12 lg:pt-20">
+            <div className="relative z-10 pt-7 bg-blue rounded-tl-4xl md:pt-12 lg:pt-20">
                 {/* PRIMERA PARTE - IMAGEN -  BTNES - TITULO PRINCIPAL */}
                 <div className="flex flex-col gap-6 px-6 md:px-10 lg:flex-row lg:mx-20 lg:items-center lg:gap-30 lg:justify-center" >
                     <div className="relative flex flex-col gap-4 md:flex-row md:gap-8 lg:order-2 ">
@@ -249,6 +249,7 @@ const Articulo = () => {
                     </div>
                 )}
             </div>
+
 
 
         </article >
