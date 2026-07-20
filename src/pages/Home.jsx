@@ -212,15 +212,15 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
             </div >
 
             <div className="relative pointer-events-none">
-                <div className="absolute inset-x-0 top-0 z-0 -mt-2 overflow-hidden w-full">
+                <div className="absolute inset-x-0 top-0 z-0 -mt-2 overflow-hidden flex justify-center">
                     <div className="block w-full md:hidden">
-                        <ZonaPixelMovil className="text-pix-light dark:text-pix-dark w-full" />
+                        <ZonaPixelMovil className="text-pix-light dark:text-pix-dark" />
                     </div>
                     <div className="hidden w-full md:block lg:hidden">
-                        <ZonaPixelTablet className="text-pix-light dark:text-pix-dark w-full" />
+                        <ZonaPixelTablet className="text-pix-light dark:text-pix-dark" />
                     </div>
-                    <div className="hidden w-full lg:block">
-                        <ZonaPixelPc className="text-pix-light dark:text-pix-dark w-full" />
+                    <div className="hidden lg:block">
+                        <ZonaPixelPc className="text-pix-light dark:text-pix-dark" />
                     </div>
                 </div>
             </div>
@@ -264,18 +264,6 @@ const Home = ({ popupHome, setpopupHome, popupQuepasa, setpopupQuepasa }) => {
                     <img src={informacion.imagen} alt="Imagen sobre nosotros" className="mx-auto my-6 bg-white overflow-hidden rounded-2xl md:w-3/4 md:my-1 lg:w-1/2" />
                     <Btn to="/Festival" text="Más Info" className="mx-auto mb-16" />
                 </section>
-
-                <div className="absolute bottom-0 rotate-180 w-full -z-10 pointer-events-none overflow-hidden mx-6">
-                    <div className="block w-full md:hidden">
-                        <ZonaPixelMovil className="text-pix-light dark:text-pix-dark w-full" />
-                    </div>
-                    <div className="hidden w-full md:block lg:hidden">
-                        <ZonaPixelTablet className="text-pix-light dark:text-pix-dark w-full" />
-                    </div>
-                    <div className="hidden w-full lg:block">
-                        <ZonaPixelPc className="text-pix-light dark:text-pix-dark w-full" />
-                    </div>
-                </div>
             </div>
 
         </>
