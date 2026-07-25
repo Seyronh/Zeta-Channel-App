@@ -19,6 +19,7 @@ const User = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo,
 
     const [popupUser, setpopupUser] = useState(true);
     const [userRegistrado, setUserRegistrado] = useState(false);
+    const [email, setEmail] = useState('');
 
     const precioEntradas = {
         entradaDia: 30,
@@ -53,9 +54,9 @@ const User = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo,
             {!userIniciado && (
                 <>
                     {userRegistrado ? (
-                        <Registrarse setUserRegistrado={setUserRegistrado} setUserIniciado={setUserIniciado} />
+                        <Registrarse setUserRegistrado={setUserRegistrado} setUserIniciado={setUserIniciado} email={email} setEmail={setEmail} />
                     ) : (
-                        <InicioSesion setUserIniciado={setUserIniciado} setUserRegistrado={setUserRegistrado} />
+                        <InicioSesion setUserIniciado={setUserIniciado} setUserRegistrado={setUserRegistrado} setEmail={setEmail} email={email} />
                     )}
                     <TextoUser />
                 </>)}
@@ -91,7 +92,7 @@ const User = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo,
                                                     <div className="flex justify-between text-black">
                                                         <div className="flex flex-col gap-1">
                                                             <p className="text-black text-start">Juanlu Molina Ruiz</p>
-                                                            <p className="text-black text-start">juanlu@lahauss.com</p>
+                                                            <p className="text-black text-start">{email}</p>
                                                         </div>
                                                         <p className="text-black">02/02/02</p>
                                                     </div>
