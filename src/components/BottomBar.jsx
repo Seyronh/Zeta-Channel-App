@@ -35,7 +35,7 @@ const BottomBar = () => {
                     </li>
 
                     {/* TICKETS */}
-                    <li className="order-1 w-[63px] lg:w-auto">
+                    <li className="order-1 w-[63px] lg:hidden">
                         <Link to="/Tickets" className="flex flex-col items-center justify-center gap-1 lg:flex-row lg:items-center lg:gap-3">
                             <img src={ticketIcon} alt="Tickets" className="invert dark:invert-0 w-6 h-6 lg:invert-0 lg:dark:invert lg:w-9 lg:h-9" />
                             <span className={`text-xs border-b-2 lg:text-2xl lg:border-b-3 ${pathname === '/Tickets' ? 'border-white dark:border-black lg:border-black lg:dark:border-white' : 'border-transparent'}`}>TICKETS</span>

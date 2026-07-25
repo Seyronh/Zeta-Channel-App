@@ -138,6 +138,7 @@ const Header = () => {
               size="lg"
               font="pixel"
               to="/Tickets"
+              
             />
           </div>
         </div>
