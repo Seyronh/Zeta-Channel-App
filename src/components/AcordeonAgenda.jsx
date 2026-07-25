@@ -44,11 +44,11 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, diaSeleccionado, setSele
                                             <Calendario fecha={13} setSeleccionados={setSeleccionadosViernes} seleccionados={seleccionadosViernes} />
                                             <div className="flex justify-center gap-8 my-6 md:hidden">
                                                 <Btn to="#" text="Borrar Todo" variant='outlinegreen' size='xs' font='sans' onClick={() => { setSeleccionadosViernes([]) }} />
-                                                <Btn to="#" text="Siguiente" variant='solidgreen' size='xs' font='sans' onClick={() => { close() }} />
+                                                <Btn to="#" text="Siguiente" variant={seleccionadosViernes.length > 0 ? 'solidgreen' : 'solidblack'} size='xs' font='sans' onClick={() => { if(seleccionadosViernes.length > 0) close() }} />
                                             </div>
                                             <div className="justify-center gap-16 my-6 hidden md:flex">
                                                 <Btn to="#" text="Borrar Todo" variant='outlinegreen' size='lg' font='sans' onClick={() => { setSeleccionadosViernes([]) }} />
-                                                <Btn to="#" text="Siguiente" variant='solidgreen' size='lg' font='sans' onClick={() => { close() }} />
+                                                <Btn to="#" text="Siguiente" variant={seleccionadosViernes.length > 0 ? 'solidgreen' : 'solidblack'} size='lg' font='sans' onClick={() => { if(seleccionadosViernes.length > 0) close() }} />
                                             </div>
                                         </DisclosurePanel>
                                     </>
@@ -73,11 +73,11 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, diaSeleccionado, setSele
                                             <Calendario fecha={14} setSeleccionados={setSeleccionadosSabado} seleccionados={seleccionadosSabado} />
                                             <div className="flex justify-center gap-8 my-6 md:hidden">
                                                 <Btn to="#" text="Borrar Todo" variant='outlinegreen' size='xs' font='sans' onClick={() => { setSeleccionadosSabado([]) }} />
-                                                <Btn to="#" text="Siguiente" variant='solidgreen' size='xs' font='sans' onClick={() => { close() }} />
+                                                <Btn to="#" text="Siguiente" variant={seleccionadosSabado.length > 0 ? 'solidgreen' : 'solidblack'} size='xs' font='sans' onClick={() => { if(seleccionadosSabado.length > 0) close() }} />
                                             </div>
                                             <div className="justify-center gap-16 my-6 hidden md:flex">
                                                 <Btn to="#" text="Borrar Todo" variant='outlinegreen' size='lg' font='sans' onClick={() => { setSeleccionadosSabado([]) }} />
-                                                <Btn to="#" text="Siguiente" variant='solidgreen' size='lg' font='sans' onClick={() => { close() }} />
+                                                <Btn to="#" text="Siguiente" variant={seleccionadosSabado.length > 0 ? 'solidgreen' : 'solidblack'} size='lg' font='sans' onClick={() => { if(seleccionadosSabado.length > 0) close() }} />
                                             </div>
                                         </DisclosurePanel>
                                     </>
@@ -102,11 +102,11 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, diaSeleccionado, setSele
                                             <Calendario fecha={15} setSeleccionados={setSeleccionadosDomingo} seleccionados={seleccionadosDomingo} />
                                             <div className="flex justify-center gap-8 my-6 md:hidden">
                                                 <Btn to="#" text="Borrar Todo" onClick={() => { setSeleccionadosDomingo([]) }} variant='outlinegreen' size='xs' font='sans' />
-                                                <Btn to="#" text="Siguiente" variant='solidgreen' size='xs' font='sans' onClick={() => { close(); irASiguiente(3) }} />
+                                                <Btn to="#" text="Siguiente" variant={seleccionadosDomingo.length > 0 ? 'solidgreen' : 'solidblack'} size='xs' font='sans' onClick={() => { if(seleccionadosDomingo.length > 0) close(); irASiguiente(3) }} />
                                             </div>
                                             <div className="justify-center gap-16 my-6 hidden md:flex">
                                                 <Btn to="#" text="Borrar Todo" onClick={() => { setSeleccionadosDomingo([]) }} variant='outlinegreen' size='lg' font='sans' />
-                                                <Btn to="#" text="Siguiente" variant='solidgreen' size='lg' font='sans' onClick={() => { close(); irASiguiente(3) }} />
+                                                <Btn to="#" text="Siguiente" variant={seleccionadosDomingo.length > 0 ? 'solidgreen' : 'solidblack'} size='lg' font='sans' onClick={() => { if(seleccionadosDomingo.length > 0) close(); irASiguiente(3) }} />
                                             </div>
                                         </DisclosurePanel>
                                     </>

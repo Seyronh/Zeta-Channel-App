@@ -5,7 +5,7 @@ const FormsInput = ({ label, placeholder, variant = 'bordered', onClickIcono, ic
     const variantStyles = {
         bordered: "border-black focus:border-blue dark:border-neutral-200",
         correct: "border-green focus:border-hover-green",
-        incorrect: "border-red focus:border-red-500"
+        incorrect: "border-red-500 focus:border-red-500"
     };
 
 

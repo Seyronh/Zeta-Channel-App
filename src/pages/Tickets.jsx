@@ -34,6 +34,9 @@ const Tickets = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomin
     const [infoEntradaInfantilDia, setInfoEntradaInfantilDia] = useState(false);
     const [infoEntrada3Dias, setInfoEntrada3Dias] = useState(false);
     const [infoEntradaInfantil3Dias, setInfoEntradaInfantil3Dias] = useState(false);
+    const [nombre, setNombre] = useState('');
+    const [fechaNacimiento, setFechaNacimiento] = useState('');
+    const [email, setEmail] = useState('');
 
     useEffect(() => {
         setSeleccionadosViernes([]);
@@ -108,10 +111,10 @@ const Tickets = ({ seleccionadosViernes, seleccionadosSabado, seleccionadosDomin
 
                         {/* ----------- ACORDEÓN 3: DATOS PERSONALES ----------- */}
 
-                        <AcordeonDatosPersonales toggleSeccion={toggleSeccion} seccionActiva={seccionActiva} irASiguiente={irASiguiente} />
+                        <AcordeonDatosPersonales toggleSeccion={toggleSeccion} seccionActiva={seccionActiva} irASiguiente={irASiguiente} nombre={nombre} setNombre={setNombre} fechaNacimiento={fechaNacimiento} setFechaNacimiento={setFechaNacimiento} email={email} setEmail={setEmail} />
 
                         {/* ----------- ACORDEÓN 4: PAGOS ----------- */}
-                        <AcordeonPagos toggleSeccion={toggleSeccion} seccionActiva={seccionActiva} setSeccionActiva={setSeccionActiva} seleccionadosViernes={seleccionadosViernes} seleccionadosSabado={seleccionadosSabado} seleccionadosDomingo={seleccionadosDomingo} entradaDia={entradaDia} precioEntradas={precioEntradas} entradaInfantilDia={entradaInfantilDia} entrada3Dias={entrada3Dias} precioTotal={precioTotal} esViernes={esViernes} entradaInfantil3Dias={entradaInfantil3Dias} />
+                        <AcordeonPagos toggleSeccion={toggleSeccion} seccionActiva={seccionActiva} setSeccionActiva={setSeccionActiva} seleccionadosViernes={seleccionadosViernes} seleccionadosSabado={seleccionadosSabado} seleccionadosDomingo={seleccionadosDomingo} entradaDia={entradaDia} precioEntradas={precioEntradas} entradaInfantilDia={entradaInfantilDia} entrada3Dias={entrada3Dias} precioTotal={precioTotal} esViernes={esViernes} entradaInfantil3Dias={entradaInfantil3Dias} nombre={nombre} fechaNacimiento={fechaNacimiento} email={email} />
                     </div>
 
                 </div>

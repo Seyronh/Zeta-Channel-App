@@ -1,10 +1,18 @@
 import flechaDesplegable from '../assets/img/icon/icon-chevron.svg';
 import FormsInput from '../components/FormsInput.jsx';
 import Btn from '../components/Btn.jsx';
+import { useState } from 'react';
 
-
-const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente }) => (
-    <div className="mt-12 md:mt-14 md:px-2">
+const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente, nombre, setNombre, fechaNacimiento, setFechaNacimiento, email, setEmail }) => {
+    const [confirmarEmail, setConfirmarEmail] = useState('');
+    const [aceptaTerminos, setAceptaTerminos] = useState(false);
+    const validEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+    const EmailConfirmado = email === confirmarEmail;
+    const valido = nombre.length > 0 && fechaNacimiento.length > 0 && validEmail(email) && EmailConfirmado && aceptaTerminos;
+    return (<div className="mt-12 md:mt-14 md:px-2">
         <button
             onClick={() => toggleSeccion(3)}
             className="flex w-full items-center uppercase font-pixel text-2xl text-left md:text-3xl"
@@ -28,6 +36,8 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente }) => (
                             variant="bordered"
                             type="text"
                             required
+                            onChange={(e) => setNombre(e.target.value)}
+                            value={nombre}
                         />
                     </li>
                     <li>
@@ -37,24 +47,30 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente }) => (
                             variant="bordered"
                             type="date"
                             required
+                            onChange={(e) => setFechaNacimiento(e.target.value)}
+                            value={fechaNacimiento}
                         />
                     </li>
                     <li>
                         <FormsInput
                             label="Email"
                             placeholder="ejemplo@example.com"
-                            variant="bordered"
+                            variant={email.length > 0 ? (validEmail(email) ? "correct" : "incorrect") : "bordered"}
                             type="email"
                             required
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
                         />
                     </li>
                     <li>
                         <FormsInput
-                            label="Email"
+                            label="Confirma tu Email"
                             placeholder="ejemplo@example.com"
-                            variant="bordered"
+                            variant={email.length > 0 ? (EmailConfirmado ? "correct" : "incorrect") : "bordered"}
                             type="email"
                             required
+                            onChange={(e) => setConfirmarEmail(e.target.value)}
+                            value={confirmarEmail}
                         />
                     </li>
                     <li className="flex gap-2 items-center justify-center w-full">
@@ -63,6 +79,8 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente }) => (
                             variant="bordered"
                             required
                             className="w-6 h-6 mb-3"
+                            onChange={(e) => setAceptaTerminos(e.target.checked)}
+                            value={aceptaTerminos}
                         />
                         <p className="text-lg text-black">
                             Acepto los{' '}
@@ -72,11 +90,11 @@ const AcordeonAgenda = ({ toggleSeccion, seccionActiva, irASiguiente }) => (
                         </p>
                     </li>
                     <li>
-                        <Btn to="#" type="button" text="Siguiente" variant='solidgreen' size='xs' font='sans' onClick={() => irASiguiente(4)} className=" lg:mx-75" />
+                        <Btn to="#" type="button" text="Siguiente" variant={valido ? 'solidgreen' : 'solidblack'} size='xs' font='sans' onClick={() => { if(valido) irASiguiente(4) }} className=" lg:mx-75" />
                     </li>
                 </ul>
             </div>
         )}
-    </div>
-);
+    </div>)
+};
 export default AcordeonAgenda;

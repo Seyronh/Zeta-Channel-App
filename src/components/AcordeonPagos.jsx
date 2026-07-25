@@ -11,10 +11,10 @@ import googlePay from '../assets/img/icon/pago-google.svg';
 import applePay from '../assets/img/icon/pago-apple.svg';
 
 
-const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo, entradaDia, precioEntradas, entradaInfantilDia, entrada3Dias, entradaInfantil3Dias, precioTotal, esViernes }) => {
+const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, seleccionadosViernes, seleccionadosSabado, seleccionadosDomingo, entradaDia, precioEntradas, entradaInfantilDia, entrada3Dias, entradaInfantil3Dias, precioTotal, esViernes, nombre, fechaNacimiento, email }) => {
 
     const [hasPagado, setHasPagado] = useState(false);
-
+    const todoCorrecto = nombre.length > 0 && fechaNacimiento.length > 0 && email.length > 0 && (seleccionadosViernes.length > 0 || seleccionadosSabado.length > 0 || seleccionadosDomingo.length > 0) && (entradaDia > 0 || entradaInfantilDia > 0 || entrada3Dias > 0 || entradaInfantil3Dias > 0);
     return (
         <div className="mt-12 md:mt-14 md:px-2">
             <button
@@ -43,10 +43,10 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
                             </div>
                             <div className="flex justify-between text-black md:text-lg">
                                 <div className="flex flex-col gap-1">
-                                    <p className="text-black">Juanlu Molina Ruiz</p>
-                                    <p className="text-black">juanlu@lahauss.com</p>
+                                    <p className="text-black">{nombre}</p>
+                                    <p className="text-black">{email}</p>
                                 </div>
-                                <p className="text-black">02/02/02</p>
+                                <p className="text-black">{fechaNacimiento}</p>
                             </div>
                         </li>
                         <li className="flex flex-col gap-4 mt-6">
@@ -145,11 +145,11 @@ const AcordeonPagos = ({ toggleSeccion, seccionActiva, setSeccionActiva, selecci
                                 </button></li>
                             </ul>
                             <div className="md:hidden">
-                                <Btn to="#" text="Comprar" variant='solidgreen' size='xs' font='sans' className="w-full" onClick={() => setHasPagado(!hasPagado)} />
+                                <Btn to="#" text="Comprar" variant={todoCorrecto ? 'solidgreen' : 'solidblack'} size='xs' font='sans' className="w-full" onClick={() => {if(todoCorrecto) setHasPagado(true)}} />
 
                             </div>
                             <div className=" hidden md:block md:w-full lg:w-1/2">
-                                <Btn to="#" text="Comprar" variant='solidgreen' size='lg' font='sans' className="w-full" onClick={() => setHasPagado(!hasPagado)} />
+                                <Btn to="#" text="Comprar" variant={todoCorrecto ? 'solidgreen' : 'solidblack'} size='lg' font='sans' className="w-full" onClick={() => {if(todoCorrecto) setHasPagado(true)}} />
 
                             </div>
 
