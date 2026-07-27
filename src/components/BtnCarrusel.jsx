@@ -4,7 +4,7 @@ export const PrevButton = (props) => {
     const { children, disabled, ...restProps } = props;
     return (
         <button
-            className={'embla__button embla__button--prev'.concat(
+            className={'embla__button pointer-events-auto embla__button--prev'.concat(
                 disabled ? ' embla__button--disabled' : ''
             )}
             type="button"
@@ -20,7 +20,7 @@ export const NextButton = (props) => {
     const { children, disabled, ...restProps } = props;
     return (
         <button
-            className={'embla__button embla__button--next'.concat(
+            className={'embla__button pointer-events-auto embla__button--next'.concat(
                 disabled ? ' embla__button--disabled' : ''
             )}
             type="button"

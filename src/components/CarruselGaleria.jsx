@@ -5,7 +5,7 @@ import { useCarruselIndicadores } from "../data/useCarruselIndicadores.js";
 import { DotButton } from "../components/CarruselIndicadores.jsx";
 
 const CarruselGaleria = ({ imagenesGaleria }) => {
-    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: true })
+    const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: true, slidesToScroll:"auto" })
 
     const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi)
 
@@ -15,7 +15,7 @@ const CarruselGaleria = ({ imagenesGaleria }) => {
     return (
         <div className="relative">
             <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex touch-pan-y touch-pinch-zoom -ml-6 lg:gap-10">
+                <div className="flex -ml-6 lg:gap-10 touch-pan-y touch-pinch-zoom">
                     {/* esto es para cuando le des con el dedo arrastrar o agrandar */}
                     {imagenesGaleria.map((imagen, posicion) => (
                         <div className="shrink-0 grow-0 basis-full min-w-0 pl-6 lg:basis-[40%] lg:first:basis-[40%] first:basis-[85%]" key={posicion}>
@@ -34,7 +34,7 @@ const CarruselGaleria = ({ imagenesGaleria }) => {
             </div>
 
             {/* Optional: Add navigation controls here */}
-            <div className="absolute bottom-0 top-0 left-0 right-0 flex  justify-between mx-3 mb-6 md:mx-10">
+            <div className="absolute bottom-0 top-0 left-0 right-0 flex  justify-between mx-3 mb-6 md:mx-10 pointer-events-none">
                 <PrevButton disabled={prevBtnDisabled} onClick={onPrevButtonClick} />
                 <NextButton disabled={nextBtnDisabled} onClick={onNextButtonClick} />
             </div>
